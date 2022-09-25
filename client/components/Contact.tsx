@@ -28,8 +28,9 @@ const Contact = () => {
       },
       body: JSON.stringify(details),
     });
-    setStatus("Submit");
+    setStatus("Message successfully sent!");
     let result = await response.json();
+    console.log(result);
     alert(result.status);
   };
   return (
