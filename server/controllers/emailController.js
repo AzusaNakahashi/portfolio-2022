@@ -1,11 +1,10 @@
 const nodemailer = require("nodemailer");
 const process = require("process");
-const dotenv = require("dotenv");
-dotenv.config();
+require("dotenv").config();
 const password = process.env.APP_PASSWORD;
 const emailAddress = process.env.EMAIL_ADDRESS;
 
-const sendEmail = async (req, res, next) => {
+exports.sendEmail = async (req, res) => {
   const form = req.body;
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -19,17 +18,13 @@ const sendEmail = async (req, res, next) => {
   const mailOptions = {
     from: form.email,
     to: emailAddress,
-    subject: form.subjet,
+    subject: `${form.name}, ${form.subjet}`,
     text: form.message,
   };
   try {
-    const result = await transporter.sendMail(mailOptions);
-    res.json(result);
-  } catch {
-    res.json({ message: "error" });
+    await transporter.sendMail(mailOptions);
+    res.status(200).send({ message: "message sent successfully" });
+  } catch (e) {
+    res.status(500).send({ message: e.message || "Error occurred" });
   }
-};
-
-module.exports = {
-  sendEmail,
 };

@@ -1,4 +1,3 @@
-import { error } from "console";
 import Image from "next/image";
 import React, { useState } from "react";
 import contactImg from "../public/illustration/contact-img.svg";
@@ -11,9 +10,9 @@ const Contact = () => {
     subject: "",
     message: "",
   });
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(formData);
     setStatus("Sending...");
     let details = {
       name: formData.name,
@@ -21,25 +20,27 @@ const Contact = () => {
       subject: formData.subject,
       message: formData.message,
     };
-    let response = await fetch("http://localhost:5000/send", {
+    let response = await fetch("http://localhost:5000/email/send", {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
       },
       body: JSON.stringify(details),
     });
-    setStatus("Message successfully sent!");
-    let result = await response.json();
-    console.log(result);
-    alert(result.status);
+    if (response.status === 200) {
+      setStatus("Message successfully sent!");
+    } else {
+      setStatus("ERROR!");
+    }
   };
+
   return (
     <div>
       <h2>Contact</h2>
       <div>
         <div>
-          <Image src={contactImg} alt="mail image" />
           <h3>I&apos;d love to hear from you!</h3>
+          <Image src={contactImg} alt="mail image" />
           <p>
             Feel free to ask me any questions or share with me your opinions
             about my website, or any words of wisdom or encouragement or a job
@@ -81,6 +82,7 @@ const Contact = () => {
               onChange={(e) =>
                 setFormData({ ...formData, subject: e.target.value })
               }
+              required
             />
           </div>
           <div>
