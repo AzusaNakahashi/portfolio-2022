@@ -1,0 +1,24 @@
+$text-color: #ffffff;
+$neon-color-primary: #ff20ce;
+$neon-color-secondary: #ffcd83;
+$bgc-gradient-blue: rgb(27, 85, 236);
+$bgc-gradient-purple: rgb(151, 110, 184);
+$bgc-gradient-brown: rgb(140, 91, 70);
+$font-family-heading: "Tourney", cursive;
+$font-size-text: 1rem;
+$font-size-heading-desktop: 5.4rem;
+$font-size-heading-mobile: 3rem;
+@mixin neon-flicker($name, $neon-color) {
+  @keyframes #{$name} {
+    100% {
+      /* Larger blur radius */
+      text-shadow: 0 0 4px $text-color, 0 0 13px $neon-color-primary,
+        0 0 18px $neon-color-primary, 0 0 25px $neon-color-primary;
+    }
+    0% {
+      /* A slightly smaller blur radius */
+      text-shadow: 0 0 8px $text-color, 0 0 9px $neon-color-primary,
+        0 0 12px $neon-color-primary, 0 0 32px $neon-color-primary;
+    }
+  }
+}
