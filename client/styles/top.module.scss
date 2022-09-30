@@ -1,6 +1,6 @@
 @import "./variables.module.scss";
 @include neon-flicker(pink-flicker, $neon-color-primary);
-.top {
+.topPage {
   padding: 2.5rem 1rem 1rem 1rem;
   background: linear-gradient(
     0deg,
@@ -8,6 +8,11 @@
     $bgc-gradient-purple 31%,
     $bgc-gradient-blue 100%
   );
+  position: relative;
+  .hamburger {
+    display: flex;
+    justify-content: flex-end;
+  }
   .left {
     h1,
     h2 {

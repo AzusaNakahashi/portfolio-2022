@@ -1,0 +1,38 @@
+@import "./variables.module.scss";
+
+.header {
+  &.open {
+    background: linear-gradient(
+      0deg,
+      $bgc-gradient-brown 0%,
+      $bgc-gradient-purple 31%,
+      $bgc-gradient-blue 100%
+    );
+  }
+  &.close {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  padding: 1rem;
+  .logo {
+    margin: 0;
+  }
+  .nav-close-button {
+    .close {
+      display: none;
+    }
+    .open {
+      text-align: right;
+    }
+  }
+  nav.close {
+    display: none;
+  }
+  nav.open {
+    height: 100vh;
+    ul {
+      list-style: none;
+    }
+  }
+}
