@@ -1,38 +1,52 @@
 @import "./variables.module.scss";
 
 .header {
-  &.open {
-    background: linear-gradient(
-      0deg,
-      $bgc-gradient-brown 0%,
-      $bgc-gradient-purple 31%,
-      $bgc-gradient-blue 100%
-    );
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  width: 100vw;
+  height: 100vh;
+  padding: 1rem 0.5rem 0.5rem 0.5rem;
+  background-color: $bgc-dark;
+  nav {
+    .logo-and-buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .logo {
+        margin: 0;
+      }
+      .toggle-buttons {
+        display: flex;
+        justify-content: flex-end;
+        // if !navIsOpen, "hamburger" close
+        // if navIsOpen, "close-button" close
+        .hamburger {
+          display: none;
+          &.close {
+            display: flex;
+          }
+        }
+        .close-button.close {
+          display: none;
+        }
+      }
+    }
+    .page-section-list {
+      ul {
+        list-style: none;
+      }
+      &.close {
+        display: none;
+      }
+    }
   }
   &.close {
+    height: auto;
     position: sticky;
     top: 0;
-    z-index: 1;
-  }
-  padding: 1rem;
-  .logo {
-    margin: 0;
-  }
-  .nav-close-button {
-    .close {
-      display: none;
-    }
-    .open {
-      text-align: right;
-    }
-  }
-  nav.close {
-    display: none;
-  }
-  nav.open {
-    height: 100vh;
-    ul {
-      list-style: none;
-    }
+    z-index: 200;
+    background-color: $bgc-gradient-blue;
   }
 }
