@@ -1,7 +1,6 @@
 @import "./variables.module.scss";
 @include neon-flicker(pink-flicker, $neon-color-primary);
 .topPage {
-  padding: 2.5rem 1rem 1rem 1rem;
   background: linear-gradient(
     0deg,
     $bgc-gradient-brown 0%,

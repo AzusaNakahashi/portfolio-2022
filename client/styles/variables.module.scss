@@ -7,19 +7,22 @@ $bgc-gradient-brown: rgb(140, 91, 70);
 $bgc-dark: #02006c;
 $font-family-heading: "Tourney", cursive;
 $font-size-text: 1rem;
+$font-size-h3: 1.25rem;
 $font-size-heading-desktop: 5.4rem;
 $font-size-heading-mobile: 3rem;
 @mixin neon-flicker($name, $neon-color) {
   @keyframes #{$name} {
     100% {
       /* Larger blur radius */
-      text-shadow: 0 0 4px $text-color, 0 0 13px $neon-color-primary,
-        0 0 18px $neon-color-primary, 0 0 25px $neon-color-primary;
+      text-shadow: 0 0 4px $text-color, 0 0 13px $neon-color,
+        0 0 18px $neon-color, 0 0 20px $neon-color, 0 0 70px $neon-color,
+        0 0 120px $neon-color, 0 0 160px $neon-color;
     }
     0% {
       /* A slightly smaller blur radius */
-      text-shadow: 0 0 8px $text-color, 0 0 9px $neon-color-primary,
-        0 0 12px $neon-color-primary, 0 0 32px $neon-color-primary;
+      text-shadow: 0 0 6px $text-color, 0 0 9px $neon-color,
+        0 0 12px $neon-color, 0 0 50px $neon-color, 0 0 120px $neon-color,
+        0 0 150px $neon-color, 0 0 200px $neon-color;
     }
   }
 }

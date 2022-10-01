@@ -1,0 +1,16 @@
+@import "./variables.module.scss";
+@include neon-flicker(pink-flicker, $neon-color-primary);
+
+.about {
+  background-color: $bgc-dark;
+  h2 {
+    margin: 1rem 0;
+    font-size: 3rem;
+    color: $text-color;
+    animation: pink-flicker 1.5s infinite alternate;
+  }
+  .text-container {
+    .text {
+    }
+  }
+}
