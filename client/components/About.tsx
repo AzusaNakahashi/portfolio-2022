@@ -2,7 +2,7 @@ import text from "../public/text";
 import styles from "../styles/about.module.scss";
 const About = () => {
   return (
-    <div className={styles["about"]}>
+    <div className={styles["about"]} id="about">
       <h2>About</h2>
       <div className="text-container">
         <div className="text">

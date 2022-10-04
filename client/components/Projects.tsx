@@ -6,7 +6,7 @@ import styles from "../styles/projects.module.scss";
 const Projects = () => {
   const projectsText = allText.data.projects;
   return (
-    <div className={styles["projects"]}>
+    <div className={styles["projects"]} id="projects">
       <h2>Projects</h2>
       <div className={styles["cards-container"]}>
         {projectsText.map((project, key) => {

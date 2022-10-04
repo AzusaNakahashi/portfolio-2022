@@ -1,5 +1,6 @@
 @import "./variables.module.scss";
 @include neon-flicker(pink-flicker, $neon-color-primary);
+
 .topPage {
   background: linear-gradient(
     0deg,
@@ -21,7 +22,7 @@
       margin: 1rem 0;
       font-size: 3rem;
       color: $text-color;
-      animation: pink-flicker 1.5s infinite alternate;
+      //animation: pink-flicker 1.5s infinite alternate;
     }
     h2 {
       font-size: $font-size-text;

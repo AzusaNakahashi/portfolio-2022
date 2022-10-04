@@ -8,7 +8,7 @@ const Top = () => {
   const navIsOpen = useAppSelector((state) => state.buttons.navIsOpen);
   const dispatch = useAppDispatch();
   return (
-    <div className={styles["topPage"]}>
+    <div className={styles["topPage"]} id="topPage">
       <div className={styles["left"]}>
         <h1>Azusa Nakahashi</h1>
         <h2>Front-end developer</h2>

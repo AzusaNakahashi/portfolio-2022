@@ -41,9 +41,21 @@ const Header = () => {
         >
           <ul>
             <li>navIsOpen {navIsOpen ? "true" : "false"}</li>
-            <li>About</li>
-            <li>Projects</li>
-            <li>Contact</li>
+            <li>
+              <a href="#about" onClick={() => dispatch(navToggle())}>
+                About
+              </a>
+            </li>
+            <li>
+              <a href="#projects" onClick={() => dispatch(navToggle())}>
+                Projects
+              </a>
+            </li>
+            <li>
+              <a href="#contact" onClick={() => dispatch(navToggle())}>
+                Contact
+              </a>
+            </li>
           </ul>
           <ul>
             <li>linkedIn</li>

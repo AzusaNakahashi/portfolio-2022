@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import contactImg from "../public/illustration/contact-img.svg";
+import styles from "../styles/contact.module.scss";
 
 const Contact = () => {
   const [status, setStatus] = useState("Submit");
@@ -35,12 +36,29 @@ const Contact = () => {
   };
 
   return (
-    <div>
+    <div className={styles["contact"]} id="contact">
       <h2>Contact</h2>
-      <div>
-        <div>
-          <h3>I&apos;d love to hear from you!</h3>
-          <Image src={contactImg} alt="mail image" />
+      <div className={styles["container"]}>
+        <div className={styles["explanation"]}>
+          <div className={styles["text-effect"]}>
+            <div className={styles["container"]}>
+              <h3
+                className={styles["glitch"]}
+                data-text="I'd love to hear from you"
+              >
+                I&apos;d <span className={styles["hightlight-pink"]}>love</span>{" "}
+                to hear from{" "}
+                <span className={styles["hightlight-blue"]}>you</span>!
+              </h3>
+              <div className={styles["glow"]}>
+                I&apos;d love to hear from you!
+              </div>
+            </div>
+            <div className={styles["scanlines"]}></div>
+          </div>
+          <div className={styles["mail-img"]}>
+            <Image src={contactImg} alt="mail image" />
+          </div>
           <p>
             Feel free to ask me any questions or share with me your opinions
             about my website, or any words of wisdom or encouragement or a job
