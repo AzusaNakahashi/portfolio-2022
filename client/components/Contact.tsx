@@ -1,10 +1,11 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import contactImg from "../public/illustration/contact-img.svg";
 import styles from "../styles/contact.module.scss";
 
 const Contact = () => {
-  const [status, setStatus] = useState("Submit");
+  const [status, setStatus] = useState("IDLE");
+  const [statusMessage, setStatusMessage] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -12,9 +13,26 @@ const Contact = () => {
     message: "",
   });
 
+  const showFormStatus = (formStatus: string) => {
+    switch (formStatus) {
+      case "IDLE":
+        setStatusMessage("");
+        break;
+      case "PENDING":
+        setStatusMessage("Sending...");
+        break;
+      case "SUCCEEDED":
+        setStatusMessage("Message successfully sent!");
+        break;
+      case "FAILED":
+        setStatusMessage("Oops! Something went wrong. Please try again later");
+        break;
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setStatus("Sending...");
+    setStatus("PENDING");
     let details = {
       name: formData.name,
       email: formData.email,
@@ -29,11 +47,15 @@ const Contact = () => {
       body: JSON.stringify(details),
     });
     if (response.status === 200) {
-      setStatus("Message successfully sent!");
+      setStatus("SUCCEEDED");
     } else {
-      setStatus("ERROR!");
+      setStatus("FAILED");
     }
   };
+
+  useEffect(() => {
+    showFormStatus(status);
+  }, [status]);
 
   return (
     <div className={styles["contact"]} id="contact">
@@ -115,7 +137,7 @@ const Contact = () => {
             />
           </div>
           <button type="submit">Submit</button>
-          <p>{status}</p>
+          <p className={styles["status-message"]}>{statusMessage}</p>
         </form>
       </div>
     </div>

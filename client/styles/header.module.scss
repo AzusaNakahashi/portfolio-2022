@@ -10,6 +10,7 @@
   padding: 1rem 0.5rem 0.5rem 0.5rem;
   background-color: $bgc-dark;
   nav {
+    height: 100%;
     .logo-and-buttons {
       display: flex;
       justify-content: space-between;
@@ -28,17 +29,43 @@
             display: flex;
           }
         }
-        .close-button.close {
-          display: none;
+        .close-button {
+          &.close {
+            display: none;
+          }
         }
       }
     }
-    .page-section-list {
+    .menu-list {
+      display: grid;
+      align-items: center;
+      grid-gap: 5rem;
+      padding: 3rem 0 0 0;
       ul {
         list-style: none;
+        margin: 0;
+        padding: 0;
       }
       &.close {
         display: none;
+      }
+      .page-section-list {
+        display: grid;
+        grid-gap: 1rem;
+        li {
+          font-family: $font-family-heading;
+          font-size: 2rem;
+          text-shadow: 0 0 2px #3060db, 0 0 5px #3060db, 0 0 10px #3060db,
+            0 0 10px #3060db, 0 0 15px #3060db, 0 0 20px #3060db;
+        }
+      }
+      .social-media-list {
+        display: flex;
+        align-items: baseline;
+        gap: 1rem;
+        li {
+          width: 36px;
+        }
       }
     }
   }
