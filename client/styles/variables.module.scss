@@ -15,15 +15,16 @@ $font-size-heading-mobile: 3rem;
   @keyframes #{$name} {
     100% {
       /* Larger blur radius */
-      text-shadow: 0 0 4px $text-color, 0 0 13px $neon-color,
-        0 0 18px $neon-color, 0 0 20px $neon-color, 0 0 70px $neon-color,
-        0 0 120px $neon-color, 0 0 160px $neon-color;
+      text-shadow: 0 0 4px $text-color, 0 0 9px $neon-color,
+        0 0 12px $neon-color, 0 0 20px $neon-color, 0 0 70px $neon-color,
+        0 0 90px $neon-color, 0 0 130px $neon-color;
     }
     0% {
       /* A slightly smaller blur radius */
-      text-shadow: 0 0 6px $text-color, 0 0 9px $neon-color,
-        0 0 12px $neon-color, 0 0 50px $neon-color, 0 0 120px $neon-color,
-        0 0 150px $neon-color, 0 0 200px $neon-color;
+      text-shadow: 0 0 6px $text-color, 0 0 13px $neon-color,
+        0 0 18px $neon-color, 0 0 60px $neon-color, 0 0 120px $neon-color,
+        0 0 150px $neon-color, 0 0 150px $neon-color, 0 0 200px $neon-color,
+        0 0 200px $neon-color;
     }
   }
 }

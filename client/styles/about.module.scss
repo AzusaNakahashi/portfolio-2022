@@ -11,6 +11,31 @@
   }
   .text-container {
     .text {
+      position: relative;
+      padding: 0.5rem;
+      border: solid 2px #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 5px 2px #95ffff, inset 0 0 5px 2px #95ffff;
+      .open {
+        //background-color: red;
+        opacity: 1;
+        transition: all 0.7s ease-in;
+      }
+      .close {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+    .page-controller {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      .close {
+        opacity: 0;
+        transition: all 0.3s ease-out;
+      }
     }
   }
 }
