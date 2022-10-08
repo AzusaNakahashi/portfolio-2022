@@ -1,79 +1,161 @@
 @import "./variables.module.scss";
 
-.header {
+.menu-wrapper {
   position: fixed;
   top: 0;
-  left: 0;
-  z-index: 200;
-  width: 100vw;
-  height: 100vh;
-  padding: 1rem 0.5rem 0.5rem 0.5rem;
-  background-color: $bgc-dark;
-  nav {
-    height: 100%;
-    .logo-and-buttons {
+  right: 0;
+  z-index: 1;
+  .toggler {
+    // contains hamburger icon
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+  }
+  .hamburger {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    padding: 1rem;
+    div {
+      // hamburger center line
+      position: relative;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      .logo {
-        margin: 0;
+      justify-content: center;
+      width: 100%;
+      height: 3px;
+      background-color: $text-color;
+      border-radius: 2px;
+      transition: all 0.4s ease;
+      filter: drop-shadow(0 0 2px rgba(#fff, 0.5)) drop-shadow(0 0 2px #87e6f9);
+      &:before,
+      &:after {
+        // hamburger top and bottom line
+        content: "";
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 3px;
+        background: inherit;
+        border-radius: 2px;
       }
-      .toggle-buttons {
-        display: flex;
-        justify-content: flex-end;
-        // if !navIsOpen, "hamburger" close
-        // if navIsOpen, "close-button" close
-        .hamburger {
-          display: none;
-          &.close {
-            display: flex;
-          }
-        }
-        .close-button {
-          &.close {
-            display: none;
-          }
-        }
+      &:before {
+        // -10px from the center line
+        top: -10px;
+      }
+      &:after {
+        top: 10px;
       }
     }
-    .menu-list {
-      display: grid;
-      align-items: center;
-      grid-gap: 5rem;
-      padding: 3rem 0 0 0;
-      ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-      &.close {
-        display: none;
-      }
-      .page-section-list {
-        display: grid;
-        grid-gap: 1rem;
-        li {
-          font-family: $font-family-heading;
-          font-size: 2rem;
-          text-shadow: 0 0 2px #3060db, 0 0 5px #3060db, 0 0 10px #3060db,
-            0 0 10px #3060db, 0 0 15px #3060db, 0 0 20px #3060db;
-        }
-      }
-      .social-media-list {
-        display: flex;
-        align-items: baseline;
-        gap: 1rem;
-        li {
-          width: 36px;
+  }
+}
+
+// hamburger <=> close icons toggle animation
+.menu-wrapper {
+  .hamburger {
+    &.open {
+      div {
+        // center line becomes / of X
+        transform: rotate(135deg);
+        filter: drop-shadow(0 0 2px white)
+          drop-shadow(0 0 5px $neon-color-tertiary)
+          drop-shadow(0 0 8px $neon-color-tertiary)
+          drop-shadow(0 0 10px $neon-color-tertiary);
+        &:before,
+        &:after {
+          // by adding 90deg, / => \
+          // before and after lines become \ of X
+          top: 0;
+          transform: rotate(90deg);
         }
       }
     }
   }
-  &.close {
-    height: auto;
-    position: sticky;
+}
+
+// overlay menu animation
+.menu-wrapper {
+  .menu {
+    position: fixed;
     top: 0;
-    z-index: 200;
-    background-color: $bgc-gradient-blue;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    overflow: hidden;
+    & > div {
+      // growing background animation
+      background: $bgc-dark;
+      border-radius: 50%;
+      display: flex;
+      flex: none;
+      align-items: center;
+      justify-content: center;
+      width: 250vw;
+      height: 250vw;
+      filter: drop-shadow(0 0 20px rgba($neon-color-tertiary, 0.2))
+        drop-shadow(0 0 30px rgba($neon-color-tertiary, 0.4))
+        drop-shadow(0 0 40px rgba($neon-color-tertiary, 0.4));
+      transform: scale(0); // grows from center
+      transition: all 0.4s ease;
+      .menu-list {
+        text-align: center;
+        max-width: 90vw;
+        max-height: 100vh;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        ul {
+          padding: 0;
+          li {
+            list-style: none;
+            a {
+              text-decoration: none;
+            }
+          }
+          &.page-section-list {
+            font-size: 2rem;
+            font-family: $font-family-heading;
+            text-shadow: 0 0 1px #fff, 0 0 5px $neon-color-tertiary,
+              0 0 10px $neon-color-tertiary, 0 0 15px $neon-color-tertiary;
+          }
+          &.social-media-list {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            gap: 1rem;
+            filter: drop-shadow(0 0 2px rgba($neon-color-secondary, 0.4))
+              drop-shadow(0 0 7px rgba($neon-color-secondary, 0.4))
+              drop-shadow(0 0 10px rgba($neon-color-tertiary, 1));
+          }
+        }
+      }
+    }
+  }
+  .menu {
+    &.open {
+      visibility: visible;
+      & > div {
+        transform: scale(1);
+        transition-duration: 0.7s;
+        .menu-list {
+          opacity: 1;
+          transition: opacity 0.4s ease 0.4s;
+        }
+      }
+    }
   }
 }

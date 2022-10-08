@@ -7,7 +7,7 @@ import Top from "../components/Top";
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <div className="content-wrapper">
       <Header />
       <main>
         <Top />

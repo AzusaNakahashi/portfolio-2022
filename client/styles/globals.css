@@ -7,6 +7,10 @@ body {
   background-color: black;
   color: white;
   font-weight: 300;
+  scroll-behavior: smooth;
+}
+.content-wrapper {
+  position: relative;
 }
 
 a {
@@ -19,8 +23,8 @@ a {
 }
 
 main > div {
-  padding: 0.5rem;
-  padding-bottom: 1rem;
+  padding: 2rem 0.5rem;
+  padding-bottom: 1.5rem;
 }
 
 h1,
