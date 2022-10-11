@@ -1,5 +1,24 @@
 @import "./variables.module.scss";
-@include neon-flicker(pink-flicker, $neon-color-primary);
+@mixin neon-heading-flicker($name, $neon-color) {
+  @keyframes #{$name} {
+    100% {
+      text-shadow: 0 0 2px #fff, 0 0 2px #fff, 0 0 3px #fff,
+        0 0 40px $neon-color-primary, 0 0 70px $neon-color-primary,
+        0 0 70px $neon-color-primary, 0 0 70px $neon-color-primary,
+        0 0 150px $neon-color-primary;
+    }
+    5% {
+      text-shadow: 0 0 2px #fff, 0 0 2px #fff, 0 0 20px $neon-color-primary;
+    }
+
+    0% {
+      text-shadow: 0 0 2px #fff, 0 0 3px #fff, 0 0 10px $neon-color-primary,
+        0 0 35px $neon-color-primary, 0 0 45px $neon-color-primary,
+        0 0 50px $neon-color-primary, 0 0 60px $neon-color-primary;
+    }
+  }
+}
+@include neon-heading-flicker(pink-flicker, $neon-color-primary);
 
 .topPage {
   background: linear-gradient(
@@ -21,11 +40,16 @@
     h1 {
       margin: 1rem 0;
       font-size: 3rem;
-      color: $text-color;
+      color: #fff;
+      line-height: 1.5;
+      text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 21px $neon-color-primary,
+        0 0 32px $neon-color-primary, 0 0 62px $neon-color-primary,
+        0 0 72px $neon-color-primary;
       //animation: pink-flicker 1.5s infinite alternate;
     }
     h2 {
       font-size: $font-size-text;
+      letter-spacing: normal;
       margin: 0;
     }
     p {
