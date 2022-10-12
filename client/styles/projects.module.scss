@@ -11,7 +11,7 @@
   h2 {
     margin: 1rem 0;
     color: $text-color;
-    animation: yellow-flicker 1.5s infinite alternate;
+    //animation: yellow-flicker 1.5s infinite alternate;
   }
   .cards-container {
     padding: 1rem 0;
@@ -67,12 +67,6 @@
 @media only screen and (min-width: 600px) {
   .projects {
     .cards-container {
-      /*
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: 1rem;
-      margin: 0 auto;
-      max-width: 600px;*/
       display: grid;
       grid-gap: 1rem;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -88,11 +82,11 @@
 @media only screen and (min-width: 900px) {
   .projects {
     .cards-container {
-      /*
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);;*/
       grid-gap: 1.5rem;
       .card {
+        .app-explanation {
+          padding: 1rem 1rem 1.5rem 1rem;
+        }
       }
     }
   }

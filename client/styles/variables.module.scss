@@ -11,6 +11,7 @@ $font-size-text: 1rem;
 $font-size-h3: 1.25rem;
 $font-size-heading-desktop: 5.4rem;
 $font-size-heading-mobile: 3rem;
+$desktop-header-height: 60px;
 @mixin neon-flicker($name, $neon-color) {
   @keyframes #{$name} {
     100% {

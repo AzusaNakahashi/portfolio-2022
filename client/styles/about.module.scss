@@ -7,11 +7,10 @@
     margin: 1rem 0;
     font-size: 3rem;
     color: $text-color;
-    animation: pink-flicker 1.5s infinite alternate;
+    //animation: pink-flicker 1.5s infinite alternate;
   }
   .text-container {
     margin: 0 auto;
-    max-width: 600px;
     .text {
       position: relative;
       padding: 0.5rem;

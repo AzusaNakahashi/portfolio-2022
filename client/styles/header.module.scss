@@ -6,6 +6,15 @@
   right: 0;
   left: 0;
   z-index: 1;
+  background-color: transparent;
+  width: 100vw;
+  height: 60px;
+  &.lightblue {
+    background-color: rgb(27, 85, 236);
+  }
+  &.navy {
+    background-color: $bgc-dark;
+  }
   .toggler {
     // contains hamburger icon
     position: absolute;
@@ -113,6 +122,9 @@
         drop-shadow(0 0 40px rgba($neon-color-tertiary, 0.4));
       transform: scale(0); // grows from center
       transition: all 0.4s ease;
+      .top-page-button {
+        display: none;
+      }
       .menu-list {
         text-align: center;
         max-width: 90vw;
@@ -173,60 +185,52 @@
     }
     .menu {
       position: relative;
-      top: 0;
-      left: 0;
       display: block;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: auto;
       visibility: visible;
-      overflow: hidden;
-      z-index: 100;
-
+      padding: 0 1rem;
       & > div {
         // growing background animation
-        background: $bgc-dark;
         border-radius: 0;
         display: flex;
-        flex: none;
-        align-items: center;
-        justify-content: center;
-        width: auto;
-        height: auto;
-        filter: drop-shadow(0 0 20px rgba($neon-color-tertiary, 0.2))
-          drop-shadow(0 0 30px rgba($neon-color-tertiary, 0.4))
-          drop-shadow(0 0 40px rgba($neon-color-tertiary, 0.4));
-        transform: scale(0); // grows from center
-        transition: all 0.4s ease;
+        justify-content: space-between;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1100px;
+        height: $desktop-header-height;
+        transform: none; // grows from center
+        transition: none;
+        background-color: transparent;
+        .top-page-button {
+          display: block;
+          width: 30%;
+          font-size: 1.2rem;
+          font-family: "Tourney", cursive;
+        }
         .menu-list {
-          text-align: center;
-          max-width: 90vw;
-          max-height: 100vh;
-          opacity: 1;
-          transition: opacity 0.4s ease;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          gap: 2rem;
+          width: 100%;
+          max-width: none;
+          max-height: none;
+          transition: none;
           ul {
-            padding: 0;
+            display: flex;
+            gap: 1rem;
+            padding: 0.5;
             li {
-              list-style: none;
               a {
-                text-decoration: none;
               }
             }
             &.page-section-list {
-              font-size: 2rem;
-              font-family: $font-family-heading;
-              text-shadow: 0 0 1px #fff, 0 0 5px $neon-color-tertiary,
-                0 0 10px $neon-color-tertiary, 0 0 15px $neon-color-tertiary;
+              font-size: 1rem;
+              font-family: ubuntu;
             }
             &.social-media-list {
-              display: flex;
-              flex-flow: row nowrap;
-              justify-content: center;
-              gap: 1rem;
-              filter: drop-shadow(0 0 2px rgba($neon-color-secondary, 0.4))
-                drop-shadow(0 0 7px rgba($neon-color-secondary, 0.4))
-                drop-shadow(0 0 10px rgba($neon-color-tertiary, 1));
+              img {
+                height: 35px;
+              }
             }
           }
         }

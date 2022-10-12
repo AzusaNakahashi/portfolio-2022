@@ -80,6 +80,11 @@
 
 @media only screen and (min-width: 900px) {
   .topPage {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding-top: $desktop-header-height;
+    height: calc(98vh);
     .content-wrapper {
       display: grid;
       grid-template-columns: 60% 40%;
