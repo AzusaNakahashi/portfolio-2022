@@ -4,6 +4,7 @@
   position: fixed;
   top: 0;
   right: 0;
+  left: 0;
   z-index: 1;
   .toggler {
     // contains hamburger icon
@@ -11,10 +12,10 @@
     top: 0;
     right: 0;
     z-index: 2;
-    cursor: pointer;
     width: 50px;
     height: 50px;
     opacity: 0;
+    cursor: pointer;
   }
   .hamburger {
     position: absolute;
@@ -154,6 +155,88 @@
         .menu-list {
           opacity: 1;
           transition: opacity 0.4s ease 0.4s;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .menu-wrapper {
+    .toggler {
+      position: relative;
+      display: none;
+    }
+    .hamburger {
+      position: relative;
+      display: none;
+    }
+    .menu {
+      position: relative;
+      top: 0;
+      left: 0;
+      display: block;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: auto;
+      visibility: visible;
+      overflow: hidden;
+      z-index: 100;
+
+      & > div {
+        // growing background animation
+        background: $bgc-dark;
+        border-radius: 0;
+        display: flex;
+        flex: none;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        height: auto;
+        filter: drop-shadow(0 0 20px rgba($neon-color-tertiary, 0.2))
+          drop-shadow(0 0 30px rgba($neon-color-tertiary, 0.4))
+          drop-shadow(0 0 40px rgba($neon-color-tertiary, 0.4));
+        transform: scale(0); // grows from center
+        transition: all 0.4s ease;
+        .menu-list {
+          text-align: center;
+          max-width: 90vw;
+          max-height: 100vh;
+          opacity: 1;
+          transition: opacity 0.4s ease;
+          ul {
+            padding: 0;
+            li {
+              list-style: none;
+              a {
+                text-decoration: none;
+              }
+            }
+            &.page-section-list {
+              font-size: 2rem;
+              font-family: $font-family-heading;
+              text-shadow: 0 0 1px #fff, 0 0 5px $neon-color-tertiary,
+                0 0 10px $neon-color-tertiary, 0 0 15px $neon-color-tertiary;
+            }
+            &.social-media-list {
+              display: flex;
+              flex-flow: row nowrap;
+              justify-content: center;
+              gap: 1rem;
+              filter: drop-shadow(0 0 2px rgba($neon-color-secondary, 0.4))
+                drop-shadow(0 0 7px rgba($neon-color-secondary, 0.4))
+                drop-shadow(0 0 10px rgba($neon-color-tertiary, 1));
+            }
+          }
+        }
+      }
+      & > div {
+        transform: none;
+        transition: none;
+        .menu-list {
+          opacity: 1;
+          transition: none;
         }
       }
     }

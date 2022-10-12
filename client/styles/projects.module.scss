@@ -18,6 +18,8 @@
     display: grid;
     grid-gap: 3rem;
     .card {
+      margin: 0 auto;
+      max-width: 400px;
       border-radius: 20px;
       background-color: $bgc-dark;
       overflow: hidden;
@@ -57,6 +59,40 @@
             box-shadow: 0 0 20px 4px #3060db;
           }
         }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .projects {
+    .cards-container {
+      /*
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1rem;
+      margin: 0 auto;
+      max-width: 600px;*/
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      .card {
+        margin: 0;
+        max-width: 350px;
+        justify-self: center;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .projects {
+    .cards-container {
+      /*
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);;*/
+      grid-gap: 1.5rem;
+      .card {
       }
     }
   }

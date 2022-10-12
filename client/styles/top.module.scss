@@ -1,4 +1,5 @@
 @import "./variables.module.scss";
+// h1 effect
 @mixin neon-heading-flicker($name, $neon-color) {
   @keyframes #{$name} {
     100% {
@@ -21,17 +22,13 @@
 @include neon-heading-flicker(pink-flicker, $neon-color-primary);
 
 .topPage {
+  position: relative;
   background: linear-gradient(
     0deg,
     $bgc-gradient-brown 0%,
     $bgc-gradient-purple 31%,
     $bgc-gradient-blue 100%
   );
-  position: relative;
-  .hamburger {
-    display: flex;
-    justify-content: flex-end;
-  }
   .left {
     h1,
     h2 {
@@ -51,15 +48,58 @@
       font-size: $font-size-text;
       letter-spacing: normal;
       margin: 0;
+      font-family: ubuntu;
     }
     p {
       margin: 0.5rem 0;
     }
   }
   .right {
+    margin: 0 auto;
     padding: 1rem 0;
+    max-width: 350px;
   }
 }
 
-@media screen {
+@media only screen and (min-width: 600px) {
+  .topPage {
+    .left {
+      h1 {
+        margin: 2rem 0 1rem 0;
+        font-size: 4rem;
+      }
+      h2 {
+        margin: 1rem 0;
+        font-size: 1.5rem;
+        font-weight: 500;
+        text-shadow: 0 0 1px #fff, 0 0 2px #fff;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .topPage {
+    .content-wrapper {
+      display: grid;
+      grid-template-columns: 60% 40%;
+      .left {
+        h1 {
+          margin: 0;
+          font-size: 5rem;
+          line-height: 1.2;
+        }
+        h2 {
+          font-size: 1.2rem;
+        }
+        p {
+          max-width: 500px;
+        }
+      }
+      .right {
+        max-width: none;
+        width: 400px;
+      }
+    }
+  }
 }

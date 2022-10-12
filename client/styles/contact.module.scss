@@ -25,12 +25,13 @@
 .contact {
   background-color: $bgc-dark;
   h2 {
+    margin: 1rem 0;
     animation: yellow-flicker 1.5s infinite alternate;
   }
-  .container {
+  .grid-wrapper {
     text-shadow: 0 0 4px $neon-color-secondary;
-
-    .explanation {
+    .thanks-message {
+      padding-bottom: 1rem;
       h3 {
         .hightlight-pink {
           color: #fff;
@@ -48,6 +49,7 @@
     form {
       display: grid;
       grid-gap: 1rem;
+      margin: 0 auto;
       div {
         display: grid;
         grid-gap: 0.5rem;
@@ -131,5 +133,25 @@
   }
   to {
     transform: translate(0px, 2%);
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .contact {
+    .grid-wrapper {
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      .thanks-message {
+      }
+      form {
+        width: 100%;
+        button {
+          max-width: 250px;
+          justify-self: center;
+        }
+      }
+    }
   }
 }
