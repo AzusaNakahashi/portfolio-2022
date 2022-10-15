@@ -1,9 +1,13 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import { useAppDispatch, useAppSelector } from "../pages/app/hooks";
 import contactImg from "../public/illustration/contact-img.svg";
 import styles from "../styles/contact.module.scss";
+import { postForm } from "../features/form";
 
 const Contact = () => {
+  const formStatus = useAppSelector((state) => state.form.status);
+  const dispatch = useAppDispatch();
   const [status, setStatus] = useState("IDLE");
   const [statusMessage, setStatusMessage] = useState("");
   const [formData, setFormData] = useState({
@@ -39,28 +43,24 @@ const Contact = () => {
       subject: formData.subject,
       message: formData.message,
     };
-    let response = await fetch("http://localhost:5000/email/send", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(details),
-    });
+    dispatch(postForm(details));
+    /*
     if (response.status === 200) {
       setStatus("SUCCEEDED");
     } else {
       setStatus("FAILED");
-    }
+    }*/
   };
 
   useEffect(() => {
     showFormStatus(status);
-  }, [status]);
+  }, [status, formStatus]);
 
   return (
     <div className={styles["contact"]} id="contact">
       <div className={styles["content-wrapper"]}>
         <h2>Contact</h2>
+        <h3>{formStatus}</h3>
         <div className={styles["grid-wrapper"]}>
           <div className={styles["thanks-message"]}>
             <div className={styles["text-effect"]}>
