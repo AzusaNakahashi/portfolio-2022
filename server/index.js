@@ -12,11 +12,19 @@ const corsOptions = {
   origin: frontEndURI,
   optionSuccessStatus: 200,
 };
+// Error handling middleware functionality
+const errorHandler = (error, req, res, next) => {
+  console.log(`ERROR ${error.message}`);
+  const status = error.status || 500;
+  res.status(status).send(error.message);
+};
 app.use(cors(corsOptions));
 // Body Parser Middleware
 app.use(bodyParser.json());
 // Routes
 app.use("/email", emailRoutes);
+
+app.use(errorHandler);
 
 app.listen(port, () => {
   console.log(`server started on port ${port}`);

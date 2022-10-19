@@ -4,7 +4,7 @@ require("dotenv").config();
 const password = process.env.APP_PASSWORD;
 const emailAddress = process.env.EMAIL_ADDRESS;
 
-exports.sendEmail = async (req, res) => {
+exports.sendEmail = async (req, res, next) => {
   const form = req.body;
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -22,9 +22,9 @@ exports.sendEmail = async (req, res) => {
     text: form.message,
   };
   try {
-    await transporter.sendMail(mailOptions);
-    res.status(200).send({ message: "message sent successfully" });
-  } catch (e) {
-    res.status(500).send({ message: e.message || "Error occurred" });
+    const result = await transporter.sendMail(mailOptions);
+    res.status(200).send(result);
+  } catch (err) {
+    next(err);
   }
 };

@@ -1,4 +1,5 @@
-import { createAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
 
 interface Form {
   name: string;
@@ -7,17 +8,27 @@ interface Form {
   message: string;
 }
 
+const SERVER_URI = "http://localhost:5000";
+const config = {
+  headers: {
+    "Content-Type": "application/json;charset=utf-8",
+  },
+};
+
 export const postForm = createAsyncThunk(
   "/email/send",
   async (form: Form, thunkAPI) => {
-    const response = await fetch("http://localhost:5000/email/send", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(form),
-    });
-    return response;
+    const formData = JSON.stringify(form);
+    try {
+      const response = await axios.post(
+        `http://localhost:5000/email/send`,
+        formData,
+        config
+      );
+      return response.data;
+    } catch (err) {
+      return err;
+    }
   }
 );
 
@@ -42,7 +53,7 @@ export const formSlice = createSlice({
       state.status = "SUCCESS";
     });
     builder.addCase(postForm.rejected, (state, action) => {
-      console.log(action.payload);
+      console.log(action);
       state.status = "REJECTED";
     });
   },
