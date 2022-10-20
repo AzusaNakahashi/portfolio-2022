@@ -15,7 +15,7 @@ const corsOptions = {
 // Error handling middleware functionality
 const errorHandler = (error, req, res, next) => {
   console.log(`ERROR ${error.message}`);
-  const status = error.status || 500;
+  const status = error.status || 400;
   res.status(status).send(error.message);
 };
 app.use(cors(corsOptions));

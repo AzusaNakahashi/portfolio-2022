@@ -18,11 +18,11 @@ const config = {
 export const postForm = createAsyncThunk(
   "/email/send",
   async (form: Form, thunkAPI) => {
-    const formData = JSON.stringify(form);
+    const formJsonData = JSON.stringify(form);
     try {
       const response = await axios.post(
-        `http://localhost:5000/email/send`,
-        formData,
+        `${SERVER_URI}/email/send`,
+        formJsonData,
         config
       );
       return response.data;

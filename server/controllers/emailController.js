@@ -18,7 +18,7 @@ exports.sendEmail = async (req, res, next) => {
   const mailOptions = {
     from: form.email,
     to: emailAddress,
-    subject: `${form.name}, ${form.subjet}`,
+    subject: `${form.name}, ${form.subject}`,
     text: form.message,
   };
   try {

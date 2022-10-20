@@ -15,6 +15,9 @@ const Home: NextPage = () => {
         <Projects />
         <Contact />
       </main>
+      <footer>
+        <h3>©2022 Azusa Nakahashi</h3>
+      </footer>
     </div>
   );
 };

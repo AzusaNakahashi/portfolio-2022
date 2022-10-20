@@ -23,6 +23,7 @@
   }
 }
 .contact {
+  padding-bottom: 3rem;
   background-color: $bgc-dark;
   h2 {
     margin: 1rem 0;
@@ -62,14 +63,25 @@
           box-shadow: 0 0 10px 4px #3060db;
         }
         input {
-          height: 36px;
+          height: 38px;
         }
         textarea {
           height: 200px;
         }
-        label {
-          span {
+        input,
+        textarea {
+          color: $bgc-dark;
+          padding: 0.5rem;
+          &:focus {
+            border: 1px solid $neon-color-primary !important;
           }
+        }
+        span {
+          color: $neon-color-primary;
+        }
+        .require-message {
+          margin: 0.2rem;
+          text-align: right;
         }
       }
       button {
@@ -88,6 +100,11 @@
           background-color: #fff;
           box-shadow: 0 0 20px 4px #3060db;
         }
+      }
+      .status-message {
+        margin: 0;
+        color: $neon-color-secondary;
+        text-align: center;
       }
     }
   }

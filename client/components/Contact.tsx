@@ -8,27 +8,26 @@ import { postForm } from "../features/form";
 const Contact = () => {
   const formStatus = useAppSelector((state) => state.form.status);
   const dispatch = useAppDispatch();
-  const [status, setStatus] = useState("IDLE");
   const [statusMessage, setStatusMessage] = useState("");
-  const [formData, setFormData] = useState({
+  const [formInput, setFormInput] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
   });
 
-  const showFormStatus = (formStatus: string) => {
-    switch (formStatus) {
+  const showFormStatusMessage = (formSendingStatus: string) => {
+    switch (formSendingStatus) {
       case "IDLE":
         setStatusMessage("");
         break;
       case "PENDING":
         setStatusMessage("Sending...");
         break;
-      case "SUCCEEDED":
+      case "SUCCESS":
         setStatusMessage("Message successfully sent!");
         break;
-      case "FAILED":
+      case "REJECTED":
         setStatusMessage("Oops! Something went wrong. Please try again later");
         break;
     }
@@ -36,31 +35,29 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setStatus("PENDING");
-    let details = {
-      name: formData.name,
-      email: formData.email,
-      subject: formData.subject,
-      message: formData.message,
+    let formData = {
+      name: formInput.name,
+      email: formInput.email,
+      subject: formInput.subject,
+      message: formInput.message,
     };
-    dispatch(postForm(details));
-    /*
-    if (response.status === 200) {
-      setStatus("SUCCEEDED");
-    } else {
-      setStatus("FAILED");
-    }*/
+    dispatch(postForm(formData));
+    setFormInput({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
   };
 
   useEffect(() => {
-    showFormStatus(status);
-  }, [status, formStatus]);
+    showFormStatusMessage(formStatus);
+  }, [formStatus]);
 
   return (
     <div className={styles["contact"]} id="contact">
       <div className={styles["content-wrapper"]}>
         <h2>Contact</h2>
-        <h3>{formStatus}</h3>
         <div className={styles["grid-wrapper"]}>
           <div className={styles["thanks-message"]}>
             <div className={styles["text-effect"]}>
@@ -89,51 +86,63 @@ const Contact = () => {
           </div>
           <form onSubmit={handleSubmit} method="POST" action="send">
             <div>
-              <label htmlFor="name">Name:</label>
+              <label htmlFor="name">
+                Name:<span>*</span>
+              </label>
               <input
                 type="text"
                 id="name"
-                value={formData.name}
+                value={formInput.name}
                 onChange={(e) =>
-                  setFormData({ ...formData, name: e.target.value })
+                  setFormInput({ ...formInput, name: e.target.value })
                 }
                 required
               />
             </div>
             <div>
-              <label htmlFor="email">Email:</label>
+              <label htmlFor="email">
+                Email:<span>*</span>
+              </label>
               <input
                 type="email"
                 id="email"
-                value={formData.email}
+                value={formInput.email}
                 onChange={(e) =>
-                  setFormData({ ...formData, email: e.target.value })
+                  setFormInput({ ...formInput, email: e.target.value })
                 }
                 required
               />
             </div>
             <div>
-              <label htmlFor="subject">Subject:</label>
+              <label htmlFor="subject">
+                Subject:<span>*</span>
+              </label>
               <input
                 type="text"
                 id="subject"
-                value={formData.subject}
+                value={formInput.subject}
                 onChange={(e) =>
-                  setFormData({ ...formData, subject: e.target.value })
+                  setFormInput({ ...formInput, subject: e.target.value })
                 }
                 required
               />
             </div>
             <div>
-              <label htmlFor="message">Message:</label>
+              <label htmlFor="message">
+                Message:<span>*</span>
+              </label>
               <textarea
                 id="message"
-                value={formData.message}
+                value={formInput.message}
                 onChange={(e) =>
-                  setFormData({ ...formData, message: e.target.value })
+                  setFormInput({ ...formInput, message: e.target.value })
                 }
                 required
               />
+              <p className={styles["require-message"]}>
+                <span>*</span>
+                {" required"}
+              </p>
             </div>
             <button type="submit">Submit</button>
             <p className={styles["status-message"]}>{statusMessage}</p>
