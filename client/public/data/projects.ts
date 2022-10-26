@@ -16,11 +16,11 @@ interface Project {
     explanation: String | null;
     features: Array<feature>;
   };
-  Technology: {
+  technology: {
     techs: String[];
     explanation: String;
   };
-  List: {
+  list: {
     motive: String[] | null;
     techGoal: String[] | null;
     projectManagement: String[] | null;
@@ -57,12 +57,12 @@ const whereverWeather: Project = {
       },
     ],
   },
-  Technology: {
+  technology: {
     techs: ["Next.js", "Redux", "SASS", "REST API", "Node.js", "Git"],
     explanation:
       "Next js is for the better loading performance. Redux keeps the map state and the weather state across the pages. Google Maps API shows the maps and gets the location data. Weather data is from AccuWeather API. Node.js is used to secure fetching the data from API.",
   },
-  List: {
+  list: {
     motive: [
       "This project was created as a personal project to deepen the programming knowledge",
     ],
@@ -82,6 +82,4 @@ const whereverWeather: Project = {
   },
 };
 
-const projectData: Project[] = [whereverWeather];
-
-export default projectData;
+export const projectsData: Project[] = [whereverWeather];

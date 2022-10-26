@@ -1,28 +1,31 @@
 import Image from "next/image";
+import Link from "next/link";
 import allText from "../public/text";
 import image from "../public/pictures/top.jpeg";
 import styles from "../styles/projects.module.scss";
-import textData from "../public/data/projects";
+import { projectsData } from "../public/data/projects";
 
 const Projects = () => {
-  const projectsText = allText.data.projects;
-  console.log(textData);
   return (
     <div className={styles["projects"]} id="projects">
       <div className={styles["content-wrapper"]}>
         <h2>Projects</h2>
         <div className={styles["cards-container"]}>
-          {projectsText.map((project, key) => {
+          {projectsData.map((project, key) => {
             return (
               <div key={key} className={styles["card"]}>
                 <Image src={image} alt="app image" />
                 <div className={styles["app-explanation"]}>
-                  <h3>{project.title}</h3>
+                  <h3>{project.basicInfo.name}</h3>
                   <div className={styles["text"]}>
-                    <p className={styles["app-category"]}>{project.category}</p>
-                    <p>{project.text}</p>
+                    <p className={styles["app-category"]}>
+                      {project.basicInfo.type}
+                    </p>
+                    <p>{project.basicInfo.explanation}</p>
                   </div>
-                  <button>see more</button>
+                  <button>
+                    <Link href={`/projects/${key}`}>see more</Link>
+                  </button>
                 </div>
               </div>
             );

@@ -1,10 +1,13 @@
-import { useAppSelector, useAppDispatch } from "../pages/app/hooks";
-import { navToggle } from "../features/buttons";
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 import styles from "../styles/header.module.scss";
+import { useAppSelector, useAppDispatch } from "../pages/app/hooks";
+import { useRouter } from "next/router";
+import { navToggle } from "../features/buttons";
 
 const Header = () => {
+  const router = useRouter();
+  const pathName = router.pathname;
   const navIsOpen = useAppSelector((state) => state.buttons.navIsOpen);
   const dispatch = useAppDispatch();
   const [navBGC, setNavBGC] = useState("");
@@ -38,18 +41,20 @@ const Header = () => {
   };
 
   useEffect(() => {
-    if (window.innerWidth > 900) {
-      window.addEventListener("scroll", changePcNavBgc);
-      return () => {
-        window.removeEventListener("scroll", changePcNavBgc);
-      };
-    } else {
-      window.addEventListener("scroll", changeMobileNavBgc);
-      return () => {
-        window.removeEventListener("scroll", changeMobileNavBgc);
-      };
+    if (pathName === "/") {
+      if (window.innerWidth > 900) {
+        window.addEventListener("scroll", changePcNavBgc);
+        return () => {
+          window.removeEventListener("scroll", changePcNavBgc);
+        };
+      } else {
+        window.addEventListener("scroll", changeMobileNavBgc);
+        return () => {
+          window.removeEventListener("scroll", changeMobileNavBgc);
+        };
+      }
     }
-  }, []);
+  }, [pathName]);
   return (
     <>
       <header className={`${styles["menu-wrapper"]} ${styles[navBGC]}`}>
@@ -72,22 +77,34 @@ const Header = () => {
             <div className={styles["menu-list"]}>
               <ul className={styles["page-section-list"]}>
                 <li>
-                  <a href="#topPage" onClick={() => dispatch(navToggle())}>
+                  <a
+                    href={pathName === "/" ? "#topPage" : "/#topPage"}
+                    onClick={() => dispatch(navToggle())}
+                  >
                     Top
                   </a>
                 </li>
                 <li>
-                  <a href="#about" onClick={() => dispatch(navToggle())}>
+                  <a
+                    href={pathName === "/" ? "#topPage" : "/#about"}
+                    onClick={() => dispatch(navToggle())}
+                  >
                     About
                   </a>
                 </li>
                 <li>
-                  <a href="#projects" onClick={() => dispatch(navToggle())}>
+                  <a
+                    href={pathName === "/" ? "#topPage" : "/#projects"}
+                    onClick={() => dispatch(navToggle())}
+                  >
                     Projects
                   </a>
                 </li>
                 <li>
-                  <a href="#contact" onClick={() => dispatch(navToggle())}>
+                  <a
+                    href={pathName === "/" ? "#topPage" : "/#contact"}
+                    onClick={() => dispatch(navToggle())}
+                  >
                     Contact
                   </a>
                 </li>
