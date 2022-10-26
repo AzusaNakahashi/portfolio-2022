@@ -2,9 +2,11 @@ import Image from "next/image";
 import allText from "../public/text";
 import image from "../public/pictures/top.jpeg";
 import styles from "../styles/projects.module.scss";
+import textData from "../public/data/projects";
 
 const Projects = () => {
   const projectsText = allText.data.projects;
+  console.log(textData);
   return (
     <div className={styles["projects"]} id="projects">
       <div className={styles["content-wrapper"]}>
