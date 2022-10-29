@@ -1,4 +1,5 @@
 $text-color: #ffffff;
+$border-color: #ffffff;
 $neon-color-primary: #ff00e4;
 $neon-color-secondary: #ffcd83;
 $neon-color-tertiary: #423fff;
@@ -7,11 +8,14 @@ $bgc-gradient-purple: rgb(151, 110, 184);
 $bgc-gradient-brown: rgb(140, 91, 70);
 $bgc-dark: #02006c;
 $font-family-heading: "Tourney", cursive;
-$font-size-text: 1rem;
-$font-size-h3: 1.25rem;
+$font-size-text: 1rem; // change to regular
+$font-size-h3: 1.25rem; // change to large
 $font-size-heading-desktop: 5.4rem;
-$font-size-heading-mobile: 3rem;
+$font-size-heading-medium: 4rem; // apply this to all h2, h3
+$font-size-heading-small: 2rem;
+$font-size-heading-mobile: 3rem; // change to phone
 $desktop-header-height: 60px;
+$desktop-content-max-width: 1100px;
 @mixin neon-flicker($name, $neon-color) {
   @keyframes #{$name} {
     100% {
