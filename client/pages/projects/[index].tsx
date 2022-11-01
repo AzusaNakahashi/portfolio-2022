@@ -96,27 +96,27 @@ const Project = () => {
               <section className={styles["list-info"]}>
                 <div className={styles["top-border"]}></div>
                 <div className={styles["list-content"]}>
-                  <h3>Motive</h3>
+                  <h3>{project.list.motive.title}</h3>
                   <ul>
-                    {project.list?.motive?.map((motive, key) => (
+                    {project.list?.motive?.text?.map((motive, key) => (
                       <li key={key}>{motive}</li>
                     ))}
                   </ul>
                 </div>
                 <div className={styles["top-border"]}></div>
                 <div className={styles["list-content"]}>
-                  <h3>Tech Goals</h3>
+                  <h3>{project.list.techGoal.title}</h3>
                   <ul>
-                    {project.list?.techGoal?.map((goal, key) => (
+                    {project.list?.techGoal?.text?.map((goal, key) => (
                       <li key={key}>{goal}</li>
                     ))}
                   </ul>
                 </div>
                 <div className={styles["top-border"]}></div>
                 <div className={styles["list-content"]}>
-                  <h3>Project Management</h3>
+                  <h3>{project.list.projectManagement.title}</h3>
                   <ul>
-                    {project.list?.projectManagement?.map((item, key) => (
+                    {project.list?.projectManagement?.text?.map((item, key) => (
                       <li key={key}>{item}</li>
                     ))}
                   </ul>

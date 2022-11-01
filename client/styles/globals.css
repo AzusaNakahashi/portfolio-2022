@@ -22,6 +22,10 @@ a {
   box-sizing: border-box;
 }
 
+*::first-letter {
+  text-transform: uppercase;
+}
+
 main > * {
   padding: 2rem 0.5rem;
   padding-bottom: 1.5rem;

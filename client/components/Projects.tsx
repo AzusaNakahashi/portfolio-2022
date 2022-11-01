@@ -35,6 +35,11 @@ const Projects = () => {
                       {project.basicInfo.type}
                     </p>
                     <p>{project.basicInfo.explanation}</p>
+                    <ul>
+                      {project.technology.techs.map((tech) => (
+                        <li key={key}>{tech}</li>
+                      ))}
+                    </ul>
                   </div>
                   <Link href={`/projects/${key}`}>
                     <button>see more</button>

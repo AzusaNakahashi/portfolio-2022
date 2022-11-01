@@ -22,9 +22,9 @@ interface Project {
     pointList: string[];
   };
   list: {
-    motive: string[] | null;
-    techGoal: string[] | null;
-    projectManagement: string[] | null;
+    motive: { title: "Motive"; text: string[] | null };
+    techGoal: { title: "Tech Goals"; text: string[] | null };
+    projectManagement: { title: "Project Management"; text: string[] | null };
   };
 }
 const whereverWeather: Project = {
@@ -69,23 +69,32 @@ const whereverWeather: Project = {
       "Next.js is for better loading performance. Redux keeps the map state and the weather state across the pages. Google Maps API shows the maps and gets the location data. Weather data is from AccuWeather API. Node.js is used to secure fetching the data from API.",*/,
   },
   list: {
-    motive: [
-      "This project was created as a personal project to deepen the programming knowledge",
-    ],
-    techGoal: [
-      "Understanding how front-end and back-end are connected.",
-      "Using Google Maps API",
-      "Learning the basics of Redux",
-    ],
-    projectManagement: [
-      "Though this is a personal project, Trello was used to manage the ideas and development effeciently. ",
-    ],
+    motive: {
+      title: "Motive",
+      text: [
+        "This project was created as a personal project to deepen the programming knowledge",
+      ],
+    },
+    techGoal: {
+      title: "Tech Goals",
+      text: [
+        "Understanding how front-end and back-end are connected.",
+        "Using Google Maps API",
+        "Learning the basics of Redux",
+      ],
+    },
+    projectManagement: {
+      title: "Project Management",
+      text: [
+        "Though this is a personal project, Trello was used to manage the ideas and development effeciently. ",
+      ],
+    },
   },
 };
 
 const grabo: Project = {
   basicInfo: {
-    name: "grabo",
+    name: "Grabo",
     path: "grabo",
     type: "native app",
     duration: "2021 Sep - 2021 Dec",
@@ -125,21 +134,30 @@ const grabo: Project = {
       "In order to create a native application, our team chose React Native as the front-end development tool. We also tried Redux and MongoDB for the first time in this project for practice and better effeciency.",*/
   },
   list: {
-    motive: [
-      "This is the last term project from Langara college Web and Mobide Design and Development course (development stream.)",
-      "The team was conposed of 6 members: 4 developers and 2 designers.",
-      "The purpose of this project is creating a native app, as we already learned how to develop with React.js before, we chose React Native as a development tool.",
-    ],
-    techGoal: [
-      "The app recognizes the language of the product from the phone camera.",
-      "Learning React Native, Redux, MongoDB",
-    ],
-    projectManagement: [
-      "Regular meeting per week.",
-      "Follow agile development. Created alpha version and beta virsion for testing.",
-      "Use git for development effeciency and accuracy.",
-      "Track team members progress and manage tasks by Trello",
-    ],
+    motive: {
+      title: "Motive",
+      text: [
+        "This is the last term project from Langara college Web and Mobide Design and Development course (development stream.)",
+        "The team was conposed of 6 members: 4 developers and 2 designers.",
+        "The purpose of this project is creating a native app, as we already learned how to develop with React.js before, we chose React Native as a development tool.",
+      ],
+    },
+    techGoal: {
+      title: "Tech Goals",
+      text: [
+        "The app recognizes the language of the product from the phone camera.",
+        "Learning React Native, Redux, MongoDB",
+      ],
+    },
+    projectManagement: {
+      title: "Project Management",
+      text: [
+        "Regular meeting per week.",
+        "Follow agile development. Created alpha version and beta virsion for testing.",
+        "Use git for development effeciency and accuracy.",
+        "Track team members progress and manage tasks by Trello",
+      ],
+    },
   },
 };
 
@@ -164,15 +182,17 @@ const portfolio: Project = {
       "Animation (menu, heading letters)",
       "Contact form with Nodemailer",
     ],
-    /*explanation:
-      "For better rendering, I went for Next.js. As the website has a contact form, I used Node.js and enabled sending emails with Nodemailer.",*/
   },
   list: {
-    motive: ["Displaying the project I worked on on one website."],
-    techGoal: ["Learning Next.js", "Creating a form"],
-    projectManagement: [
-      "Git for preventing errors and keeping the track of progress.",
-    ],
+    motive: {
+      title: "Motive",
+      text: ["Displaying the project I worked on on one website."],
+    },
+    techGoal: { title: "Tech Goals", text: null },
+    projectManagement: {
+      title: "Project Management",
+      text: ["Git for preventing errors and keeping the track of progress."],
+    },
   },
 };
 
