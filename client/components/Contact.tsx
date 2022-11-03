@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../pages/app/hooks";
+import { useAppDispatch, useAppSelector } from "../hooks";
 import contactImg from "../public/illustration/contact-img.svg";
 import styles from "../styles/contact.module.scss";
 import { postForm } from "../features/form";

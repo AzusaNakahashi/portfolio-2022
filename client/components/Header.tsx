@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "../styles/header.module.scss";
-import { useAppSelector, useAppDispatch } from "../pages/app/hooks";
+import { useAppSelector, useAppDispatch } from "../hooks";
 import { useRouter } from "next/router";
 import { navToggle } from "../features/buttons";
 

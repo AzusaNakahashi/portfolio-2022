@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { createWrapper } from "next-redux-wrapper";
-import buttonReducer from "../../features/buttons";
-import formReducer from "../../features/form";
+import buttonReducer from "./features/buttons";
+import formReducer from "./features/form";
 
 export const store = configureStore({
   reducer: {
