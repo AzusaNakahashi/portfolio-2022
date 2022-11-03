@@ -8,7 +8,7 @@ const Projects = () => {
   useState(() => {
     setPathNames(() => {
       let paths: string[] = [];
-      projectsData.map((project, key) => {
+      projectsData.map((project) => {
         paths = [...paths, project.basicInfo.path];
       });
       return paths;
@@ -19,12 +19,12 @@ const Projects = () => {
       <div className={styles["content-wrapper"]}>
         <h2>Projects</h2>
         <div className={styles["cards-container"]}>
-          {projectsData.map((project, key) => {
+          {projectsData.map((project, index) => {
             return (
-              <div key={key} className={styles["card"]}>
+              <div key={`project${index}`} className={styles["card"]}>
                 <picture>
                   <img
-                    src={`/projectData/image/${pathNames[key]}/thumbnail.png`}
+                    src={`/projectData/image/${pathNames[index]}/thumbnail.png`}
                     alt="link to linkedIn"
                   />
                 </picture>
@@ -36,12 +36,12 @@ const Projects = () => {
                     </p>
                     <p>{project.basicInfo.explanation}</p>
                     <ul>
-                      {project.technology.techs.map((tech) => (
-                        <li key={key}>{tech}</li>
+                      {project.technology.techs.map((tech, index) => (
+                        <li key={`tech${index}`}>{tech}</li>
                       ))}
                     </ul>
                   </div>
-                  <Link href={`/projects/${key}`}>
+                  <Link href={`/projects/${index}`}>
                     <button>see more</button>
                   </Link>
                 </div>

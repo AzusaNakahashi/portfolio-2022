@@ -9,7 +9,7 @@ const Project = () => {
   const project = projectsData[index];
   let listItems: string[] = [];
   if (project?.list) {
-    Object.keys(project.list).map((item, key) => {
+    Object.keys(project.list).map((item) => {
       listItems = [...listItems, item];
     });
   }
@@ -63,8 +63,11 @@ const Project = () => {
                     <h3>Features</h3>
                     <p className={styles["intro"]}>{project.features?.intro}</p>
                     <div className={styles["features-wrapper"]}>
-                      {project.features?.features?.map((feature, key) => (
-                        <div className={styles["feature"]} key={key}>
+                      {project.features?.features?.map((feature, index) => (
+                        <div
+                          className={styles["feature"]}
+                          key={`feature${index}`}
+                        >
                           <picture>
                             <img
                               src={`/projectData/image/${project.basicInfo.path}/hero.png`}
@@ -86,27 +89,30 @@ const Project = () => {
               <section className={styles["technology"]}>
                 <h3>Technology</h3>
                 <ul className={styles["tech-names"]}>
-                  {project.technology.techs.map((name, key) => (
-                    <li key={key}>{name}</li>
+                  {project.technology.techs.map((name, index) => (
+                    <li key={`tech${index}`}>{name}</li>
                   ))}
                 </ul>
                 <ul className={styles["tech-point"]}>
-                  {project.technology.pointList.map((point, key) => (
-                    <li key={key}>{point}</li>
+                  {project.technology.pointList.map((point, index) => (
+                    <li key={`point${index}`}>{point}</li>
                   ))}
                 </ul>
               </section>
               <section className={styles["list-info"]}>
                 {listItems.length > 0 && (
                   <>
-                    {listItems.map((item, key) => (
+                    {listItems.map((item, index) => (
                       <>
                         {project.list[item as keyof typeof project.list]
                           .text !== null && (
                           <>
                             <div className={styles["top-border"]}></div>
-                            <div className={styles["list-content"]} key={key}>
-                              <h3 key={key}>
+                            <div
+                              className={styles["list-content"]}
+                              key={`list${index}`}
+                            >
+                              <h3>
                                 {
                                   project.list[
                                     item as keyof typeof project.list
@@ -117,7 +123,7 @@ const Project = () => {
                                 {project.list[
                                   item as keyof typeof project.list
                                 ].text?.map((sentence, index) => (
-                                  <li key={index}>{sentence}</li>
+                                  <li key={`sentence${index}`}>{sentence}</li>
                                 ))}
                               </ul>
                             </div>
