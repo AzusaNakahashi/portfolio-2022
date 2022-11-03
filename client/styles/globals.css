@@ -22,7 +22,7 @@ a {
   box-sizing: border-box;
 }
 
-*::first-letter {
+p::first-letter {
   text-transform: uppercase;
 }
 

@@ -1,18 +1,6 @@
-import Image from "next/image";
 import { useState } from "react";
-import text from "../public/text";
+import text from "../public/indexPageText";
 import styles from "../styles/about.module.scss";
-import html5Logo from "../public/techLogos/html5.svg";
-import cssLogo from "../public/techLogos/css.svg";
-import jsLogo from "../public/techLogos/js.svg";
-import reduxLogo from "../public/techLogos/redux.svg";
-import sassLogo from "../public/techLogos/sass.svg";
-import nodeLogo from "../public/techLogos/node.svg";
-import sqlLogo from "../public/techLogos/mysql.png";
-import mongoLogo from "../public/techLogos/mongoDB.svg";
-import firebaseLogo from "../public/techLogos/firebase.svg";
-import reactLogo from "../public/techLogos/react.svg";
-import gitLogo from "../public/techLogos/git.svg";
 
 const About = () => {
   const [openPage, setOpenPage] = useState(0);

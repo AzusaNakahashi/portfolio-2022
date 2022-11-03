@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-
 interface Form {
   name: string;
   email: string;
@@ -8,7 +7,7 @@ interface Form {
   message: string;
 }
 
-const SERVER_URI = "http://localhost:5000";
+const SERVER_URI = process.env.NEXT_PUBLIC_SERVER_URI;
 const config = {
   headers: {
     "Content-Type": "application/json;charset=utf-8",
@@ -18,6 +17,7 @@ const config = {
 export const postForm = createAsyncThunk(
   "/email/send",
   async (form: Form, thunkAPI) => {
+    console.log(SERVER_URI);
     const formJsonData = JSON.stringify(form);
     try {
       const response = await axios.post(
@@ -25,9 +25,14 @@ export const postForm = createAsyncThunk(
         formJsonData,
         config
       );
+      console.log("data", response.data);
       return response.data;
-    } catch (err) {
-      return err;
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        throw error;
+      } else {
+        throw new Error("different error than axios");
+      }
     }
   }
 );

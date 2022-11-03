@@ -1,6 +1,4 @@
-import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 import Header from "../../components/Header";
 import { projectsData } from "../../public/projectData/text/projects";
 import styles from "../../styles/project.module.scss";
@@ -9,7 +7,12 @@ const Project = () => {
   const router = useRouter();
   const index = Number(router.query.index);
   const project = projectsData[index];
-  useEffect(() => {});
+  let listItems: string[] = [];
+  if (project?.list) {
+    Object.keys(project.list).map((item, key) => {
+      listItems = [...listItems, item];
+    });
+  }
   return (
     <>
       {project && (
@@ -94,34 +97,36 @@ const Project = () => {
                 </ul>
               </section>
               <section className={styles["list-info"]}>
-                <div className={styles["top-border"]}></div>
-                <div className={styles["list-content"]}>
-                  <h3>{project.list.motive.title}</h3>
-                  <ul>
-                    {project.list?.motive?.text?.map((motive, key) => (
-                      <li key={key}>{motive}</li>
+                {listItems.length > 0 && (
+                  <>
+                    {listItems.map((item, key) => (
+                      <>
+                        {project.list[item as keyof typeof project.list]
+                          .text !== null && (
+                          <>
+                            <div className={styles["top-border"]}></div>
+                            <div className={styles["list-content"]} key={key}>
+                              <h3 key={key}>
+                                {
+                                  project.list[
+                                    item as keyof typeof project.list
+                                  ].title
+                                }
+                              </h3>
+                              <ul>
+                                {project.list[
+                                  item as keyof typeof project.list
+                                ].text?.map((sentence, index) => (
+                                  <li key={index}>{sentence}</li>
+                                ))}
+                              </ul>
+                            </div>
+                          </>
+                        )}
+                      </>
                     ))}
-                  </ul>
-                </div>
-                <div className={styles["top-border"]}></div>
-                <div className={styles["list-content"]}>
-                  <h3>{project.list.techGoal.title}</h3>
-                  <ul>
-                    {project.list?.techGoal?.text?.map((goal, key) => (
-                      <li key={key}>{goal}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div className={styles["top-border"]}></div>
-                <div className={styles["list-content"]}>
-                  <h3>{project.list.projectManagement.title}</h3>
-                  <ul>
-                    {project.list?.projectManagement?.text?.map((item, key) => (
-                      <li key={key}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div className={styles["top-border"]}></div>
+                  </>
+                )}
               </section>
             </div>
           </main>

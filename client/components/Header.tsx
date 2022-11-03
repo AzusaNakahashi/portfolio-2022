@@ -70,43 +70,31 @@ const Header = () => {
         <div className={`${styles["menu"]} ${navIsOpen && styles["open"]}`}>
           <div>
             <p className={styles["top-page-button"]}>
-              <a href="/" onClick={() => dispatch(navToggle())}>
-                Azusa Nakahashi
-              </a>
+              <Link href="/">
+                <a onClick={() => dispatch(navToggle())}>Azusa Nakahashi</a>
+              </Link>
             </p>
             <div className={styles["menu-list"]}>
               <ul className={styles["page-section-list"]}>
                 <li>
-                  <a
-                    href={pathName === "/" ? "#topPage" : "/#topPage"}
-                    onClick={() => dispatch(navToggle())}
-                  >
-                    Top
-                  </a>
+                  <Link href="/#topPage">
+                    <a onClick={() => dispatch(navToggle())}>Top</a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href={pathName === "/" ? "#topPage" : "/#about"}
-                    onClick={() => dispatch(navToggle())}
-                  >
-                    About
-                  </a>
+                  <Link href="/#about">
+                    <a onClick={() => dispatch(navToggle())}>About</a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href={pathName === "/" ? "#topPage" : "/#projects"}
-                    onClick={() => dispatch(navToggle())}
-                  >
-                    Projects
-                  </a>
+                  <Link href="/#projects">
+                    <a onClick={() => dispatch(navToggle())}>Projects</a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href={pathName === "/" ? "#topPage" : "/#contact"}
-                    onClick={() => dispatch(navToggle())}
-                  >
-                    Contact
-                  </a>
+                  <Link href="/#contact">
+                    <a onClick={() => dispatch(navToggle())}>Contact</a>
+                  </Link>
                 </li>
               </ul>
               <ul className={styles["social-media-list"]}>

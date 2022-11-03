@@ -36,7 +36,7 @@ const whereverWeather: Project = {
     explanation:
       "It allows you to find the weather information from your current location, search bar, and map pin.",
     liveURL: "https://wherever-forecast.vercel.app/",
-    github: "",
+    github: "https://github.com/AzusaNakahashi/weather-app-with-map",
   },
   features: {
     intro: "You can find wehater from...",
@@ -59,14 +59,12 @@ const whereverWeather: Project = {
     ],
   },
   technology: {
-    techs: ["Next.js", "Redux", "SASS", "REST API", "Node.js", "Git"],
+    techs: ["Next.js", "Redux", "Sass", "REST API", "Node.js", "Git"],
     pointList: [
       "Redux allows keeping all states for map coordinates and weather information.",
       "An interactive map is created using Google Maps API.",
       "Node.js secures API access by allowing only the front-end URL to call the weather API.",
-    ] /*
-    explanation:
-      "Next.js is for better loading performance. Redux keeps the map state and the weather state across the pages. Google Maps API shows the maps and gets the location data. Weather data is from AccuWeather API. Node.js is used to secure fetching the data from API.",*/,
+    ],
   },
   list: {
     motive: {
@@ -101,7 +99,7 @@ const grabo: Project = {
     explanation:
       "Grabo is a language-based community app where people exchange information of the products from all over the world.",
     liveURL: null,
-    github: "",
+    github: "https://github.com/satoshinbp/grabo",
   },
   features: {
     intro: "When you have a question about foreigh products...",
@@ -123,15 +121,13 @@ const grabo: Project = {
     ],
   },
   technology: {
-    techs: ["React Native", "Redux", "SASS", "Node.js", "Express", "MongoDB"],
+    techs: ["React Native", "Redux", "Sass", "Node.js", "Express", "MongoDB"],
     pointList: [
       "Detect a language from google api",
       "Log-in log-out implementation",
       "manage products information with Redux",
       "search products from MongoDB",
     ],
-    /*explanation:
-      "In order to create a native application, our team chose React Native as the front-end development tool. We also tried Redux and MongoDB for the first time in this project for practice and better effeciency.",*/
   },
   list: {
     motive: {
@@ -168,20 +164,25 @@ const portfolio: Project = {
     type: "website",
     duration: "2022 Sep - 2022 Oct",
     explanation:
-      "Portfolio website that displays all of the projects I was in and provides the contact form",
+      "A portfolio website that displays all of the projects and provides a contact form",
     liveURL: null,
-    github: "",
+    github: "https://github.com/AzusaNakahashi/portfolio-2022",
   },
   features: {
     intro: null,
     features: null,
   },
   technology: {
-    techs: ["Next.js", "Redux", "SASS", "Node.js", "Express", "Git"],
-    pointList: [
-      "Animation (menu, heading letters)",
-      "Contact form with Nodemailer",
+    techs: [
+      "Next.js",
+      "Redux",
+      "TypeScript",
+      "Sass",
+      "Node.js",
+      "Express",
+      "Git",
     ],
+    pointList: ["Animation", "Contact form"],
   },
   list: {
     motive: {
@@ -196,4 +197,4 @@ const portfolio: Project = {
   },
 };
 
-export const projectsData: Project[] = [portfolio, whereverWeather, grabo];
+export const projectsData: Project[] = [whereverWeather, portfolio, grabo];
