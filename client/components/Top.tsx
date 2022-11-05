@@ -10,9 +10,10 @@ const Top = () => {
         <div className={styles["left"]}>
           <h1>Azusa Nakahashi</h1>
           <h2>Front-end developer</h2>
-          {text.data.top.map((text, key) => (
-            <p key={key}>{text}</p>
-          ))}
+          <p>
+            I love creating solid and beautiful websites and apps using modern
+            front-end technologies!
+          </p>
         </div>
         <div className={styles["right"]}>
           <Image src={topImage} alt="facePicture" />

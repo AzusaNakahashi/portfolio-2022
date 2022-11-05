@@ -1,9 +1,10 @@
 import type { NextPage } from "next";
-import About from "../components/About";
-import Contact from "../components/Contact";
 import Header from "../components/Header";
-import Projects from "../components/Projects";
 import Top from "../components/Top";
+import About from "../components/About";
+import Projects from "../components/Projects";
+import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 
 const Home: NextPage = () => {
   return (
@@ -15,9 +16,7 @@ const Home: NextPage = () => {
         <Projects />
         <Contact />
       </main>
-      <footer>
-        <h3>©2022 Azusa Nakahashi</h3>
-      </footer>
+      <Footer />
     </div>
   );
 };

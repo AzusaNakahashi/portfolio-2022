@@ -3,132 +3,59 @@ import text from "../public/indexPageText";
 import styles from "../styles/about.module.scss";
 
 const About = () => {
-  const [openPage, setOpenPage] = useState(0);
+  const text: string[] = [
+    "Hi! I'm Azusa, a front-end developer based in Vancouver.",
+    "I'm passionate about creating apps with modern front-end Technologies and delivering excellent user experience.",
+    "I have a solid knowledge of HTML, CSS (Sass), and JavaScript, and I have worked on multiple projects with React.js and Node.js. As a developer, I prioritize readability.",
+    "I always try to write clean and manageable code.",
+  ];
+
+  interface Tech {
+    name: string;
+    path: string;
+    class?: string;
+  }
+
+  const techNames: Tech[] = [
+    { name: "HTML", path: "html5.svg" },
+    { name: "CSS", path: "css.svg" },
+    { name: "JavaScript", path: "js.svg" },
+    { name: "React.js", path: "react.svg" },
+    { name: "Redux", path: "redux.svg" },
+    { name: "Firebase", path: "firebase.svg" },
+    { name: "Git", path: "git.svg" },
+    { name: "Node.js", path: "node.svg", class: "node" },
+    { name: "MySQL", path: "mysql.png" },
+    { name: "MongoDB", path: "mongoDB.svg" },
+  ];
   return (
     <div className={styles["about"]} id="about">
       <div className={styles["content-wrapper"]}>
         <h2>About</h2>
         <div className={styles["text-container"]}>
           <div className={styles["text"]}>
-            {text.data.about.map((page, key) => {
-              return (
-                <div
-                  key={key}
-                  className={`${styles[`page-${key}`]}  ${
-                    key === openPage ? styles["open"] : styles["close"]
-                  }`}
-                >
-                  {page.map((paragraph, key) => {
-                    return <p key={key}>{paragraph}</p>;
-                  })}
-                </div>
-              );
-            })}
+            {text.map((sentence, index) => (
+              <p key={`sentece${index}`}>{sentence}</p>
+            ))}
           </div>
-          <div className={styles["page-controller"]}>
-            <p
-              className={`${styles["previous-btn"]} ${
-                openPage === 0 ? styles["close"] : styles["open"]
-              }`}
-              onClick={() => {
-                console.log("clicked");
-                if (openPage === 1) {
-                  setOpenPage(openPage - 1);
-                }
-              }}
-            >
-              {"← previous page"}
-            </p>{" "}
-            <p
-              className={`${styles["next-btn"]} ${
-                openPage === 0 ? styles["open"] : styles["close"]
-              }`}
-              onClick={() => {
-                if (openPage === 0) {
-                  setOpenPage(openPage + 1);
-                }
-              }}
-            >
-              {"next page →"}
-            </p>
-          </div>
+          <button>Resume</button>
         </div>
         <div className={styles["skills"]}>
-          <h2>Skills</h2>
           <div className={styles["cards-wrapper"]}>
-            <div className={styles["tech-card"]}>
-              <picture>
-                <img src="/techLogos/html5.svg" alt={"html 5 logo"} />
-              </picture>
-              <p>HTML5</p>
-            </div>
-            <div className={styles["tech-card"]}>
-              <picture>
-                <img src="/techLogos/css.svg" alt={"css logo"} />
-              </picture>
-              <p>CSS</p>
-            </div>
-            <div className={styles["tech-card"]}>
-              <picture>
-                <img src="/techLogos/js.svg" alt={"javascript logo"} />
-              </picture>
-              <p>JavaScript</p>
-            </div>
-            <div className={styles["tech-card"]}>
-              <picture>
-                <img src="/techLogos/react.svg" alt={"react logo"} />
-              </picture>
-              <p>React.js</p>
-            </div>
-            <div className={styles["tech-card"]}>
-              <picture>
-                <img src="/techLogos/redux.svg" alt={"redux logo"} />
-              </picture>
-              <p>Redux</p>
-            </div>
-
-            <div className={styles["tech-card"]}>
-              <picture>
-                <img src="/techLogos/firebase.svg" alt={"firebase logo"} />
-              </picture>
-              <p>Firebase</p>
-            </div>
-            <div className={styles["tech-card"]}>
-              <picture>
-                <img src="/techLogos/git.svg" alt={"git logo"} />
-              </picture>
-              <p>Git</p>
-            </div>
-            <div className={styles["tech-card"]}>
-              <picture>
-                <img
-                  src="/techLogos/node.svg"
-                  alt={"node.js logo"}
-                  className={styles["node-logo"]}
-                />
-              </picture>
-              <p>Node.js</p>
-            </div>
-            <div className={styles["tech-card"]}>
-              <picture>
-                <img
-                  src="/techLogos/mysql.png"
-                  alt={"mySQL logo"}
-                  className={styles["mysql-logo"]}
-                />
-              </picture>
-              <p>MySQL</p>
-            </div>
-            <div className={styles["tech-card"]}>
-              <picture>
-                <img
-                  src="/techLogos/mongoDB.svg"
-                  alt={"mongo db logo"}
-                  className={styles["mongo-logo"]}
-                />
-              </picture>
-              <p>MongoDB</p>
-            </div>
+            {techNames.map((tech, index) => (
+              <div key={`tech${index}`} className={styles["tech-card"]}>
+                <picture>
+                  <img
+                    src={`/techLogos/${tech.path}`}
+                    alt={"Tech logo"}
+                    className={
+                      tech.class ? styles[tech.class] : styles[tech.name]
+                    }
+                  />
+                </picture>
+                <p>{tech.name}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

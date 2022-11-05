@@ -1,4 +1,5 @@
 @import "./variables.module.scss";
+@import "./mixins.module.scss";
 .project {
   background: linear-gradient(
     0deg,
@@ -53,23 +54,8 @@
         margin: 0.5rem 0;
       }
       button {
-        display: block;
-        margin: 1rem auto;
-        width: 100%;
-        max-width: 300px;
-        height: 50px;
-        color: #fff;
-        background-color: transparent;
-        border: 2px solid #fff;
-        border-radius: 10px;
-        box-shadow: 0px 0px 10px #fff, inset 0 0 10px #fff;
-        text-shadow: 0px 0px 10px $neon-color-secondary;
-        transition: 0.3s;
-        &:hover {
-          color: $bgc-dark;
-          background-color: #fff;
-          box-shadow: 0 0 20px 4px #3060db;
-        }
+        @include neon-button;
+        margin: 2rem auto;
       }
     }
   }
@@ -119,7 +105,7 @@
   }
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: $desktop-min-width) {
   .project {
     grid-gap: 4rem;
     h3 {
@@ -168,7 +154,6 @@
       position: relative;
       padding: 5rem 0;
       margin: 0 auto;
-      width: 100vw;
       z-index: 3;
       .background-color {
         z-index: 0;

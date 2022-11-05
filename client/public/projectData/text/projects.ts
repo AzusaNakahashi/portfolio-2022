@@ -112,7 +112,7 @@ const grabo: Project = {
       {
         keyphrase: "scan the product",
         description:
-          "take a picture of the product in a foreign language, write down questions about the product.",
+          "take a picture of the product of a foreign language, write down questions about the product.",
       },
       {
         keyphrase: "get answers",

@@ -29,6 +29,7 @@
     $bgc-gradient-purple 31%,
     $bgc-gradient-blue 100%
   );
+  padding-top: $desktop-header-height;
   .left {
     h1,
     h2 {
@@ -61,8 +62,9 @@
   }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: $tablet-min-width) {
   .topPage {
+    padding-bottom: 3rem;
     .left {
       h1 {
         margin: 2rem 0 1rem 0;
@@ -78,12 +80,13 @@
   }
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: $desktop-min-width) {
   .topPage {
     display: grid;
     justify-content: center;
     align-items: center;
     padding-top: $desktop-header-height;
+    padding-bottom: 0;
     height: calc(98vh);
     .content-wrapper {
       display: grid;
@@ -102,8 +105,8 @@
         }
       }
       .right {
-        max-width: none;
-        width: 400px;
+        min-width: 300px;
+        max-width: 400px;
       }
     }
   }

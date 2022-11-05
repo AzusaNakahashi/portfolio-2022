@@ -102,7 +102,7 @@ const Header = () => {
                   <Link href="https://www.linkedin.com/in/azusa-nakahashi/">
                     <a>
                       <picture>
-                        <img src="/icons/linkedIn.svg" alt="link to linkedIn" />
+                        <img src="/icons/linkedin.svg" alt="link to linkedIn" />
                       </picture>
                     </a>
                   </Link>
