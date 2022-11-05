@@ -1,4 +1,3 @@
-import text from "../public/indexPageText";
 import Image from "next/image";
 import topImage from "../public/pictures/top.jpeg";
 import styles from "../styles/top.module.scss";

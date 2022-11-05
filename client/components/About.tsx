@@ -1,5 +1,3 @@
-import { useState } from "react";
-import text from "../public/indexPageText";
 import styles from "../styles/about.module.scss";
 
 const About = () => {
