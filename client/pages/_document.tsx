@@ -14,6 +14,11 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Tourney:wght@900&family=Ubuntu:wght@300;500&display=swap"
           rel="stylesheet"
         />
+        <meta
+          name="description"
+          content="Front-end developer Azusa Nakahashi portfolio website"
+        />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <body>
         <Main />

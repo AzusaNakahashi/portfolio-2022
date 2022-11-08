@@ -1,11 +1,11 @@
-import type { FC } from "react";
-import Layout from "../../layout/Layout";
-import type { NextPageWithLayout } from "../_app";
 import { useRouter } from "next/router";
 import { projectsData } from "../../public/projectData/text/projects";
 import styles from "../../styles/project.module.scss";
+import type { ReactElement } from "react";
+import Layout from "../../layout/Layout";
+import type { NextPageWithLayout } from "../_app";
 
-const Project: FC = () => {
+const Project: NextPageWithLayout = () => {
   const router = useRouter();
   const index = Number(router.query.index);
   const project = projectsData[index];
@@ -138,6 +138,9 @@ const Project: FC = () => {
     </>
   );
 };
-(Project as NextPageWithLayout).layout = Layout;
+
+Project.getLayout = function getLayout(page: ReactElement) {
+  return <Layout>{page}</Layout>;
+};
 
 export default Project;

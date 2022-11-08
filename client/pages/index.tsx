@@ -1,12 +1,12 @@
-import type { FC } from "react";
-import Layout from "../layout/Layout";
-import type { NextPageWithLayout } from "./_app";
 import Top from "../components/Top";
 import About from "../components/About";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
+import type { ReactElement } from "react";
+import Layout from "../layout/Layout";
+import type { NextPageWithLayout } from "./_app";
 
-const Home: FC = () => {
+const Home: NextPageWithLayout = () => {
   return (
     <>
       <Top />
@@ -17,6 +17,8 @@ const Home: FC = () => {
   );
 };
 
-(Home as NextPageWithLayout).layout = Layout;
+Home.getLayout = function getLayout(page: ReactElement) {
+  return <Layout>{page}</Layout>;
+};
 
 export default Home;
