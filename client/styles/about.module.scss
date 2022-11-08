@@ -64,7 +64,7 @@
         }
       }
       button {
-        margin: 2rem 0 3rem 0;
+        margin: 2rem 0 3rem auto;
         width: 300px;
       }
     }
@@ -104,8 +104,6 @@
     }
     .text-container {
       max-width: none;
-      .text {
-      }
     }
     .skills {
       .cards-wrapper {
