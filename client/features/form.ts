@@ -17,7 +17,6 @@ const config = {
 export const postForm = createAsyncThunk(
   "/email/send",
   async (form: Form, thunkAPI) => {
-    console.log(SERVER_URI);
     const formJsonData = JSON.stringify(form);
     try {
       const response = await axios.post(
@@ -25,7 +24,6 @@ export const postForm = createAsyncThunk(
         formJsonData,
         config
       );
-      console.log("data", response.data);
       return response.data;
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -54,11 +52,9 @@ export const formSlice = createSlice({
       state.status = "PENDING";
     });
     builder.addCase(postForm.fulfilled, (state, action) => {
-      console.log(action.payload);
       state.status = "SUCCESS";
     });
     builder.addCase(postForm.rejected, (state, action) => {
-      console.log(action);
       state.status = "REJECTED";
     });
   },

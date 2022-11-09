@@ -4,6 +4,10 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <meta
+          name="description"
+          content="Front-end developer Azusa Nakahashi portfolio website"
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -13,10 +17,6 @@ export default function Document() {
         <link
           href="https://fonts.googleapis.com/css2?family=Tourney:wght@900&family=Ubuntu:wght@300;500&display=swap"
           rel="stylesheet"
-        />
-        <meta
-          name="description"
-          content="Front-end developer Azusa Nakahashi portfolio website"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

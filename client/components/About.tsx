@@ -1,6 +1,7 @@
 import styles from "../styles/about.module.scss";
 
 const About = () => {
+  // Content Text
   const text: string[] = [
     "Hi! I'm Azusa, a front-end developer based in Vancouver.",
     "I'm passionate about creating apps with modern front-end Technologies and delivering excellent user experience.",
@@ -8,11 +9,11 @@ const About = () => {
     "I always try to write clean and manageable code.",
   ];
 
-  interface Tech {
+  type Tech = {
     name: string;
     path: string;
     class?: string;
-  }
+  };
 
   const techNames: Tech[] = [
     { name: "HTML", path: "html5.svg" },
@@ -26,6 +27,7 @@ const About = () => {
     { name: "MySQL", path: "mysql.png" },
     { name: "MongoDB", path: "mongoDB.svg" },
   ];
+
   return (
     <div className={styles["about"]} id="about">
       <div className={styles["content-wrapper"]}>

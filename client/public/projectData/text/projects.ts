@@ -1,32 +1,5 @@
-interface feature {
-  keyphrase: string | null;
-  description: string | null;
-}
+import type { Project } from "../../../types/projectType";
 
-interface Project {
-  basicInfo: {
-    name: string;
-    path: string;
-    type: string;
-    duration: string;
-    explanation: string;
-    liveURL: string | null;
-    github: string;
-  };
-  features: {
-    intro: string | null;
-    features: Array<feature> | null;
-  };
-  technology: {
-    techs: string[];
-    pointList: string[];
-  };
-  list: {
-    motive: { title: "Motive"; text: string[] | null };
-    techGoal: { title: "Tech Goals"; text: string[] | null };
-    projectManagement: { title: "Project Management"; text: string[] | null };
-  };
-}
 const whereverWeather: Project = {
   basicInfo: {
     name: "Wherever Weather",

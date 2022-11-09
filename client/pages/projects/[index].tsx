@@ -3,12 +3,13 @@ import { projectsData } from "../../public/projectData/text/projects";
 import styles from "../../styles/project.module.scss";
 import type { ReactElement } from "react";
 import Layout from "../../layout/Layout";
-import type { NextPageWithLayout } from "../_app";
+import type { NextPageWithLayout } from "../../types/layoutType";
+import type { Project } from "../../types/projectType";
 
 const Project: NextPageWithLayout = () => {
   const router = useRouter();
   const index = Number(router.query.index);
-  const project = projectsData[index];
+  const project: Project = projectsData[index];
   let listItems: string[] = [];
   if (project?.list) {
     Object.keys(project.list).map((item) => {
@@ -63,27 +64,27 @@ const Project: NextPageWithLayout = () => {
                   <h3>Features</h3>
                   <p className={styles["intro"]}>{project.features?.intro}</p>
                   <div className={styles["features-wrapper"]}>
-                    {project.features?.features?.map(
-                      (feature, featureIndex) => (
-                        <div
-                          className={styles["feature"]}
-                          key={feature.keyphrase}
-                        >
-                          <picture>
-                            <img
-                              src={`/projectData/image/${project.basicInfo.path}/hero.png`}
-                              alt="hero image"
-                            />
-                          </picture>
-                          <p className={styles["keyfrase"]}>
-                            {feature.keyphrase}
-                          </p>
-                          <p className={styles["description"]}>
-                            {feature.description}
-                          </p>
-                        </div>
-                      )
-                    )}
+                    {project.features?.features?.map((feature, index) => (
+                      <div
+                        className={styles["feature"]}
+                        key={feature.keyphrase}
+                      >
+                        <picture>
+                          <img
+                            src={`/projectData/image/${
+                              project.basicInfo.path
+                            }/feature-${index + 1}.png`}
+                            alt="hero image"
+                          />
+                        </picture>
+                        <p className={styles["keyfrase"]}>
+                          {feature.keyphrase}
+                        </p>
+                        <p className={styles["description"]}>
+                          {feature.description}
+                        </p>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </section>
