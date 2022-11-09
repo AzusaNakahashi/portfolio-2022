@@ -15,11 +15,11 @@ const Header = () => {
   const changePcNavBgc = () => {
     const yPosition = window.pageYOffset;
     const pageHeight = window.innerHeight;
-    if (yPosition > pageHeight * 0.2 && yPosition < pageHeight * 0.88) {
+    if (yPosition > pageHeight * 0.2 && yPosition < pageHeight * 0.9) {
       setNavBGC("lightblue");
-    } else if (yPosition > pageHeight * 0.88 && yPosition < pageHeight * 2.5) {
+    } else if (yPosition > pageHeight * 0.9 && yPosition < pageHeight * 2.17) {
       setNavBGC("navy");
-    } else if (yPosition > pageHeight * 2.5 && yPosition < pageHeight * 4.47) {
+    } else if (yPosition > pageHeight * 2.17 && yPosition < pageHeight * 4.47) {
       setNavBGC("lightblue");
     } else if (yPosition > pageHeight * 4.47) {
       setNavBGC("navy");
@@ -29,11 +29,11 @@ const Header = () => {
   const changeMobileNavBgc = () => {
     const yPosition = window.pageYOffset;
     const pageHeight = window.innerHeight;
-    if (yPosition > pageHeight * 0.2 && yPosition < pageHeight * 1.35) {
+    if (yPosition > pageHeight * 0.2 && yPosition < pageHeight * 1.13) {
       setNavBGC("lightblue");
-    } else if (yPosition > pageHeight * 1.35 && yPosition < pageHeight * 3.05) {
+    } else if (yPosition > pageHeight * 1.13 && yPosition < pageHeight * 2.78) {
       setNavBGC("navy");
-    } else if (yPosition > pageHeight * 3.05 && yPosition < pageHeight * 7.55) {
+    } else if (yPosition > pageHeight * 2.78 && yPosition < pageHeight * 7.55) {
       setNavBGC("lightblue");
     } else if (yPosition > pageHeight * 7.55) {
       setNavBGC("navy");

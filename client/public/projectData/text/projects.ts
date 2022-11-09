@@ -170,4 +170,55 @@ const portfolio: Project = {
   },
 };
 
-export const projectsData: Project[] = [whereverWeather, portfolio, grabo];
+const petPaws: Project = {
+  basicInfo: {
+    name: "PetPaws",
+    path: "petPaws",
+    type: "website",
+    duration: "2021 May - 2021 July",
+    explanation:
+      "You can keep track of your pet's daily calorie intake and exercise amount on the graph. It also calculates the ideal weight and provides vet/pet supply store infomation.",
+    liveURL: null,
+    github: "https://github.com/satoshinbp/PetPaws",
+  },
+  features: {
+    intro: null,
+    features: null,
+  },
+  technology: {
+    techs: ["React.js", "Node.js", "Express", "MySQL", "Firebase", "Git"],
+    pointList: [
+      "I mainly worked on the tracking pages, where the calorie graph and exercise graph are shown",
+      "Data stored in MySQL (users' profile data, pet's calorie and exercise data.), fetched with Node.js (Express).",
+    ],
+  },
+  list: {
+    motive: {
+      title: "Motive",
+      text: [
+        "This website was created as Web and Mobile App Design and Development course (development stream) term 3 team project.",
+        "The team was composed of four developers and three designers",
+      ],
+    },
+    techGoal: {
+      title: "Tech Goals",
+      text: ["To understand the mechanism of back-end"],
+    },
+    projectManagement: {
+      title: "Project Management",
+      text: [
+        "Incorporation of agile practice",
+        "Weekly meeting.",
+        "Created two test versions and fixed problems",
+        "Use Trello for task tracking",
+      ],
+    },
+  },
+};
+
+export const projectsData: Project[] = [
+  whereverWeather,
+  portfolio,
+  grabo,
+  petPaws,
+];

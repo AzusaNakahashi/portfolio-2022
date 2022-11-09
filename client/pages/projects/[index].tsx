@@ -5,6 +5,7 @@ import type { ReactElement } from "react";
 import Layout from "../../layout/Layout";
 import type { NextPageWithLayout } from "../../types/layoutType";
 import type { Project } from "../../types/projectType";
+import Link from "next/link";
 
 const Project: NextPageWithLayout = () => {
   const router = useRouter();
@@ -46,14 +47,18 @@ const Project: NextPageWithLayout = () => {
                 </div>
                 <p>{project.basicInfo.explanation}</p>
                 {project.basicInfo?.liveURL && (
-                  <button>
-                    <a href={project.basicInfo.liveURL}>Livesite</a>
-                  </button>
+                  <Link href="https://github.com/AzusaNakahashi">
+                    <a href={project.basicInfo.liveURL}>
+                      <button>Livesite </button>
+                    </a>
+                  </Link>
                 )}
                 {project.basicInfo?.github && (
-                  <button>
-                    <a href={project.basicInfo.github}>Github</a>
-                  </button>
+                  <Link href="https://github.com/AzusaNakahashi">
+                    <a href={project.basicInfo.github}>
+                      <button>Github </button>
+                    </a>
+                  </Link>
                 )}
               </div>
             </section>

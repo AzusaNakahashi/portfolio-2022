@@ -25,7 +25,7 @@ const Projects = () => {
                 <picture>
                   <img
                     src={`/projectData/image/${pathNames[index]}/thumbnail.png`}
-                    alt="link to linkedIn"
+                    alt="app thumbnail"
                   />
                 </picture>
                 <div className={styles["app-explanation"]}>
