@@ -112,6 +112,8 @@
       // growing background animation
       background: $bgc-dark;
       border-radius: 50%;
+      -webkit-border-radius: 50%;
+      will-change: transform;
       display: flex;
       flex: none;
       align-items: center;
@@ -196,6 +198,7 @@
       & > div {
         // growing background animation
         border-radius: 0;
+        -webkit-border-radius: 0;
         display: flex;
         justify-content: space-between;
         margin: 0 auto;
@@ -241,6 +244,7 @@
         }
       }
       & > div {
+        will-change: transform;
         transform: none;
         transition: none;
         .menu-list {
