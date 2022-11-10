@@ -120,9 +120,9 @@
       justify-content: center;
       width: 250vw;
       height: 250vw;
-      filter: drop-shadow(0 0 20px rgba($neon-color-tertiary, 0.2))
-        drop-shadow(0 0 30px rgba($neon-color-tertiary, 0.4))
-        drop-shadow(0 0 40px rgba($neon-color-tertiary, 0.4));
+      //filter: drop-shadow(0 0 20px rgba($neon-color-tertiary, 0.2))
+      //  drop-shadow(0 0 30px rgba($neon-color-tertiary, 0.4))
+      //  drop-shadow(0 0 40px rgba($neon-color-tertiary, 0.4));
       transform: scale(0); // grows from center
       transition: all 1s ease;
       -webkit-transition: all 1s ease;
@@ -167,6 +167,7 @@
     &.open {
       visibility: visible;
       & > div {
+        border-radius: 50%;
         will-change: transition, transform;
         transform: scale(1);
         transition-duration: 2s;
