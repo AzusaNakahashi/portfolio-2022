@@ -1,6 +1,6 @@
 @import "./variables.module.scss";
 @import "./mixins.module.scss";
-@include neon-flicker(pink-flicker, $neon-color-primary);
+@include neon-heading-flicker(pink-flicker, $neon-color-primary);
 
 .about {
   background-color: $bgc-dark;

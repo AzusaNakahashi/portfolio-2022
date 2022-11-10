@@ -1,24 +1,7 @@
 @import "./variables.module.scss";
-// h1 effect
-@mixin neon-heading-flicker($name, $neon-color) {
-  @keyframes #{$name} {
-    100% {
-      text-shadow: 0 0 2px #fff, 0 0 2px #fff, 0 0 3px #fff,
-        0 0 40px $neon-color-primary, 0 0 70px $neon-color-primary,
-        0 0 70px $neon-color-primary, 0 0 70px $neon-color-primary,
-        0 0 150px $neon-color-primary;
-    }
-    5% {
-      text-shadow: 0 0 2px #fff, 0 0 2px #fff, 0 0 20px $neon-color-primary;
-    }
+@import "./keyframes.module.scss";
+@import "./mixins.module.scss";
 
-    0% {
-      text-shadow: 0 0 2px #fff, 0 0 3px #fff, 0 0 10px $neon-color-primary,
-        0 0 35px $neon-color-primary, 0 0 45px $neon-color-primary,
-        0 0 50px $neon-color-primary, 0 0 60px $neon-color-primary;
-    }
-  }
-}
 @include neon-heading-flicker(pink-flicker, $neon-color-primary);
 
 .topPage {
@@ -43,22 +26,26 @@
       text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 21px $neon-color-primary,
         0 0 32px $neon-color-primary, 0 0 62px $neon-color-primary,
         0 0 72px $neon-color-primary;
-      //animation: pink-flicker 1.5s infinite alternate;
+      animation: pink-flicker 1.5s infinite alternate, slide-left 1.2s;
+      //animation: slide-left 1.2s;
     }
     h2 {
       font-size: $font-size-text;
       letter-spacing: normal;
       margin: 0;
       font-family: ubuntu;
+      animation: slide-left 1.3s;
     }
     p {
       margin: 0.5rem 0;
+      animation: slide-left 1.5s;
     }
   }
   .right {
     margin: 0 auto;
     padding: 1rem 0;
     max-width: 350px;
+    animation: slide-right 1.6s;
   }
 }
 

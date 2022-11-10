@@ -1,6 +1,6 @@
 @import "./variables.module.scss";
 @import "./mixins.module.scss";
-@include neon-flicker(yellow-flicker, $neon-color-secondary);
+@include neon-heading-flicker(yellow-flicker, $neon-color-secondary);
 
 @keyframes noise-1 {
   $steps: 30;
