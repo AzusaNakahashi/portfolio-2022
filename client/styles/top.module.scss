@@ -30,15 +30,19 @@
       //animation: slide-left 1.2s;
     }
     h2 {
+      width: 100%;
       font-size: $font-size-text;
       letter-spacing: normal;
       margin: 0;
       font-family: ubuntu;
       animation: slide-left 1.3s;
+      overflow: hidden;
     }
     p {
+      width: 100%;
       margin: 0.5rem 0;
       animation: slide-left 1.5s;
+      overflow: hidden;
     }
   }
   .right {
