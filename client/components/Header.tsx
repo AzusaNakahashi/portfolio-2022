@@ -58,7 +58,7 @@ const Header = () => {
   return (
     <>
       <header className={`${styles["menu-wrapper"]} ${styles[navBGC]}`}>
-        <input
+        <div
           className={styles["toggler"]}
           onClick={() => dispatch(navToggle())}
         />

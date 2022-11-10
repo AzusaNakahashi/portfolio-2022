@@ -14,13 +14,6 @@ body {
   position: relative;
 }
 
-h1,
-h2,
-h3,
-p {
-  overflow: hidden;
-}
-
 a {
   color: inherit;
   text-decoration: none;
