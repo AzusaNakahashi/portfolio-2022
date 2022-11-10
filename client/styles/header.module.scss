@@ -113,7 +113,7 @@
       background: $bgc-dark;
       border-radius: 50%;
       -webkit-border-radius: 50%;
-      will-change: transform;
+      will-change: transform, transition;
       display: flex;
       flex: none;
       align-items: center;
@@ -167,6 +167,7 @@
     &.open {
       visibility: visible;
       & > div {
+        will-change: transition, transform;
         transform: scale(1);
         transition-duration: 2s;
         -webkit-transition-duration: 2s;
@@ -205,6 +206,7 @@
         width: 100%;
         max-width: 1100px;
         height: $desktop-header-height;
+        will-change: transition, transform;
         transform: none; // grows from center
         transition: none;
         background-color: transparent;
@@ -244,7 +246,7 @@
         }
       }
       & > div {
-        will-change: transform;
+        will-change: transform, transition;
         transform: none;
         transition: none;
         .menu-list {
