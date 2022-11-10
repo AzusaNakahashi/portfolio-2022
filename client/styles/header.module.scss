@@ -124,8 +124,8 @@
       //  drop-shadow(0 0 30px rgba($neon-color-tertiary, 0.4))
       //  drop-shadow(0 0 40px rgba($neon-color-tertiary, 0.4));
       transform: scale(0); // grows from center
-      transition: all 1s ease;
-      -webkit-transition: all 1s ease;
+      transition: all 0.4s ease;
+      -webkit-transition: all 0.4s ease;
       .top-page-button {
         display: none;
       }
@@ -134,8 +134,8 @@
         max-width: 90vw;
         max-height: 100vh;
         opacity: 0;
-        transition: opacity 1s ease;
-        -webkit-transition: opacity 1s ease;
+        transition: opacity 0.4s ease;
+        -webkit-transition: opacity 0.4s ease;
         ul {
           padding: 0;
           li {
@@ -170,8 +170,8 @@
         border-radius: 50%;
         will-change: transition, transform;
         transform: scale(1);
-        transition-duration: 2s;
-        -webkit-transition-duration: 2s;
+        transition-duration: 0.9s;
+        -webkit-transition-duration: 0.9s;
         .menu-list {
           opacity: 1;
           transition: opacity 0.4s ease 0.4s;
