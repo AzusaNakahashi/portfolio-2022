@@ -22,20 +22,49 @@
   }
 }
 
+@mixin heading-text-shadow($neon-color) {
+  text-shadow: 0 0 1px #fff, 0 0 3px #fff, 0 0 21px $neon-color,
+    0 0 32px $neon-color, 0 0 62px $neon-color, 0 0 72px $neon-color;
+}
+
 @mixin neon-heading-flicker($name, $neon-color) {
   @keyframes #{$name} {
-    100% {
-      /* Larger blur radius */
-      text-shadow: 0 0 4px $text-color, 0 0 9px $neon-color,
-        0 0 12px $neon-color, 0 0 20px $neon-color, 0 0 70px $neon-color,
-        0 0 90px $neon-color, 0 0 130px $neon-color;
-    }
     0% {
+      /* Larger blur radius */
+      text-shadow: 0 0 2px $text-color, 0 0 9px $neon-color,
+        0 0 20px $neon-color, 0 0 90px $neon-color;
+    }
+    40% {
       /* A slightly smaller blur radius */
-      text-shadow: 0 0 6px $text-color, 0 0 13px $neon-color,
-        0 0 18px $neon-color, 0 0 60px $neon-color, 0 0 120px $neon-color,
-        0 0 150px $neon-color, 0 0 150px $neon-color, 0 0 200px $neon-color,
+      text-shadow: 0 0 2px $text-color, 0 0 4px $text-color,
+        0 0 6px $text-color 0 0 14px $neon-color, 0 0 30px $neon-color,
+        0 0 90px $neon-color, 0 0 100px $neon-color, 0 0 180px $neon-color,
         0 0 200px $neon-color;
+    }
+    60% {
+      /* A slightly smaller blur radius */
+      text-shadow: 0 0 2px $text-color, 0 0 4px $text-color,
+        0 0 14px $neon-color, 0 0 40px $neon-color, 0 0 100px $neon-color,
+        0 0 80px $neon-color, 0 0 120px $neon-color;
+    }
+    100% {
+      text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 21px $neon-color-primary,
+        0 0 32px $neon-color-primary, 0 0 62px $neon-color-primary,
+        0 0 72px $neon-color-primary;
+    }
+  }
+}
+
+@mixin slide-text-horizontal($name, $position) {
+  @keyframes #{$name} {
+    from {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
     }
   }
 }

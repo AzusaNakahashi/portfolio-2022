@@ -13,14 +13,83 @@
   }
 }
 
-@keyframes slide-right {
-  from {
+@keyframes slide-image-right {
+  0% {
     opacity: 0;
     transform: translateX(100px);
   }
 
-  to {
+  60% {
+    opacity: 0;
+  }
+
+  100% {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes slide-top {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  60% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoom-left {
+  from {
+    opacity: 0;
+    transform: translate3d(-200px, 0, 0) scale(2);
+  }
+
+  60% {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes zoom-right {
+  from {
+    opacity: 0;
+    transform: translate3d(200px, 0, 0) scale(1.4);
+  }
+
+  60% {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes pulsate {
+  100% {
+    /* Larger blur radius */
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff,
+      0 0 40px $neon-color-primary, 0 0 80px $neon-color-primary,
+      0 0 90px $neon-color-primary, 0 0 100px $neon-color-primary,
+      0 0 150px $neon-color-primary;
+  }
+  0% {
+    /* Smaller blur radius */
+    text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff,
+      0 0 10px $neon-color-primary, 0 0 45px $neon-color-primary,
+      0 0 55px $neon-color-primary, 0 0 70px $neon-color-primary,
+      0 0 80px $neon-color-primary;
   }
 }

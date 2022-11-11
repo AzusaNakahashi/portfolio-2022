@@ -76,29 +76,29 @@ const Header = () => {
             </p>
             <div className={styles["menu-list"]}>
               <ul className={styles["page-section-list"]}>
-                <li>
+                <li className={styles["item-1"]}>
                   <Link href="/#topPage">
                     <a onClick={() => dispatch(navToggle())}>Top</a>
                   </Link>
                 </li>
-                <li>
+                <li className={styles["item-2"]}>
                   <Link href="/#about">
                     <a onClick={() => dispatch(navToggle())}>About</a>
                   </Link>
                 </li>
-                <li>
+                <li className={styles["item-3"]}>
                   <Link href="/#projects">
                     <a onClick={() => dispatch(navToggle())}>Projects</a>
                   </Link>
                 </li>
-                <li>
+                <li className={styles["item-4"]}>
                   <Link href="/#contact">
                     <a onClick={() => dispatch(navToggle())}>Contact</a>
                   </Link>
                 </li>
               </ul>
               <ul className={styles["social-media-list"]}>
-                <li>
+                <li className={styles["item-5"]}>
                   <Link href="https://www.linkedin.com/in/azusa-nakahashi/">
                     <a>
                       <picture>
@@ -107,7 +107,7 @@ const Header = () => {
                     </a>
                   </Link>
                 </li>
-                <li>
+                <li className={styles["item-6"]}>
                   <Link href="https://github.com/AzusaNakahashi">
                     <a>
                       <picture>

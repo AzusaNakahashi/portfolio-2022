@@ -1,8 +1,9 @@
 @import "./variables.module.scss";
 @import "./keyframes.module.scss";
 @import "./mixins.module.scss";
-
 @include neon-heading-flicker(pink-flicker, $neon-color-primary);
+// text animation from mixin
+@include slide-text-horizontal(slide-text-left, -100px);
 
 .topPage {
   position: relative;
@@ -19,15 +20,13 @@
       font-family: $font-family-heading;
     }
     h1 {
+      @include heading-text-shadow($neon-color-primary);
       margin: 1rem 0;
       font-size: 3rem;
       color: #fff;
       line-height: 1.5;
-      text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 21px $neon-color-primary,
-        0 0 32px $neon-color-primary, 0 0 62px $neon-color-primary,
-        0 0 72px $neon-color-primary;
-      //animation: pink-flicker 1.5s infinite alternate, slide-left 1.2s;
-      //animation: slide-left 1.2s;
+      //animation: pulsate 2.5s infinite alternate, slide-left 1.2s;
+      animation: slide-text-left 1.1s;
     }
     h2 {
       width: 100%;
@@ -35,12 +34,12 @@
       letter-spacing: normal;
       margin: 0;
       font-family: ubuntu;
-      animation: slide-left 1.3s;
+      animation: slide-text-left 1.3s;
     }
     p {
       width: 100%;
       margin: 0.5rem 0;
-      animation: slide-left 1.5s;
+      animation: slide-text-left 1.5s;
     }
   }
   .right {
@@ -52,7 +51,7 @@
       width: 100%;
       max-width: 350px;
       margin: 0 auto;
-      animation: slide-right 1.6s;
+      animation: slide-image-right 1.5s;
     }
   }
 }
@@ -91,17 +90,22 @@
           margin: 0;
           font-size: 5rem;
           line-height: 1.2;
+          animation: zoom-left 1.5s;
         }
         h2 {
           font-size: 1.2rem;
+          animation: zoom-left 1.8s;
         }
         p {
           max-width: 500px;
+          animation: zoom-left 2s;
         }
       }
       .right {
-        min-width: 300px;
-        max-width: 400px;
+        img {
+          width: 100%;
+          animation: zoom-right 2s;
+        }
       }
     }
   }
