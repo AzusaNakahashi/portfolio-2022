@@ -36,13 +36,11 @@
       margin: 0;
       font-family: ubuntu;
       animation: slide-left 1.3s;
-      overflow: hidden;
     }
     p {
       width: 100%;
       margin: 0.5rem 0;
       animation: slide-left 1.5s;
-      overflow: hidden;
     }
   }
   .right {
@@ -50,6 +48,7 @@
     padding: 1rem 0;
     max-width: 350px;
     animation: slide-right 1.6s;
+    overflow: hidden;
   }
 }
 
