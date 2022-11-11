@@ -1,5 +1,3 @@
-import Image from "next/image";
-import topImage from "../public/pictures/top.jpeg";
 import styles from "../styles/top.module.scss";
 
 const Top = () => {
@@ -15,7 +13,9 @@ const Top = () => {
           </p>
         </div>
         <div className={styles["right"]}>
-          <Image src={topImage} alt="facePicture" />
+          <picture>
+            <img src="/pictures/top.jpeg" alt="face image" />
+          </picture>
         </div>
       </div>
     </div>

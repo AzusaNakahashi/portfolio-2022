@@ -46,9 +46,12 @@
   .right {
     margin: 0 auto;
     padding: 1rem 0;
-    max-width: 350px;
-    animation: slide-right 1.6s;
     overflow: hidden;
+    img {
+      animation: slide-right 1.6s;
+      width: 100%;
+      max-width: 350px;
+    }
   }
 }
 
