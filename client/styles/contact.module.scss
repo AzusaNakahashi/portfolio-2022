@@ -86,7 +86,7 @@
         }
       }
       button {
-        @include neon-button;
+        @include neon-button-with-hover;
       }
       .status-message {
         margin: 0;

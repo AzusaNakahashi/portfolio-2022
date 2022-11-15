@@ -1,6 +1,28 @@
 import styles from "../styles/about.module.scss";
+import { useInView } from "react-intersection-observer";
 
 const About = () => {
+  //const ref = useRef<HTMLDivElement>(null);
+  const { ref: wrapperRef, inView: wrapperIsVisible } = useInView({
+    threshold: 0.2,
+    //triggerOnce: true,
+  });
+  const { ref: headingRef, inView: headingIsVisible } = useInView({
+    threshold: 0.2,
+    //triggerOnce: true,
+  });
+  const { ref: textRef, inView: textIsVisible } = useInView({
+    threshold: 0.3,
+    //triggerOnce: true,
+  });
+  const { ref: buttonRef, inView: buttonIsVisible } = useInView({
+    threshold: 0.5,
+    //triggerOnce: true,
+  });
+  const { ref: skillsRef, inView: skillsIsVisible } = useInView({
+    threshold: 0.4,
+    //triggerOnce: true,
+  });
   // Content Text
   const text: string[] = [
     "Hi! I'm Azusa, a front-end developer based in Vancouver.",
@@ -29,18 +51,35 @@ const About = () => {
   ];
 
   return (
-    <div className={styles["about"]} id="about">
+    <div ref={wrapperRef} className={styles["about"]} id="about">
       <div className={styles["content-wrapper"]}>
-        <h2>About</h2>
-        <div className={styles["text-container"]}>
-          <div className={styles["text"]}>
-            {text.map((sentence, index) => (
-              <p key={`sentece${index}`}>{sentence}</p>
+        <h2
+          ref={headingRef}
+          className={`${headingIsVisible && styles.animated}`}
+        >
+          About
+        </h2>
+        <div ref={textRef} className={styles["text-container"]}>
+          <div
+            className={`${styles["text"]} ${textIsVisible && styles.animated}`}
+          >
+            {text.map((sentence) => (
+              <p key={sentence}>{sentence}</p>
             ))}
           </div>
-          <button>Resume</button>
+          <button
+            ref={buttonRef}
+            className={`${buttonIsVisible && styles.animated}`}
+          >
+            Resume
+          </button>
         </div>
-        <div className={styles["skills"]}>
+        <div
+          ref={skillsRef}
+          className={`${styles["skills"]} ${
+            skillsIsVisible && styles.animated
+          }`}
+        >
           <div className={styles["cards-wrapper"]}>
             {techNames.map((tech, index) => (
               <div key={`tech${index}`} className={styles["tech-card"]}>

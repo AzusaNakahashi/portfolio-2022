@@ -54,7 +54,7 @@
         margin: 0.5rem 0;
       }
       button {
-        @include neon-button;
+        @include neon-button-with-hover;
         margin: 2rem auto;
       }
     }
