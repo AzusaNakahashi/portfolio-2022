@@ -1,10 +1,16 @@
-import Link from "next/link";
-import styles from "../styles/projects.module.scss";
-import { projectsData } from "../public/projectData/text/projects";
 import { useState } from "react";
+import Link from "next/link";
+import { projectsData } from "../public/projectData/text/projects";
+import { useInView } from "react-intersection-observer";
+import styles from "../styles/projects.module.scss";
 
 const Projects = () => {
   const [pathNames, setPathNames] = useState<string[]>([]);
+  const { ref: headingRef, inView: headingIsVisible } = useInView({
+    threshold: 0.2,
+    //triggerOnce: true,
+  });
+  console.log(headingIsVisible);
   useState(() => {
     setPathNames(() => {
       let paths: string[] = [];
@@ -17,7 +23,12 @@ const Projects = () => {
   return (
     <div className={styles["projects"]} id="projects">
       <div className={styles["content-wrapper"]}>
-        <h2>Projects</h2>
+        <h2
+          ref={headingRef}
+          className={`${headingIsVisible && styles.animated}`}
+        >
+          Projects
+        </h2>
         <div className={styles["cards-container"]}>
           {projectsData.map((project, index) => {
             return (

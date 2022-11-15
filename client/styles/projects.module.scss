@@ -1,4 +1,5 @@
 @import "./variables.module.scss";
+@import "./keyframes.module.scss";
 @import "./mixins.module.scss";
 @include neon-heading-flicker(yellow-flicker, $neon-color-secondary);
 
@@ -12,7 +13,9 @@
   h2 {
     margin: 1rem 0;
     color: $text-color;
+    @include heading-text-shadow($neon-color-primary);
     //animation: yellow-flicker 1.5s infinite alternate;
+    @include slide-up-animation(0.7s);
   }
   .cards-container {
     padding: 1rem 0;

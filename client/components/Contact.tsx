@@ -1,9 +1,10 @@
-import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../hooks";
+import { postForm } from "../features/form";
+import Image from "next/image";
+import { useInView } from "react-intersection-observer";
 import contactImg from "../public/illustration/contact-img.svg";
 import styles from "../styles/contact.module.scss";
-import { postForm } from "../features/form";
 
 const Contact = () => {
   const formStatus = useAppSelector((state) => state.form.status);
@@ -15,7 +16,11 @@ const Contact = () => {
     subject: "",
     message: "",
   });
-
+  const { ref: headingRef, inView: headingIsVisible } = useInView({
+    threshold: 0.2,
+    //triggerOnce: true,
+  });
+  console.log("headingref", headingIsVisible);
   const showFormStatusMessage = (formSendingStatus: string) => {
     switch (formSendingStatus) {
       case "IDLE":
@@ -57,7 +62,12 @@ const Contact = () => {
   return (
     <div className={styles["contact"]} id="contact">
       <div className={styles["content-wrapper"]}>
-        <h2>Contact</h2>
+        <h2
+          ref={headingRef}
+          className={`${headingIsVisible && styles.animated}`}
+        >
+          Contact
+        </h2>
         <div className={styles["grid-wrapper"]}>
           <div className={styles["thanks-message"]}>
             <div className={styles["text-effect"]}>
