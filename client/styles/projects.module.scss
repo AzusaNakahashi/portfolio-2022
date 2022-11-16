@@ -15,7 +15,7 @@
     color: $text-color;
     @include heading-text-shadow($neon-color-primary);
     //animation: yellow-flicker 1.5s infinite alternate;
-    @include slide-up-animation(0.7s);
+    @include slide-up-animation-quick(0.4s);
   }
   .cards-container {
     padding: 1rem 0;
@@ -30,6 +30,7 @@
       background-color: $bgc-dark;
       overflow: hidden;
       box-shadow: 0px 20px 4px rgba(113, 0, 101, 0.5);
+      @include slide-up-animation-slow(1s);
       img {
         object-fit: cover;
         width: 100%;
@@ -97,9 +98,13 @@
 
 @media only screen and (min-width: 900px) {
   .projects {
+    h2 {
+      @include slide-up-animation-slow(0.5s);
+    }
     .cards-container {
       grid-gap: 1.5rem;
       .card {
+        @include slide-up-animation-slow(1.2s);
         .app-explanation {
           padding: 1rem 1rem 1.5rem 1rem;
         }

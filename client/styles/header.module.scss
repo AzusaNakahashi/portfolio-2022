@@ -234,22 +234,22 @@
             padding: 0.5;
             li {
               &.item-1 {
-                animation: slide-top 0.6s;
+                animation: slide-top-quick 0.6s;
               }
               &.item-2 {
-                animation: slide-top 0.75s;
+                animation: slide-top-quick 0.75s;
               }
               &.item-3 {
-                animation: slide-top 0.9s;
+                animation: slide-top-quick 0.9s;
               }
               &.item-4 {
-                animation: slide-top 1.05s;
+                animation: slide-top-quick 1.05s;
               }
               &.item-5 {
-                animation: slide-top 1.3s;
+                animation: slide-top-quick 1.3s;
               }
               &.item-6 {
-                animation: slide-top 1.45s;
+                animation: slide-top-quick 1.45s;
               }
             }
             &.page-section-list {

@@ -32,11 +32,19 @@
   @include neon-button-hover-transition();
 }
 
-@mixin slide-up-animation($second) {
+@mixin slide-up-animation-quick($second) {
   visibility: hidden;
   &.animated {
     visibility: visible;
-    animation: slide-top $second;
+    animation: slide-top-quick $second;
+  }
+}
+
+@mixin slide-up-animation-slow($second) {
+  visibility: hidden;
+  &.animated {
+    visibility: visible;
+    animation: slide-top-quick $second ease-out;
   }
 }
 

@@ -11,12 +11,12 @@
     color: $text-color;
     @include heading-text-shadow($neon-color-primary);
     //animation: pink-flicker 1.5s infinite alternate;
-    @include slide-up-animation(0.4s);
+    @include slide-up-animation-quick(0.4s);
   }
   .text-container {
     margin: 0 auto;
     .text {
-      @include slide-up-animation(0.6s);
+      @include slide-up-animation-quick(0.65s);
     }
     button {
       margin-top: 2rem;
@@ -24,7 +24,7 @@
       // neon-button is used. neon-button-with-hover doesn't work due to slide-up-animation
       // avoid causing the element flickering(switching inView true and false repeatedly)
       @include neon-button;
-      @include slide-up-animation(0.8s);
+      @include slide-up-animation-quick(0.7s);
       &.animated {
         &:hover {
           @include neon-button-hover-transition;
@@ -33,7 +33,7 @@
     }
   }
   .skills {
-    @include slide-up-animation(0.8s);
+    @include slide-up-animation-quick(0.7s);
     .cards-wrapper {
       padding: 1rem 0;
       display: flex;
@@ -136,19 +136,19 @@
     h2 {
       //margin-bottom: 2rem;
       margin: 3rem 0;
-      @include slide-up-animation(0.5s);
+      @include slide-up-animation-slow(0.5s);
     }
     .text-container {
       .text {
         grid-gap: 2rem;
-        @include slide-up-animation(0.8s);
+        @include slide-up-animation-slow(1.2s);
       }
       button {
-        @include slide-up-animation(0.8s);
+        @include slide-up-animation-slow(1.2s);
       }
     }
   }
   .skills {
-    @include slide-up-animation(0.8s);
+    @include slide-up-animation-slow(1.4s);
   }
 }

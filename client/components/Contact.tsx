@@ -20,7 +20,7 @@ const Contact = () => {
     threshold: 0.2,
     //triggerOnce: true,
   });
-  console.log("headingref", headingIsVisible);
+
   const showFormStatusMessage = (formSendingStatus: string) => {
     switch (formSendingStatus) {
       case "IDLE":
