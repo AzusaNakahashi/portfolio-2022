@@ -1,10 +1,10 @@
+/************** Utilities ***************/
+@import "./utilities/variables.module.scss";
+@import "./utilities/keyframes.module.scss";
+
 /************** Mixin ***************/
 @import "./mixins/animation.module.scss";
 @import "./mixins/elements.module.scss";
-
-/************** Utilities ***************/
-@import "./utilities/keyframes.module.scss";
-@import "./utilities/variables.module.scss";
 
 /************** Layout ***************/
 @import "./layout/about.module.scss";

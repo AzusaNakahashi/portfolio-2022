@@ -1,0 +1,117 @@
+@import "../utilities/variables.module.scss";
+
+/****************** Normalize *****************/
+html,
+body {
+  padding: 0;
+  margin: 0;
+  color: $text-color;
+  font-size: $font-size-text-regular;
+  font-family: Ubuntu, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-weight: 300;
+  line-height: $line-height-regular;
+  background-color: $bgc-dark;
+  scroll-behavior: smooth;
+}
+
+.content-wrapper {
+  position: relative;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+p::first-letter {
+  text-transform: uppercase;
+}
+
+/**************** Layout *******************/
+
+main > * {
+  padding: 3rem 0.5rem;
+}
+
+/**************** Headings *****************/
+h1,
+h2,
+h3 {
+  font-family: "Tourney", cursive;
+}
+
+h1,
+h2 {
+  font-size: $font-size-heading-M;
+  letter-spacing: 0.2rem;
+}
+
+/*************** Button ********************/
+
+button {
+  font-family: "Tourney", cursive;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/*************** List ***********************/
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+footer {
+  padding: 0.5rem;
+  background-color: #7d3561;
+  text-align: right;
+}
+
+footer h3 {
+  font-family: ubuntu;
+  font-weight: 300;
+  font-size: 1rem;
+  margin: 0;
+}
+
+@media only screen and (min-width: $tablet-min-width) {
+  main > * {
+    padding: 6rem 1rem;
+  }
+  footer {
+    padding: 1rem;
+  }
+  h1 {
+    font-size: $font-size-heading-L;
+  }
+  h2 {
+    margin: 3rem 0;
+  }
+}
+
+@media only screen and (min-width: $desktop-min-width) {
+  body {
+    width: 100vw;
+  }
+
+  main > * {
+    padding: 10rem 1rem;
+  }
+
+  main > * > * {
+    margin: 0 auto;
+    max-width: 1100px;
+  }
+
+  h1 {
+    font-size: $font-size-heading-XL;
+  }
+
+  h2 {
+    font-size: $font-size-heading-L;
+  }
+}

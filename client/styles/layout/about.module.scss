@@ -1,14 +1,7 @@
-@import "../utilities/variables.module.scss";
-@import "../utilities/keyframes.module.scss";
-@import "../mixins/animation.module.scss";
-@import "../mixins/elements.module.scss";
-@include neon-heading-flicker(pink-flicker, $neon-color-primary);
-
 .about {
   background-color: $bgc-dark;
   h2 {
     margin: 1rem 0;
-    font-size: 3rem;
     color: $text-color;
     @include heading-text-shadow($neon-color-primary);
     //animation: pink-flicker 1.5s infinite alternate;
@@ -70,9 +63,6 @@
 }
 @media only screen and (min-width: $tablet-min-width) {
   .about {
-    h2 {
-      margin: 3rem 0;
-    }
     .text-container {
       .text {
         p {
@@ -116,41 +106,25 @@
 @media only screen and (min-width: $desktop-min-width) {
   .about {
     h2 {
-      margin: 4rem 0;
+      @include slide-up-animation-slow(0.4s);
     }
     .text-container {
       max-width: none;
+      .text {
+        @include slide-up-animation-slow(0.6s);
+      }
+      button {
+        @include slide-up-animation-slow(0.6s);
+      }
     }
     .skills {
+      @include slide-up-animation-slow(0.6s);
       .cards-wrapper {
-        gap: 2rem !important;
+        gap: 2rem;
         .tech-card {
           flex-grow: 1;
         }
       }
     }
-  }
-}
-
-@media only screen and (min-width: 1000px) {
-  .about {
-    h2 {
-      //margin-bottom: 2rem;
-      margin: 3rem 0;
-      @include slide-up-animation-slow(0.5s);
-    }
-    .text-container {
-      .text {
-        animation: none;
-        grid-gap: 2rem;
-        @include slide-up-animation-slow(0.7s);
-      }
-      button {
-        @include slide-up-animation-slow(0.7s);
-      }
-    }
-  }
-  .skills {
-    @include slide-up-animation-slow(0.7s);
   }
 }

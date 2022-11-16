@@ -1,5 +1,3 @@
-@import "../utilities/variables.module.scss";
-
 @mixin slide-up-animation-quick($second) {
   visibility: hidden;
   &.animated {

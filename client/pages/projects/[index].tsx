@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { projectsData } from "../../public/projectData/text/projects";
-import styles from "../../styles/project.module.scss";
+import styles from "../../styles/layout/project.module.scss";
 import type { ReactElement } from "react";
 import Layout from "../../layout/Layout";
 import type { NextPageWithLayout } from "../../types/layoutType";

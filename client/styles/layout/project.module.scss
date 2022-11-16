@@ -1,7 +1,3 @@
-@import "../utilities/variables.module.scss";
-@import "../utilities/keyframes.module.scss";
-@import "../mixins/animation.module.scss";
-@import "../mixins/elements.module.scss";
 .project {
   background: linear-gradient(
     0deg,
@@ -9,17 +5,16 @@
     $bgc-gradient-purple 31%,
     $bgc-gradient-blue 100%
   );
-  h3 {
-    margin: 1rem 0;
-    font-size: 38px;
-    letter-spacing: 0.2rem;
-    overflow: hidden;
-  }
   h2,
   h3 {
     overflow: visible;
     text-shadow: 0 0 3px #fff, 0 0 21px $neon-color-primary,
       0 0 32px $neon-color-primary;
+  }
+  h3 {
+    margin: 1rem 0;
+    font-size: $font-size-heading-S;
+    letter-spacing: 0.2rem;
   }
   display: grid;
   grid-gap: 2rem;
@@ -110,8 +105,11 @@
 @media only screen and (min-width: $desktop-min-width) {
   .project {
     grid-gap: 4rem;
+    h2 {
+      font-size: $font-size-heading-L;
+    }
     h3 {
-      font-size: $font-size-heading-medium;
+      font-size: $font-size-heading-M;
     }
     > section {
       width: 100%;
@@ -132,12 +130,9 @@
         }
       }
       .text {
-        h2 {
-          font-size: 4rem;
-        }
         .app-type,
         .time-frame {
-          font-size: $font-size-h3;
+          font-size: $font-size-text-large;
         }
         .hero-image-phone {
           display: none;
@@ -172,7 +167,7 @@
       .content-wrapper {
         .intro {
           margin: 1rem 0;
-          font-size: 40px;
+          font-size: $font-size-heading-S;
           font-family: $font-family-heading;
         }
         .features-wrapper {
@@ -192,7 +187,7 @@
             }
             .keyfrase {
               margin: 0;
-              font-size: 32px;
+              font-size: $font-size-heading-S;
               font-family: $font-family-heading;
               text-align: center;
             }
@@ -207,7 +202,7 @@
         justify-content: center;
         align-items: center;
         h3 {
-          font-size: $font-size-heading-small;
+          font-size: $font-size-heading-S;
         }
       }
     }
