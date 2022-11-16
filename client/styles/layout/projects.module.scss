@@ -1,6 +1,7 @@
-@import "./variables.module.scss";
-@import "./keyframes.module.scss";
-@import "./mixins.module.scss";
+@import "../utilities/variables.module.scss";
+@import "../utilities/keyframes.module.scss";
+@import "../mixins/animation.module.scss";
+@import "../mixins/elements.module.scss";
 @include neon-heading-flicker(yellow-flicker, $neon-color-secondary);
 
 .projects {

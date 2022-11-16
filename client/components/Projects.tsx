@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import { projectsData } from "../public/projectData/text/projects";
-import { useInView } from "react-intersection-observer";
-import styles from "../styles/projects.module.scss";
 import type { Project } from "../types/projectType";
+import { useInView } from "react-intersection-observer";
+import styles from "../styles/main.module.scss";
 
 const Projects = () => {
   const { ref: headingRef, inView: headingIsVisible } = useInView({

@@ -2,7 +2,7 @@ import { store } from "../store";
 import { Provider } from "react-redux";
 import Head from "next/head";
 import type { AppPropsWithLayout } from "../types/layoutType";
-import "../styles/globals.css";
+import "../styles/base/normalize.css";
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page);

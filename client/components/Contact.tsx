@@ -4,7 +4,7 @@ import { postForm } from "../features/form";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 import contactImg from "../public/illustration/contact-img.svg";
-import styles from "../styles/contact.module.scss";
+import styles from "../styles/main.module.scss";
 
 const Contact = () => {
   const formStatus = useAppSelector((state) => state.form.status);

@@ -1,5 +1,6 @@
 @import "./variables.module.scss";
-@import "./mixins.module.scss";
+@import "../mixins/animation.module.scss";
+@import "../mixins/elements.module.scss";
 
 @keyframes slide-left {
   from {

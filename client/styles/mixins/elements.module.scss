@@ -1,5 +1,6 @@
-@import "./variables.module.scss";
+@import "../utilities/variables.module.scss";
 
+/**************** Button ****************/
 // without hover transition
 @mixin neon-button() {
   display: block;
@@ -32,22 +33,7 @@
   @include neon-button-hover-transition();
 }
 
-@mixin slide-up-animation-quick($second) {
-  visibility: hidden;
-  &.animated {
-    visibility: visible;
-    animation: slide-top-quick $second;
-  }
-}
-
-@mixin slide-up-animation-slow($second) {
-  visibility: hidden;
-  &.animated {
-    visibility: visible;
-    animation: slide-top-quick $second ease-out;
-  }
-}
-
+/**************** Heading ****************/
 @mixin heading-text-shadow($neon-color) {
   text-shadow: 0 0 1px #fff, 0 0 3px #fff, 0 0 21px $neon-color,
     0 0 32px $neon-color, 0 0 62px $neon-color, 0 0 72px $neon-color;
@@ -77,20 +63,6 @@
       text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 21px $neon-color-primary,
         0 0 32px $neon-color-primary, 0 0 62px $neon-color-primary,
         0 0 72px $neon-color-primary;
-    }
-  }
-}
-
-@mixin slide-text-horizontal($name, $position) {
-  @keyframes #{$name} {
-    from {
-      opacity: 0;
-      transform: translateX(-100px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateX(0);
     }
   }
 }
