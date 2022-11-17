@@ -4,7 +4,6 @@ import { useInView } from "react-intersection-observer";
 const About = () => {
   //const ref = useRef<HTMLDivElement>(null);
   const { ref: wrapperRef, inView: wrapperIsVisible } = useInView({
-    threshold: 0.2,
     //triggerOnce: true,
   });
   const { ref: headingRef, inView: headingIsVisible } = useInView({
