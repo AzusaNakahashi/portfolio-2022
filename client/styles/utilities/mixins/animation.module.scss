@@ -1,3 +1,38 @@
+/*********** Text, Heading **********/
+// Top Page
+@mixin slide-left-animation($second) {
+  visibility: hidden;
+  &.animated {
+    visibility: visible;
+    animation: slide-left $second ease-out;
+  }
+}
+
+@mixin slide-right-animation($second) {
+  visibility: hidden;
+  &.animated {
+    visibility: visible;
+    animation: slide-right $second ease-out;
+  }
+}
+
+@mixin zoom-left-animation($second) {
+  visibility: hidden;
+  &.animated {
+    visibility: visible;
+    animation: zoom-left $second ease-out;
+  }
+}
+
+@mixin zoom-right-animation($second) {
+  visibility: hidden;
+  &.animated {
+    visibility: visible;
+    animation: zoom-right $second ease-out;
+  }
+}
+
+// Index Page Titles, Texts
 @mixin slide-up-animation-quick($second) {
   visibility: hidden;
   &.animated {
