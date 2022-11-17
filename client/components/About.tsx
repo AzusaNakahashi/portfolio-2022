@@ -1,4 +1,4 @@
-import styles from "../styles/main.module.scss";
+import styles from "../styles/layout/about.module.scss";
 import { useInView } from "react-intersection-observer";
 
 const About = () => {
@@ -55,7 +55,9 @@ const About = () => {
       <div className={styles["content-wrapper"]}>
         <h2
           ref={headingRef}
-          className={`${headingIsVisible && styles.animated}`}
+          className={`${styles["section-title"]} ${
+            headingIsVisible && styles.animated
+          }`}
         >
           About
         </h2>

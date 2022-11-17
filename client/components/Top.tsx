@@ -1,4 +1,4 @@
-import styles from "../styles/main.module.scss";
+import styles from "../styles/layout/top.module.scss";
 
 const Top = () => {
   return (

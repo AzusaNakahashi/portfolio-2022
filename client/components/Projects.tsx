@@ -3,7 +3,7 @@ import Link from "next/link";
 import { projectsData } from "../public/projectData/text/projects";
 import type { Project } from "../types/projectType";
 import { useInView } from "react-intersection-observer";
-import styles from "../styles/main.module.scss";
+import styles from "../styles/layout/projects.module.scss";
 
 const Projects = () => {
   const { ref: headingRef, inView: headingIsVisible } = useInView({
@@ -15,7 +15,9 @@ const Projects = () => {
       <div className={styles["content-wrapper"]}>
         <h2
           ref={headingRef}
-          className={`${headingIsVisible && styles.animated}`}
+          className={`${styles["section-title"]} ${
+            headingIsVisible && styles.animated
+          }`}
         >
           Projects
         </h2>

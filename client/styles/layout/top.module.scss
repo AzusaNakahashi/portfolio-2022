@@ -1,3 +1,4 @@
+@import "../import.module.scss";
 @include neon-heading-flicker(pink-flicker, $neon-color-primary);
 // text animation from mixin
 @include slide-text-horizontal(slide-text-left, -100px);
@@ -58,11 +59,9 @@
     .left {
       h1 {
         margin: 2rem 0 1rem 0;
-        //font-size: 4rem;
       }
       h2 {
         margin: 1rem 0;
-        //font-size: 1.5rem;
         font-weight: 500;
         text-shadow: 0 0 1px #fff, 0 0 2px #fff;
       }
@@ -88,7 +87,6 @@
           animation: zoom-left 1.5s;
         }
         h2 {
-          //font-size: 1.2rem;
           animation: zoom-left 1.8s;
         }
         p {

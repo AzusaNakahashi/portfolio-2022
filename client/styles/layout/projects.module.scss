@@ -1,3 +1,4 @@
+@import "../import.module.scss";
 @include neon-heading-flicker(yellow-flicker, $neon-color-secondary);
 
 .projects {
