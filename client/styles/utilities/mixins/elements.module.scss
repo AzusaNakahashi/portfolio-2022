@@ -32,9 +32,15 @@
 }
 
 /**************** Heading ****************/
+
 @mixin heading-text-shadow($neon-color) {
   text-shadow: 0 0 1px #fff, 0 0 3px #fff, 0 0 21px $neon-color,
     0 0 32px $neon-color, 0 0 62px $neon-color, 0 0 72px $neon-color;
+}
+
+@mixin section-title-heading {
+  @include heading-text-shadow($neon-color-primary);
+  @include slide-up-animation-quick(0.4s);
 }
 
 @mixin neon-heading-flicker($name, $neon-color) {

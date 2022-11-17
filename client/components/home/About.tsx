@@ -1,4 +1,4 @@
-import styles from "../styles/layout/about.module.scss";
+import styles from "../../styles/layout/about.module.scss";
 import { useInView } from "react-intersection-observer";
 
 const About = () => {

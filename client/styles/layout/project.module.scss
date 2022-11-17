@@ -6,11 +6,9 @@
     $bgc-gradient-purple 31%,
     $bgc-gradient-blue 100%
   );
-  h2,
-  h3 {
+  .section-title {
+    @include section-title-heading;
     overflow: visible;
-    text-shadow: 0 0 3px #fff, 0 0 21px $neon-color-primary,
-      0 0 32px $neon-color-primary;
   }
   h3 {
     margin: 1rem 0;

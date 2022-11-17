@@ -24,11 +24,11 @@
 }
 .contact {
   background-color: $bgc-dark;
-  h2 {
+  .section-title {
     margin: 2rem 0;
-    @include heading-text-shadow($neon-color-primary);
-    //animation: yellow-flicker 1.5s infinite alternate;
-    @include slide-up-animation-quick(0.4s);
+    @include section-title-heading
+      //animation: yellow-flicker 1.5s infinite alternate;
+;
   }
   .grid-wrapper {
     text-shadow: 0 0 4px $neon-color-secondary;

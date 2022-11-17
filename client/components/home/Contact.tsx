@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../hooks";
-import { postForm } from "../features/form";
+import { useAppDispatch, useAppSelector } from "../../hooks";
+import { postForm } from "../../features/form";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
-import contactImg from "../public/illustration/contact-img.svg";
-import styles from "../styles/layout/contact.module.scss";
+import contactImg from "../../public/illustration/contact-img.svg";
+import styles from "../../styles/layout/contact.module.scss";
 
 const Contact = () => {
   const formStatus = useAppSelector((state) => state.form.status);

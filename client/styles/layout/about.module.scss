@@ -1,12 +1,11 @@
 @import "../import.module.scss";
 .about {
   background-color: $bgc-dark;
-  h2 {
+  .section-title {
     margin: 1rem 0;
     color: $text-color;
-    @include heading-text-shadow($neon-color-primary);
+    @include section-title-heading;
     //animation: pink-flicker 1.5s infinite alternate;
-    @include slide-up-animation-quick(0.4s);
   }
   .text-container {
     margin: 0 auto;
