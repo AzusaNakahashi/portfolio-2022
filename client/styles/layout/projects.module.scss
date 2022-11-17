@@ -74,7 +74,7 @@
   }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: $tablet-min-width) {
   .projects {
     .cards-container {
       display: grid;
@@ -84,6 +84,12 @@
         margin: 0;
         max-width: 350px;
         justify-self: center;
+        &.animated {
+          transition: all 0.3s;
+          &:hover {
+            transform: scale(1.02);
+          }
+        }
         .app-explanation {
           padding: 1rem;
         }
@@ -92,7 +98,7 @@
   }
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: $desktop-min-width) {
   .projects {
     h2 {
       @include slide-up-animation-slow(0.5s);
