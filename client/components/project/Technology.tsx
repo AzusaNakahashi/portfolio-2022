@@ -1,33 +1,45 @@
-import Link from "next/link";
 import type { Project } from "../../types/projectType";
 import { useInView } from "react-intersection-observer";
 import styles from "../../styles/layout/project.module.scss";
 
 const Technology = ({ project }: { project: Project }) => {
-  const { ref: titleRef, inView: titleIsVisible } = useInView();
+  const [titleRef, titleIsVisible] = useInView({ threshold: 0.2 });
+  const [textRef, textIsVisible] = useInView({ threshold: 0 });
   return (
     <>
-      <section className={`${styles["technology"]}`}>
+      <section ref={titleRef} className={`${styles["technology"]}`}>
         <h3
-          ref={titleRef}
           className={`${styles["section-title"]} ${
             titleIsVisible && styles.animated
           } ${styles["technology"]}`}
         >
           Technology
         </h3>
-        <ul className={styles["tech-names"]}>
+        <ul
+          className={` ${styles["tech-names"]} ${
+            titleIsVisible && styles.animated
+          }`}
+        >
           {project.technology.techs.map((name, index) => (
             <li key={name}>{name}</li>
           ))}
         </ul>
         <ul className={styles["tech-point"]}>
           {project.technology.pointList.map((point, index) => (
-            <li key={point}>{point}</li>
+            <List point={point} key={point} />
           ))}
         </ul>
       </section>
     </>
+  );
+};
+
+const List = ({ point }: { point: string }) => {
+  const [textRef, textIsVisible] = useInView({ threshold: 0 });
+  return (
+    <li ref={textRef} className={`${textIsVisible && styles.animated}`}>
+      {point}
+    </li>
   );
 };
 

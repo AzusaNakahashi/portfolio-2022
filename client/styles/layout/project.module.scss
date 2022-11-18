@@ -7,9 +7,10 @@
     $bgc-gradient-blue 100%
   );
   .section-title {
-    @include section-title-heading;
-    overflow: visible;
+    @include slide-left-animation(0.6s);
+    @include heading-text-shadow($neon-color-primary);
   }
+
   h3 {
     margin: 1rem 0;
     font-size: $font-size-heading-S;
@@ -34,23 +35,31 @@
       .time-frame {
         font-family: $font-family-heading;
         text-shadow: 0px 0px 10px $neon-color-secondary;
+        @include slide-left-animation(0.9s);
       }
       .hero-image-phone {
         display: flex;
         align-items: center;
         justify-content: center;
         padding-top: 1rem;
+        overflow: hidden;
         img {
           display: block;
           margin: 0 auto;
+          animation: slide-right 0.9s;
+          @include slide-right-animation(1s);
           width: 220px;
         }
       }
       p {
         margin: 0.5rem 0;
       }
+      .description {
+        @include slide-up-animation-quick(0.4s);
+      }
       button {
-        @include neon-button-with-hover;
+        @include neon-button;
+        @include slide-up-animation-quick(0.4s);
         margin: 2rem auto;
       }
     }
@@ -64,6 +73,7 @@
       flex-flow: row wrap;
       gap: 0.5rem;
       padding: 1rem 0;
+      @include slide-up-animation-quick(0.7s);
       li {
         flex-grow: 1;
         padding: 0.8rem 1rem;
@@ -78,6 +88,9 @@
     ul.tech-point {
       padding-left: 16px;
       list-style: disc;
+      li {
+        @include slide-up-animation-slow(0.5s);
+      }
     }
   }
   .list-info {

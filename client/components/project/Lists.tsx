@@ -25,7 +25,9 @@ const Lists = ({ project }: { project: Project }) => {
 };
 
 const List = ({ project, item }: { project: Project; item: string }) => {
-  const { ref: titleRef, inView: titleIsVisible } = useInView();
+  const { ref: titleRef, inView: titleIsVisible } = useInView({
+    threshold: 0.4,
+  });
   return (
     <div>
       {project.list[item as keyof typeof project.list].text !== null && (
