@@ -60,10 +60,9 @@ const Contact = () => {
   }, [formStatus]);
 
   return (
-    <div className={styles["contact"]} id="contact">
+    <div ref={headingRef} className={styles["contact"]} id="contact">
       <div className={styles["content-wrapper"]}>
         <h2
-          ref={headingRef}
           className={`${styles["section-title"]} ${
             headingIsVisible && styles.animated
           }`}
@@ -73,21 +72,16 @@ const Contact = () => {
         <div className={styles["grid-wrapper"]}>
           <div className={styles["thanks-message"]}>
             <div className={styles["text-effect"]}>
-              <h3
-                className={styles["glitch"]}
-                data-text="I'd love to hear from you"
-              >
-                I&apos;d <span className={styles["hightlight-pink"]}>love</span>{" "}
-                to hear from{" "}
-                <span className={styles["hightlight-blue"]}>you</span>!
-              </h3>
-              <div className={styles["glow"]}>
-                I&apos;d love to hear from you!
-              </div>
               <div className={styles["scanlines"]}></div>
             </div>
             <div className={styles["mail-img"]}>
-              <Image src={contactImg} alt="mail image" />
+              <picture>
+                <img
+                  className={styles["neon-sign"]}
+                  src={"/illustration/contact-neon-sign.svg"}
+                  alt="I'd love to hear from you"
+                />
+              </picture>
             </div>
             <p>
               Feel free to ask me any questions or share with me your opinions

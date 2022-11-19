@@ -32,6 +32,15 @@
   }
   .grid-wrapper {
     text-shadow: 0 0 4px $neon-color-secondary;
+    .neon-sign {
+      filter: drop-shadow(0 0 1px rgba(#fff, 0.3))
+        drop-shadow(0 0 10px rgba(#000aff, 0.5))
+        drop-shadow(0 0 10px rgba(#ad00ff, 0.5))
+        drop-shadow(0 0 20px rgba(#000aff, 0.9))
+        drop-shadow(0 0 40px rgba(#000aff, 0.6))
+        drop-shadow(0 0 40px rgba(#ad00ff, 0.3))
+        drop-shadow(0 0 70px rgba(#000aff, 0.4));
+    }
     .thanks-message {
       padding-bottom: 1rem;
       h3 {

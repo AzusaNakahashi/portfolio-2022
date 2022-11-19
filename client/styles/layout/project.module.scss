@@ -117,6 +117,8 @@
 @media only screen and (min-width: $desktop-min-width) {
   .project {
     grid-gap: 4rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
     h2 {
       font-size: $font-size-heading-L;
     }
@@ -130,7 +132,15 @@
       display: grid;
       grid-template-columns: repeat(2, 50%);
       align-items: start;
-      padding-top: 3rem;
+      .text {
+        h2 {
+          @include slide-up-animation-quick(1.4s);
+        }
+        .app-type,
+        .time-frame {
+          @include slide-up-animation-quick(1.7s);
+        }
+      }
       .hero-image-desktop {
         display: flex;
         justify-content: center;
@@ -139,6 +149,7 @@
         img {
           display: block;
           width: 300px;
+          @include zoom-left-animation(0.9s);
         }
       }
       .text {
@@ -152,9 +163,13 @@
         p {
           margin: 1rem 0;
         }
+        .description {
+          @include slide-up-animation-quick(1.8s);
+        }
         button {
           margin: 2rem 0;
           width: 245px;
+          @include slide-up-animation-quick(2s);
         }
       }
     }
@@ -202,6 +217,10 @@
               font-size: $font-size-heading-S;
               font-family: $font-family-heading;
               text-align: center;
+              @include slide-up-animation-quick(0.5s);
+            }
+            .description {
+              @include slide-up-animation-quick(0.7s);
             }
           }
         }

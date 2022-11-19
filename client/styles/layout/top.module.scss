@@ -1,7 +1,6 @@
 @import "../import.module.scss";
 @include neon-heading-flicker(pink-flicker, $neon-color-primary);
 // text animation from mixin
-@include slide-text-horizontal(slide-text-left, -100px);
 
 .topPage {
   position: relative;

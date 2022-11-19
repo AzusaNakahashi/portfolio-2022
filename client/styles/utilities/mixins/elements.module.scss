@@ -16,7 +16,7 @@
 }
 
 @mixin neon-button-hover-transition {
-  transition: 0.3s;
+  transition: color mix-blend-mode background-color box-shadow 0.3s;
   &:hover {
     color: #000;
     mix-blend-mode: screen; // make text transparent

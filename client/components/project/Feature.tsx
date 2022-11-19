@@ -4,7 +4,8 @@ import { useInView } from "react-intersection-observer";
 import styles from "../../styles/layout/project.module.scss";
 
 const Feature = ({ project }: { project: Project }) => {
-  const { ref: titleRef, inView: titleIsVisible } = useInView();
+  const [titleRef, titleIsVisible] = useInView();
+  const [featureRef, featureIsVisible] = useInView();
   return (
     <>
       {project.features.features && (
@@ -31,8 +32,21 @@ const Feature = ({ project }: { project: Project }) => {
                       alt="hero image"
                     />
                   </picture>
-                  <p className={styles["keyfrase"]}>{feature.keyphrase}</p>
-                  <p className={styles["description"]}>{feature.description}</p>
+                  <p
+                    ref={featureRef}
+                    className={`${featureIsVisible && styles.animated} ${
+                      styles["keyfrase"]
+                    }`}
+                  >
+                    {feature.keyphrase}
+                  </p>
+                  <p
+                    className={`${styles["description"]} ${
+                      featureIsVisible && styles.animated
+                    }`}
+                  >
+                    {feature.description}
+                  </p>
                 </div>
               ))}
             </div>

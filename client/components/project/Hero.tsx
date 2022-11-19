@@ -13,6 +13,7 @@ const Hero = ({ project }: { project: Project }) => {
         <picture>
           <img
             src={`/projectData/image/${project.basicInfo.path}/hero.png`}
+            className={`${titleIsVisible && styles.animated}`}
             alt="hero image"
           />
         </picture>

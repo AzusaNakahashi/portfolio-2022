@@ -60,7 +60,7 @@
 @keyframes zoom-left {
   from {
     opacity: 0;
-    transform: translate3d(-200px, 0, 0) scale(2);
+    transform: translate3d(-200px, -100px, 100px) scale(1.5);
   }
 
   60% {
