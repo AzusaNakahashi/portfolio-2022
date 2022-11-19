@@ -16,10 +16,12 @@ const Contact = () => {
     subject: "",
     message: "",
   });
-  const { ref: headingRef, inView: headingIsVisible } = useInView({
+  const [headingRef, headingIsVisible] = useInView({
     threshold: 0.2,
     //triggerOnce: true,
   });
+  const [neonRef, neonIsVisible] = useInView();
+  const [messageRef, messageIsVisible] = useInView();
 
   const showFormStatusMessage = (formSendingStatus: string) => {
     switch (formSendingStatus) {
@@ -74,7 +76,12 @@ const Contact = () => {
             <div className={styles["text-effect"]}>
               <div className={styles["scanlines"]}></div>
             </div>
-            <div className={styles["mail-img"]}>
+            <div
+              ref={neonRef}
+              className={`${styles["image-wrapper"]} ${
+                neonIsVisible && styles.animated
+              }`}
+            >
               <picture>
                 <img
                   className={styles["neon-sign"]}
@@ -83,7 +90,10 @@ const Contact = () => {
                 />
               </picture>
             </div>
-            <p>
+            <p
+              ref={messageRef}
+              className={`${messageIsVisible && styles.animated}`}
+            >
               Feel free to ask me any questions or share with me your opinions
               about my website, or any words of wisdom or encouragement or a job
               offer maybe...
