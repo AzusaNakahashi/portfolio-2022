@@ -33,13 +33,17 @@
 
 /**************** Heading ****************/
 
-@mixin heading-text-shadow($neon-color) {
-  text-shadow: 0 0 1px #fff, 0 0 3px #fff, 0 0 21px $neon-color,
-    0 0 32px $neon-color, 0 0 62px $neon-color, 0 0 72px $neon-color;
+@mixin heading-text-shadow($neon-color, $neon-saturated) {
+  text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px $neon-saturated,
+    0 0 21px $neon-color, 0 0 32px $neon-color, 0 0 62px $neon-color,
+    0 0 72px $neon-color;
 }
 
 @mixin section-title-heading {
-  @include heading-text-shadow($neon-color-primary);
+  @include heading-text-shadow(
+    $neon-color-primary,
+    $neon-color-primary-saturated
+  );
   @include slide-up-animation-quick(0.4s);
 }
 

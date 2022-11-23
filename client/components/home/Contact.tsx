@@ -3,7 +3,6 @@ import { useAppDispatch, useAppSelector } from "../../hooks";
 import { postForm } from "../../features/form";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
-import contactImg from "../../public/illustration/contact-img.svg";
 import styles from "../../styles/layout/contact.module.scss";
 
 const Contact = () => {
@@ -90,15 +89,19 @@ const Contact = () => {
                 />
               </picture>
             </div>
-            <p
-              ref={messageRef}
-              className={`${messageIsVisible && styles.animated}`}
-            >
-              Feel free to ask me any questions or share with me your opinions
-              about my website, or any words of wisdom or encouragement or a job
-              offer maybe...
-            </p>
-            <p>Thank you for your time!</p>
+            <div className={styles["text"]}>
+              <p
+                ref={messageRef}
+                className={`${messageIsVisible && styles.animated}`}
+              >
+                Feel free to ask me any questions or share with me your opinions
+                about my website, or any words of wisdom or encouragement or a
+                job offer maybe...
+              </p>
+              <p className={`${messageIsVisible && styles.animated}`}>
+                Thank you for your time!
+              </p>
+            </div>
           </div>
           <form onSubmit={handleSubmit} method="POST" action="send">
             <div>

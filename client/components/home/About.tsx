@@ -24,10 +24,10 @@ const About = () => {
   });
   // Content Text
   const text: string[] = [
-    "Hi! I'm Azusa, a front-end developer based in Vancouver.",
-    "I'm passionate about creating apps with modern front-end Technologies and delivering excellent user experience.",
-    "I have a solid knowledge of HTML, CSS (Sass), and JavaScript, and I have worked on multiple projects with React.js and Node.js. As a developer, I prioritize readability.",
-    "I always try to write clean and manageable code.",
+    "Hi! I'm Azusa, a Vancouver based front-developer with a passion for creating apps and delivering excellent user experience.",
+    "My knowledge of  HTML, CSS, and JavaScript, is solid and I have worked on multiple projects with React.js and Node.js.",
+    "Readability is a high priority for me. I always try to keep my code clean and manageable.",
+    "Striving to grow as a web developer, I love learning and, whenever I can, investigate up and coming technologies. Currently, I am learning Typescript.",
   ];
 
   type Tech = {

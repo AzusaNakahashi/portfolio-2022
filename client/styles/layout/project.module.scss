@@ -7,8 +7,11 @@
     $bgc-gradient-blue 100%
   );
   .section-title {
+    @include heading-text-shadow(
+      $neon-color-primary,
+      $neon-color-primary-saturated
+    );
     @include slide-left-animation(0.6s);
-    @include heading-text-shadow($neon-color-primary);
   }
 
   h3 {

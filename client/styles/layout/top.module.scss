@@ -10,7 +10,32 @@
     $bgc-gradient-purple 31%,
     $bgc-gradient-blue 100%
   );
+  /*
+  background: url(../../public/illustration/top-bg-left.svg) no-repeat fixed -100%
+      bottom,
+    url(../../public/illustration/top-bg-right.svg) no-repeat fixed 200% top,
+    linear-gradient(
+      0deg,
+      $bgc-gradient-brown 0%,
+      $bgc-gradient-purple 31%,
+      $bgc-gradient-blue 100%
+    );
+  background-size: 40%, 55%;*/
   padding-top: $desktop-header-height;
+  //transition: background 1.9s;
+  /*
+  &.animated {
+    background: url(../../public/illustration/top-bg-left.svg) no-repeat fixed -4%
+        bottom,
+      url(../../public/illustration/top-bg-right.svg) no-repeat fixed 100% top,
+      linear-gradient(
+        0deg,
+        $bgc-gradient-brown 0%,
+        $bgc-gradient-purple 31%,
+        $bgc-gradient-blue 100%
+      );
+    background-size: 40%, 55%;
+  }*/
   .left {
     h1,
     h2 {
@@ -21,7 +46,10 @@
       color: #fff;
       line-height: 1.5;
       //animation: pulsate 2.5s infinite alternate, slide-left 1.2s;
-      @include heading-text-shadow($neon-color-primary);
+      @include heading-text-shadow(
+        $neon-color-primary,
+        $neon-color-primary-saturated
+      );
       @include slide-left-animation(0.6s);
     }
     h2 {
@@ -83,20 +111,20 @@
         h1 {
           margin: 0;
           line-height: 1.2;
-          animation: zoom-left-animation(1.5s);
+          @include zoom-left-animation(1.4s);
         }
         h2 {
-          animation: zoom-left-animation(1.8s);
+          @include slide-up-animation-quick(1.6s);
         }
         p {
           max-width: 500px;
-          animation: zoom-left-animation(2s);
+          @include slide-up-animation-quick(1.9s);
         }
       }
       .right {
         img {
           width: 100%;
-          animation: zoom-right-animation(2s);
+          @include zoom-right-animation(1.5s);
         }
       }
     }

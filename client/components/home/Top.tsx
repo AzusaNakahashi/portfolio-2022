@@ -4,7 +4,11 @@ import styles from "../../styles/layout/top.module.scss";
 const Top = () => {
   const [titleRef, titleIsVisible] = useInView();
   return (
-    <div ref={titleRef} className={styles["topPage"]} id="topPage">
+    <div
+      ref={titleRef}
+      className={`${styles["topPage"]} ${titleIsVisible && styles.animated}`}
+      id="topPage"
+    >
       <div className={styles["content-wrapper"]}>
         <div className={styles["left"]}>
           <h1 className={`${titleIsVisible && styles.animated}`}>

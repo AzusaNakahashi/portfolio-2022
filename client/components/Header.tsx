@@ -15,13 +15,18 @@ const Header = () => {
   const changePcNavBgc = () => {
     const yPosition = window.pageYOffset;
     const pageHeight = window.innerHeight;
-    if (yPosition > pageHeight * 0.2 && yPosition < pageHeight * 0.9) {
+    if (yPosition >= pageHeight * 0 && yPosition < pageHeight * 0.2) {
+      setNavBGC("transparent");
+    } else if (yPosition >= pageHeight * 0.2 && yPosition < pageHeight * 0.9) {
       setNavBGC("lightblue");
-    } else if (yPosition > pageHeight * 0.9 && yPosition < pageHeight * 2.17) {
+    } else if (yPosition >= pageHeight * 0.9 && yPosition < pageHeight * 2.17) {
       setNavBGC("navy");
-    } else if (yPosition > pageHeight * 2.17 && yPosition < pageHeight * 4.47) {
+    } else if (
+      yPosition >= pageHeight * 2.17 &&
+      yPosition < pageHeight * 4.47
+    ) {
       setNavBGC("lightblue");
-    } else if (yPosition > pageHeight * 4.47) {
+    } else if (yPosition >= pageHeight * 4.47) {
       setNavBGC("navy");
     }
   };
@@ -29,15 +34,30 @@ const Header = () => {
   const changeMobileNavBgc = () => {
     const yPosition = window.pageYOffset;
     const pageHeight = window.innerHeight;
-    if (yPosition > pageHeight * 0.2 && yPosition < pageHeight * 1.13) {
+    if (yPosition >= pageHeight * 0 && yPosition < pageHeight * 0.08) {
+      setNavBGC("transparent");
+    } else if (
+      yPosition >= pageHeight * 0.08 &&
+      yPosition < pageHeight * 1.13
+    ) {
       setNavBGC("lightblue");
-    } else if (yPosition > pageHeight * 1.13 && yPosition < pageHeight * 2.78) {
+    } else if (
+      yPosition >= pageHeight * 1.13 &&
+      yPosition < pageHeight * 2.78
+    ) {
       setNavBGC("navy");
-    } else if (yPosition > pageHeight * 2.78 && yPosition < pageHeight * 7.55) {
+    } else if (
+      yPosition >= pageHeight * 2.78 &&
+      yPosition < pageHeight * 7.55
+    ) {
       setNavBGC("lightblue");
-    } else if (yPosition > pageHeight * 7.55) {
+    } else if (yPosition >= pageHeight * 7.55) {
       setNavBGC("navy");
     }
+  };
+
+  const changeProjectBgc = () => {
+    setNavBGC("lightblue");
   };
 
   useEffect(() => {
@@ -53,6 +73,8 @@ const Header = () => {
           window.removeEventListener("scroll", changeMobileNavBgc);
         };
       }
+    } else {
+      window.addEventListener("scroll", changeProjectBgc);
     }
   }, [pathName]);
   return (
