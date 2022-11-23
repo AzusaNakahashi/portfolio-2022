@@ -128,6 +128,9 @@
 
 @media only screen and (min-width: $tablet-min-width) {
   .contact {
+    background: url(../../public/illustration/shooting-star.svg) no-repeat fixed
+        right 15%,
+      $bgc-dark;
     .grid-wrapper {
       margin: 0 auto;
       display: grid;

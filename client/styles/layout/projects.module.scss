@@ -2,9 +2,11 @@
 @include neon-heading-flicker(yellow-flicker, $neon-color-secondary);
 
 .projects {
-  background: url(../../public/illustration/palm-tree.svg) no-repeat fixed 100%
-      bottom,
-    linear-gradient(100deg, $bgc-gradient-blue 0%, $bgc-gradient-wine 100%);
+  background: linear-gradient(
+    100deg,
+    $bgc-gradient-blue 0%,
+    $bgc-gradient-wine 100%
+  );
   .section-title {
     margin: 1rem 0;
     color: $text-color;
@@ -93,6 +95,14 @@
         }
       }
     }
+  }
+}
+
+@media only screen and (min-width: $tablet-min-width) {
+  .projects {
+    background: url(../../public/illustration/palm-tree.svg) no-repeat fixed
+        100% bottom,
+      linear-gradient(100deg, $bgc-gradient-blue 0%, $bgc-gradient-wine 100%);
   }
 }
 
