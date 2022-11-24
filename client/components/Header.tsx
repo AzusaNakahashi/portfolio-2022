@@ -16,18 +16,18 @@ const Header = () => {
     const yPosition = window.pageYOffset;
     const pageHeight = window.innerHeight;
     if (yPosition >= pageHeight * 0 && yPosition < pageHeight * 0.2) {
-      setNavBGC("transparent");
+      setNavBGC("transparent"); // hero very top
     } else if (yPosition >= pageHeight * 0.2 && yPosition < pageHeight * 0.9) {
-      setNavBGC("lightblue");
-    } else if (yPosition >= pageHeight * 0.9 && yPosition < pageHeight * 2.17) {
-      setNavBGC("navy");
+      setNavBGC("lightblue"); // hero after scroll
+    } else if (yPosition >= pageHeight * 0.9 && yPosition < pageHeight * 2.07) {
+      setNavBGC("navy"); // about
     } else if (
-      yPosition >= pageHeight * 2.17 &&
+      yPosition >= pageHeight * 2.07 &&
       yPosition < pageHeight * 4.47
     ) {
-      setNavBGC("lightblue");
+      setNavBGC("lightblue"); // projects
     } else if (yPosition >= pageHeight * 4.47) {
-      setNavBGC("navy");
+      setNavBGC("navy"); // contact
     }
   };
 

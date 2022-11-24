@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { Project } from "../../types/projectType";
 import { useInView } from "react-intersection-observer";
 import styles from "../../styles/layout/project.module.scss";

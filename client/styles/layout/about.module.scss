@@ -15,15 +15,11 @@
     button {
       margin-top: 2rem;
       margin-bottom: 3rem;
-      // neon-button is used. neon-button-with-hover doesn't work due to slide-up-animation
+      // neon-button-without-hover is used. neon-button-with-hover doesn't work due to slide-up-animation
       // avoid causing the element flickering(switching inView true and false repeatedly)
-      @include neon-button;
+      @include neon-button-without-hover;
       @include slide-up-animation-quick(0.7s);
-      &.animated {
-        &:hover {
-          @include neon-button-hover-transition;
-        }
-      }
+      @include neon-button-hover-transition;
     }
   }
   .skills {

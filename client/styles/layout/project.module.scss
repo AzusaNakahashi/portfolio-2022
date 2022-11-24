@@ -61,8 +61,9 @@
         @include slide-up-animation-quick(0.4s);
       }
       button {
-        @include neon-button;
+        @include neon-button-without-hover;
         @include slide-up-animation-quick(0.4s);
+        @include neon-button-hover-transition;
         margin: 2rem auto;
       }
     }
@@ -181,7 +182,6 @@
       position: relative;
       padding: 5rem 0;
       margin: 0 auto;
-      z-index: 3;
       .background-color {
         z-index: 0;
         background-color: rgba($color: #fff, $alpha: 0.3);
@@ -195,6 +195,8 @@
         border-radius: 50% / 15%;
       }
       .content-wrapper {
+        position: relative;
+        z-index: 3;
         .intro {
           margin: 1rem 0;
           font-size: $font-size-heading-S;
