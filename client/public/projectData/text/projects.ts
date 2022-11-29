@@ -2,10 +2,10 @@ import type { Project } from "../../../types/projectType";
 
 const portfolio: Project = {
   basicInfo: {
-    name: "portfolio",
+    name: "Portfolio",
     path: "portfolio",
     type: "website",
-    duration: "2022 Sep - 2022 Oct",
+    duration: "2022 Sep - 2022 Nov",
     explanation:
       "A portfolio website that displays all of the projects and provides a contact form",
     liveURL: null,
@@ -104,7 +104,7 @@ const whereverWeather: Project = {
       title: "Tech Goals",
       text: [
         "Understanding how front-end and back-end are connected.",
-        "Using Google Maps API",
+        "Understanding Google Maps API",
         "Learning Redux",
       ],
     },
@@ -184,7 +184,7 @@ const grabo: Project = {
 
 const petPaws: Project = {
   basicInfo: {
-    name: "PetPaws",
+    name: "Pet Paws",
     path: "petPaws",
     type: "website",
     duration: "2021 May - 2021 July",
@@ -208,16 +208,17 @@ const petPaws: Project = {
       "Git",
     ],
     pointList: [
-      "I mainly worked on the tracking pages, where the calorie graph and exercise graph are shown",
+      "Our first time to create a project with SQL (MySQL).",
       "Data stored in MySQL (users' profile data, pet's calorie and exercise data.), fetched with Node.js (Express).",
+      "I mainly worked on the tracking pages, where the calorie graph and exercise graph are shown",
     ],
   },
   list: {
     motive: {
       title: "Motive",
       text: [
-        "This website was created as Web and Mobile App Design and Development course (development stream) term 3 team project.",
-        "The team was composed of four developers and three designers",
+        "This website was created as a Web and Mobile App Design and Development course (development stream) second project.",
+        "The team was composed of 4 developers and 3 designers",
       ],
     },
     techGoal: {
@@ -238,48 +239,63 @@ const petPaws: Project = {
 
 const cheers: Project = {
   basicInfo: {
-    name: "cheers",
+    name: "Cheers!",
     path: "cheers",
     type: "PWA",
-    duration: "2021 May - 2021 July",
+    duration: "2021 Jan - 2021 Apr",
     explanation:
-      "You can keep track of your pet's daily calorie intake and exercise amount on the graph. It also calculates the ideal weight and provides vet/pet supply store infomation.",
+      "This is a review website entirely about alcohol drinks! You can find the best drinks and bars that match your exact taste.",
     liveURL: null,
     github: "https://github.com/nori3506/cheers",
   },
   features: {
     intro: null,
     features: [
-      { keyphrase: "search", description: "search" },
-      { keyphrase: "leave a review", description: "write a review" },
-      { keyphrase: "read a review", description: "read a review" },
+      {
+        keyphrase: "Search",
+        description: "You can find bars, restaurants, and drinks on the map.",
+      },
+      {
+        keyphrase: "Read a review",
+        description:
+          "You can read reviews about the drinks you are curious about.",
+      },
+      {
+        keyphrase: "Write a review",
+        description:
+          "You can write a review about the drinks you tried. Share your opinion with others.",
+      },
     ],
   },
   technology: {
     techs: ["React.js", "Sass", "Firebase", "Git"],
     pointList: [
-      "I mainly worked on the tracking pages, where the calorie graph and exercise graph are shown",
-      "Data stored in MySQL (users' profile data, pet's calorie and exercise data.), fetched with Node.js (Express).",
+      "First time using React.js",
+      "We used Firebase to mock the functionality.",
+      "I mainly worked on the page that shows reviews.",
     ],
   },
   list: {
     motive: {
       title: "Motive",
       text: [
-        "This website was created as Web and Mobile App Design and Development course (development stream) term 3 team project.",
-        "The team was composed of four developers and three designers",
+        "This website was created as a Web and Mobile App Design and Development course (development stream) first team project.",
+        "The team was composed of 4 developers and 1 designer",
       ],
     },
     techGoal: {
       title: "Tech Goals",
-      text: ["To understand the mechanism of back-end"],
+      text: [
+        "Get familiar with React.js",
+        "Get familiar with the CRUD process.",
+      ],
     },
     projectManagement: {
       title: "Project Management",
       text: [
         "Incorporation of agile practice",
         "Weekly meeting.",
-        "Created two test versions and fixed problems",
+        "Created two test versions to fix problems",
         "Use Trello for task tracking",
       ],
     },
@@ -287,9 +303,9 @@ const cheers: Project = {
 };
 
 export const projectsData: Project[] = [
-  whereverWeather,
   portfolio,
+  whereverWeather,
   grabo,
-  cheers,
   petPaws,
+  cheers,
 ];

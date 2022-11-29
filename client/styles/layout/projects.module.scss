@@ -50,7 +50,8 @@
           gap: 0.7rem;
           p {
             margin: 0;
-            &.app-category {
+            &.app-category,
+            &.duration {
               font-weight: 500;
             }
           }

@@ -1,8 +1,8 @@
 import { useInView } from "react-intersection-observer";
-import styles from "../../styles/layout/top.module.scss";
+import styles from "../../styles/layout/indexHero.module.scss";
 
 const Top = () => {
-  const [titleRef, titleIsVisible] = useInView();
+  const [titleRef, titleIsVisible] = useInView({ triggerOnce: true });
   return (
     <div
       ref={titleRef}

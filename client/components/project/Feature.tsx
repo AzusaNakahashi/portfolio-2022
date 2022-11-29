@@ -3,8 +3,8 @@ import { useInView } from "react-intersection-observer";
 import styles from "../../styles/layout/project.module.scss";
 
 const Feature = ({ project }: { project: Project }) => {
-  const [titleRef, titleIsVisible] = useInView();
-  const [featureRef, featureIsVisible] = useInView();
+  const [titleRef, titleIsVisible] = useInView({ triggerOnce: true });
+  const [featureRef, featureIsVisible] = useInView({ triggerOnce: true });
   return (
     <>
       {project.features.features && (

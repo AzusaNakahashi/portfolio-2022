@@ -27,6 +27,7 @@ const Lists = ({ project }: { project: Project }) => {
 const List = ({ project, item }: { project: Project; item: string }) => {
   const { ref: titleRef, inView: titleIsVisible } = useInView({
     threshold: 0.4,
+    triggerOnce: true,
   });
   return (
     <div>

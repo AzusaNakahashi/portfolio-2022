@@ -4,9 +4,9 @@ import { useInView } from "react-intersection-observer";
 import styles from "../../styles/layout/project.module.scss";
 
 const Hero = ({ project }: { project: Project }) => {
-  const [titleRef, titleIsVisible] = useInView();
-  const [textRef, textIsVisible] = useInView();
-  const [buttonRef, buttonIsVisible] = useInView();
+  const [titleRef, titleIsVisible] = useInView({ triggerOnce: true });
+  const [textRef, textIsVisible] = useInView({ triggerOnce: true });
+  const [buttonRef, buttonIsVisible] = useInView({ triggerOnce: true });
   return (
     <section className={styles["hero-section"]} ref={titleRef}>
       <div className={styles["hero-image-desktop"]}>

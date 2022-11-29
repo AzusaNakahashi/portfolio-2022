@@ -17,10 +17,10 @@ const Contact = () => {
   });
   const [headingRef, headingIsVisible] = useInView({
     threshold: 0.2,
-    //triggerOnce: true,
+    triggerOnce: true,
   });
-  const [neonRef, neonIsVisible] = useInView();
-  const [messageRef, messageIsVisible] = useInView();
+  const [neonRef, neonIsVisible] = useInView({ triggerOnce: true });
+  const [messageRef, messageIsVisible] = useInView({ triggerOnce: true });
 
   const showFormStatusMessage = (formSendingStatus: string) => {
     switch (formSendingStatus) {

@@ -3,8 +3,10 @@ import { useInView } from "react-intersection-observer";
 import styles from "../../styles/layout/project.module.scss";
 
 const Technology = ({ project }: { project: Project }) => {
-  const [titleRef, titleIsVisible] = useInView({ threshold: 0.2 });
-  const [textRef, textIsVisible] = useInView({ threshold: 0 });
+  const [titleRef, titleIsVisible] = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
   return (
     <>
       <section ref={titleRef} className={`${styles["technology"]}`}>
@@ -35,7 +37,7 @@ const Technology = ({ project }: { project: Project }) => {
 };
 
 const List = ({ point }: { point: string }) => {
-  const [textRef, textIsVisible] = useInView({ threshold: 0 });
+  const [textRef, textIsVisible] = useInView({ triggerOnce: true });
   return (
     <li ref={textRef} className={`${textIsVisible && styles.animated}`}>
       {point}

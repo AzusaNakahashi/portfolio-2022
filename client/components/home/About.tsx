@@ -1,31 +1,28 @@
 import styles from "../../styles/layout/about.module.scss";
 import { useInView } from "react-intersection-observer";
+import Link from "next/link";
 
 const About = () => {
-  //const ref = useRef<HTMLDivElement>(null);
-  const { ref: wrapperRef, inView: wrapperIsVisible } = useInView({
-    //triggerOnce: true,
-  });
   const { ref: headingRef, inView: headingIsVisible } = useInView({
     threshold: 0.2,
-    //triggerOnce: true,
+    triggerOnce: true,
   });
   const { ref: textRef, inView: textIsVisible } = useInView({
     threshold: 0.3,
-    //triggerOnce: true,
+    triggerOnce: true,
   });
   const { ref: buttonRef, inView: buttonIsVisible } = useInView({
     threshold: 0.5,
-    //triggerOnce: true,
+    triggerOnce: true,
   });
   const { ref: skillsRef, inView: skillsIsVisible } = useInView({
     threshold: 0.4,
-    //triggerOnce: true,
+    triggerOnce: true,
   });
   // Content Text
   const text: string[] = [
     "Hi! I'm Azusa, a Vancouver-based frontend developer with a passion for creating apps and delivering excellent user experience.",
-    "Currently, my favourite frontend development tool is React.js. And I have worked on multiple school projects with Redux and Node.js along React.js.",
+    "Currently, my favourite frontend development tool is React.js. I have worked on multiple school projects with Redux and Node.js along with React.js.",
     "Readability is a high priority for me. I always try to keep my code clean and manageable.",
     "Striving to grow as a web developer, I love learning and, whenever I can, investigate up-and-coming technologies.",
   ];
@@ -50,7 +47,7 @@ const About = () => {
   ];
 
   return (
-    <div ref={wrapperRef} className={styles["about"]} id="about">
+    <div className={styles["about"]} id="about">
       <div className={styles["content-wrapper"]}>
         <h2
           ref={headingRef}
@@ -68,12 +65,16 @@ const About = () => {
               <p key={sentence}>{sentence}</p>
             ))}
           </div>
-          <button
-            ref={buttonRef}
-            className={`${buttonIsVisible && styles.animated}`}
-          >
-            Resume
-          </button>
+          <Link href="/icons/website-logo.svg">
+            <a download>
+              <button
+                ref={buttonRef}
+                className={`${buttonIsVisible && styles.animated}`}
+              >
+                Resume
+              </button>
+            </a>
+          </Link>
         </div>
         <div
           ref={skillsRef}

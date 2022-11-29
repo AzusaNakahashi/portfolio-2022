@@ -8,7 +8,7 @@ import styles from "../../styles/layout/projects.module.scss";
 const Projects = () => {
   const { ref: headingRef, inView: headingIsVisible } = useInView({
     threshold: 0.2,
-    //triggerOnce: true,
+    triggerOnce: true,
   });
   return (
     <div className={styles["projects"]} id="projects">
@@ -38,7 +38,7 @@ const ProjectCard = ({
   project: Project;
   index: number;
 }) => {
-  const { ref, inView } = useInView();
+  const { ref, inView } = useInView({ triggerOnce: true });
   const [pathNames, setPathNames] = useState<string[]>([]);
   useState(() => {
     setPathNames(() => {
@@ -65,6 +65,7 @@ const ProjectCard = ({
         <h3>{project.basicInfo.name}</h3>
         <div className={styles["text"]}>
           <p className={styles["app-category"]}>{project.basicInfo.type}</p>
+          <p className={styles["duration"]}>{project.basicInfo.duration}</p>
           <p>{project.basicInfo.explanation}</p>
           <ul>
             {project.technology.techs.map((tech, techIndex) => (
