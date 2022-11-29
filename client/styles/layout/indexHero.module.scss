@@ -10,17 +10,10 @@
     $bgc-gradient-purple 31%,
     $bgc-gradient-blue 100%
   );
-  /*
-  background: url(../../public/illustration/top-bg-left.svg) no-repeat fixed -100%
+  background: url(../../public/pictures/index-hero.jpeg) no-repeat fixed 70%
       bottom,
-    url(../../public/illustration/top-bg-right.svg) no-repeat fixed 200% top,
-    linear-gradient(
-      0deg,
-      $bgc-gradient-brown 0%,
-      $bgc-gradient-purple 31%,
-      $bgc-gradient-blue 100%
-    );
-  background-size: 40%, 55%;*/
+    #6862cc;
+  background-size: 60%;
   padding-top: $desktop-header-height;
   //transition: background 1.9s;
   /*

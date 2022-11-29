@@ -17,20 +17,8 @@ const Top = () => {
           <h2 className={`${titleIsVisible && styles.animated}`}>
             Front-end developer
           </h2>
-          <p className={`${titleIsVisible && styles.animated}`}>
-            I love creating solid and beautiful websites and apps using modern
-            front-end technologies!
-          </p>
         </div>
-        <div className={styles["right"]}>
-          <picture>
-            <img
-              className={`${titleIsVisible && styles.animated}`}
-              src="/pictures/top.jpeg"
-              alt="face image"
-            />
-          </picture>
-        </div>
+        <div className={styles["right"]}></div>
       </div>
     </div>
   );

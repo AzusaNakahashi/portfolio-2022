@@ -18,7 +18,7 @@ const Header = () => {
     if (yPosition >= pageHeight * 0 && yPosition < pageHeight * 0.2) {
       setNavBGC("transparent"); // hero very top
     } else if (yPosition >= pageHeight * 0.2 && yPosition < pageHeight * 0.9) {
-      setNavBGC("lightblue"); // hero after scroll
+      setNavBGC("lightpurple"); // hero after scroll
     } else if (yPosition >= pageHeight * 0.9 && yPosition < pageHeight * 2.07) {
       setNavBGC("navy"); // about
     } else if (
@@ -40,7 +40,7 @@ const Header = () => {
       yPosition >= pageHeight * 0.08 &&
       yPosition < pageHeight * 1.13
     ) {
-      setNavBGC("lightblue");
+      setNavBGC("lightpurple");
     } else if (
       yPosition >= pageHeight * 1.13 &&
       yPosition < pageHeight * 2.78
