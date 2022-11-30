@@ -18,7 +18,6 @@ const Top = () => {
             Front-end developer
           </h2>
         </div>
-        <div className={styles["right"]}></div>
       </div>
     </div>
   );
