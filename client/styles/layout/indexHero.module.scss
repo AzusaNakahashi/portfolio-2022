@@ -85,20 +85,10 @@
           line-height: 1.2;
           font-size: 100px;
           max-width: 500px;
-          @include zoom-left-animation(1.4s);
+          @include zoom-left-animation(1.6s);
         }
         h2 {
-          @include slide-up-animation-quick(1.6s);
-        }
-        p {
-          max-width: 500px;
-          @include slide-up-animation-quick(1.9s);
-        }
-      }
-      .right {
-        img {
-          width: 100%;
-          @include zoom-right-animation(1.5s);
+          @include slide-up-animation-quick(2.3s);
         }
       }
     }

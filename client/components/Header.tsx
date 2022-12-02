@@ -91,15 +91,6 @@ const Header = () => {
         </div>
         <div className={`${styles["menu"]} ${navIsOpen && styles["open"]}`}>
           <div>
-            <p className={styles["top-page-button"]}>
-              <Link href="/">
-                <a onClick={() => dispatch(navToggle())}>
-                  <picture>
-                    <img src="/icons/website-logo.svg" alt="link to homepage" />
-                  </picture>
-                </a>
-              </Link>
-            </p>
             <div className={styles["menu-list"]}>
               <ul className={styles["page-section-list"]}>
                 <li className={styles["item-1"]}>
