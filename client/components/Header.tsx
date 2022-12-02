@@ -4,6 +4,7 @@ import styles from "../styles/layout/header.module.scss";
 import { useAppSelector, useAppDispatch } from "../hooks";
 import { useRouter } from "next/router";
 import { navToggle } from "../features/buttons";
+import { Link as ScrollLink } from "react-scroll";
 
 const Header = () => {
   const router = useRouter();
@@ -94,9 +95,16 @@ const Header = () => {
             <div className={styles["menu-list"]}>
               <ul className={styles["page-section-list"]}>
                 <li className={styles["item-1"]}>
-                  <Link href="/#topPage">
-                    <a onClick={() => dispatch(navToggle())}>Top</a>
-                  </Link>
+                  <ScrollLink
+                    to="topPage"
+                    spy={true}
+                    smooth={true}
+                    offset={0}
+                    duration={80}
+                    onClick={() => dispatch(navToggle())}
+                  >
+                    Top
+                  </ScrollLink>
                 </li>
                 <li className={styles["item-2"]}>
                   <Link href="/#about">
