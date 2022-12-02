@@ -4,40 +4,20 @@
 
 .topPage {
   height: 98vh;
-  padding-bottom: 300px;
   position: relative;
   background: #6862cc;
   padding-top: $desktop-header-height;
-  background: url(../../public/pictures/index-hero.jpeg) no-repeat fixed 70%
+  background: url(../../public/pictures/index-hero.jpeg) no-repeat fixed 68%
       bottom,
     #6862cc;
-  background-size: 450px;
-  //transition: background 1.9s;
-  /*
-  &.animated {
-    background: url(../../public/illustration/top-bg-left.svg) no-repeat fixed -4%
-        bottom,
-      url(../../public/illustration/top-bg-right.svg) no-repeat fixed 100% top,
-      linear-gradient(
-        0deg,
-        $bgc-gradient-brown 0%,
-        $bgc-gradient-purple 31%,
-        $bgc-gradient-blue 100%
-      );
-    background-size: 40%, 55%;
-  }*/
+  background-size: clamp(450px, calc((100vw) / 0.625), 600px);
   .left {
-    h1,
-    h2 {
-      font-family: $font-family-heading;
-    }
     h1 {
-      margin: 1rem 0;
-      max-width: 450px;
+      margin: 0;
       color: #fff;
-      line-height: 1.5;
-      letter-spacing: 4px;
-      //animation: pulsate 2.5s infinite alternate, slide-left 1.2s;
+      line-height: 1.2;
+      font-size: calc((100vw - 8px) / 0.625 / 9);
+      font-family: $font-family-heading;
       @include heading-text-shadow(
         $neon-color-primary,
         $neon-color-primary-saturated
@@ -46,36 +26,40 @@
     }
     h2 {
       width: 100%;
-      font-size: $font-size-heading-XS;
+      font-size: $font-size-heading-S;
       letter-spacing: normal;
       margin: 0;
-      font-family: ubuntu;
-      font-weight: 400;
-      @include slide-left-animation(0.9s);
-    }
-    p {
-      width: 100%;
-      margin: 0.5rem 0;
-      @include slide-left-animation(1s);
+      font-family: "Exo", sans-serif;
+      font-weight: 100;
+      font-style: italic;
+      text-shadow: 0 0 2px $text-color;
+      @include slide-left-animation(1.2s);
     }
   }
 }
 
 @media only screen and (min-width: $tablet-min-width) {
   .topPage {
-    background: url(../../public/illustration/hero-outline.svg) no-repeat fixed
-        320px bottom,
-      url(../../public/pictures/index-hero.jpeg) no-repeat fixed 200px bottom,
+    background: url(../../public/pictures/index-hero.jpeg) no-repeat fixed 100%
+        bottom,
       #6862cc;
-    background-size: 190px, 550px;
-    .left {
-      h1 {
-        margin: 2rem 0 1rem 0;
-      }
-      h2 {
-        margin: 1rem 0;
-        font-weight: 500;
-        text-shadow: 0 0 1px #fff, 0 0 2px #fff;
+    background-size: 700px;
+    .content-wrapper {
+      height: 100%;
+      .left {
+        display: flex;
+        flex-flow: column nowrap;
+        height: 100%;
+        h1 {
+          margin: 0;
+          font-size: $font-size-heading-XL;
+          letter-spacing: 3px;
+        }
+        h2 {
+          margin: 1rem 0;
+          font-size: $font-size-heading-S;
+          letter-spacing: 3px;
+        }
       }
     }
   }
@@ -88,14 +72,19 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background-size: 700px;
-    background-position-x: 650px;
+    background-size: clamp(750px, 80%, 900px);
+    background-position-x: clamp(250px, 85%, 450px), 90%;
     .content-wrapper {
       .left {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        height: 100%;
         h1 {
           margin: 0;
           line-height: 1.2;
           font-size: 100px;
+          max-width: 500px;
           @include zoom-left-animation(1.4s);
         }
         h2 {
@@ -113,5 +102,12 @@
         }
       }
     }
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .topPage {
+    background-size: 1000px;
+    background-position-x: 75%;
   }
 }

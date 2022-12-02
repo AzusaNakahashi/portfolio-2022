@@ -238,8 +238,7 @@
             padding: 0.5;
             li {
               &:hover {
-                text-shadow: 0 0 1px #fff, 0 0 10px #fff, 0 0 20px #fff,
-                  0 0 30px #fff;
+                text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 15px #fff;
               }
               &.item-1 {
                 animation: slide-top-quick 0.6s;
@@ -261,9 +260,9 @@
               }
             }
             &.page-section-list {
-              text-shadow: 0 0 1px #fff, 0 0 10px #fff;
+              text-shadow: 0 0 1px $text-color;
               font-size: 1rem;
-              font-family: ubuntu;
+              font-family: $font-family-text;
             }
             &.social-media-list {
               img {

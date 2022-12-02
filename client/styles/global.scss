@@ -7,9 +7,10 @@ body {
   margin: 0;
   color: $text-color;
   font-size: $font-size-text-regular;
-  font-family: Ubuntu, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Oxygen, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: 300;
+  font-family: $font-family-text, Ubuntu, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Oxygen, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
+  font-weight: 200;
   line-height: $line-height-regular;
   background-color: $bgc-dark;
   scroll-behavior: smooth;
@@ -28,6 +29,7 @@ a {
   box-sizing: border-box;
 }
 
+button,
 p::first-letter {
   text-transform: uppercase;
 }
@@ -36,6 +38,10 @@ p::first-letter {
 
 main > * {
   padding: 3rem 0.5rem;
+}
+
+main > div > div {
+  max-width: 100%;
 }
 
 /**************** Headings *****************/
