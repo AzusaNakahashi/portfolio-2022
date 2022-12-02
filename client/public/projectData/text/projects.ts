@@ -48,7 +48,7 @@ const whereverWeather: Project = {
   basicInfo: {
     name: "Wherever Weather",
     path: "whereverWeather",
-    type: "Mobile App",
+    type: "Web Application",
     duration: "2022 May - 2022 July",
     explanation:
       "It allows you to find the weather information from your current location, search bar, and map pin.",
@@ -122,7 +122,7 @@ const grabo: Project = {
   basicInfo: {
     name: "Grabo",
     path: "grabo",
-    type: "native app",
+    type: "Hybrid Mobile Application",
     duration: "2021 Sep - 2021 Dec",
     explanation:
       "Grabo is a language-based community app where people exchange information about products from all over the world.",
@@ -160,7 +160,7 @@ const grabo: Project = {
       text: [
         "This is the last term project from Langara college Web and Mobide Design and Development course (development stream.)",
         "The team was conposed of 6 members: 4 developers and 2 designers.",
-        "The purpose of this project was to create a native app. As we had already developed apps with React.js, we chose React Native as a development tool.",
+        "The purpose of this project was to create a hybrid/mobile app. As we had already developed apps with React.js, we chose React Native as a development tool.",
       ],
     },
     techGoal: {
@@ -186,7 +186,7 @@ const petPaws: Project = {
   basicInfo: {
     name: "Pet Paws",
     path: "petPaws",
-    type: "website",
+    type: "Full Stack Web Application",
     duration: "2021 May - 2021 July",
     explanation:
       "You can keep track of your pet's daily calorie intake and exercise amount on the graph. It also calculates the ideal weight and provides vet/pet supply store infomation.",
@@ -241,7 +241,7 @@ const cheers: Project = {
   basicInfo: {
     name: "Cheers!",
     path: "cheers",
-    type: "PWA",
+    type: "Progressive Web App",
     duration: "2021 Jan - 2021 Apr",
     explanation:
       "This is a review website entirely about alcohol drinks! You can find the best drinks and bars that match your exact taste.",
