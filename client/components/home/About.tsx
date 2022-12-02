@@ -65,8 +65,8 @@ const About = () => {
               <p key={sentence}>{sentence}</p>
             ))}
           </div>
-          <Link href="/icons/website-logo.svg">
-            <a download>
+          <Link href="/resume/azusa-nakahashi-resume.pdf">
+            <a download target="_blank" rel="noopener">
               <button
                 ref={buttonRef}
                 className={`${buttonIsVisible && styles.animated}`}

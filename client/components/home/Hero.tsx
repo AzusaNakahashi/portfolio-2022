@@ -15,7 +15,7 @@ const Top = () => {
             Azusa Nakahashi
           </h1>
           <h2 className={`${titleIsVisible && styles.animated}`}>
-            Front-end developer
+            Front-end Developer
           </h2>
         </div>
       </div>

@@ -15,7 +15,7 @@ export default function Document() {
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;1,100;1,200&family=Tourney:wght@900&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,500;1,100;1,200&family=Tourney:wght@900&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300&display=swap"
           rel="stylesheet"
         />
         <link rel="icon" href="/favicon.ico" />
