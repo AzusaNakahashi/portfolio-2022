@@ -94,31 +94,61 @@ const Header = () => {
           <div>
             <div className={styles["menu-list"]}>
               <ul className={styles["page-section-list"]}>
+                {/* item number for animation */}
                 <li className={styles["item-1"]}>
-                  <ScrollLink
-                    to="topPage"
-                    spy={true}
-                    smooth={true}
-                    offset={0}
-                    duration={80}
-                    onClick={() => dispatch(navToggle())}
-                  >
-                    Top
-                  </ScrollLink>
+                  <Link href="/">
+                    <ScrollLink
+                      to="topPage"
+                      spy={true}
+                      smooth={true}
+                      offset={0}
+                      duration={500}
+                      onClick={() => dispatch(navToggle())}
+                    >
+                      Top
+                    </ScrollLink>
+                  </Link>
                 </li>
                 <li className={styles["item-2"]}>
-                  <Link href="/#about">
-                    <a onClick={() => dispatch(navToggle())}>About</a>
+                  <Link href="/">
+                    <ScrollLink
+                      to="about"
+                      spy={true}
+                      smooth={true}
+                      offset={50}
+                      duration={500}
+                      onClick={() => dispatch(navToggle())}
+                    >
+                      About
+                    </ScrollLink>
                   </Link>
                 </li>
                 <li className={styles["item-3"]}>
-                  <Link href="/#projects">
-                    <a onClick={() => dispatch(navToggle())}>Projects</a>
+                  <Link href="/">
+                    <ScrollLink
+                      to="projects"
+                      spy={true}
+                      smooth={true}
+                      offset={80}
+                      duration={500}
+                      onClick={() => dispatch(navToggle())}
+                    >
+                      Projects
+                    </ScrollLink>
                   </Link>
                 </li>
                 <li className={styles["item-4"]}>
-                  <Link href="/#contact">
-                    <a onClick={() => dispatch(navToggle())}>Contact</a>
+                  <Link href="/">
+                    <ScrollLink
+                      to="contact"
+                      spy={true}
+                      smooth={true}
+                      offset={100}
+                      duration={500}
+                      onClick={() => dispatch(navToggle())}
+                    >
+                      Contact
+                    </ScrollLink>
                   </Link>
                 </li>
               </ul>

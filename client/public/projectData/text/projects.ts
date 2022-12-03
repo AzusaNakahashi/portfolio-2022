@@ -241,7 +241,7 @@ const cheers: Project = {
   basicInfo: {
     name: "Cheers!",
     path: "cheers",
-    type: "Progressive Web App",
+    type: "Progressive Web Application",
     duration: "2021 Jan - 2021 Apr",
     explanation:
       "This is a review website entirely about alcohol drinks! You can find the best drinks and bars that match your exact taste.",
