@@ -6,8 +6,9 @@
   height: 98vh;
   position: relative;
   padding-top: $desktop-header-height;
-  background: url(../../public/pictures/index-hero.jpeg) no-repeat fixed 68%
-    bottom;
+  background-image: url(../../public/pictures/index-hero.jpeg);
+  background-repeat: no-repeat;
+  background-position: 68% bottom;
   -webkit-background-size: 450px;
   -moz-background-size: 450px;
   -o-background-size: 450px;
