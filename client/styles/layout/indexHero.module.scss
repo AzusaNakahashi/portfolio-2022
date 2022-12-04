@@ -9,6 +9,9 @@
   background: url(../../public/pictures/index-hero.jpeg) no-repeat fixed 68%
       bottom,
     #6862cc;
+  -webkit-background-size: 450px;
+  -moz-background-size: 450px;
+  -o-background-size: 450px;
   background-size: clamp(450px, calc((100vw) / 0.625), 600px);
   .left {
     h1 {
