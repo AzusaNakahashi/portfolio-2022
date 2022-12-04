@@ -3,17 +3,26 @@
 // text animation from mixin
 
 .topPage {
-  height: 98vh;
+  height: 100vh;
   position: relative;
   padding-top: $desktop-header-height;
-  background-image: url(../../public/pictures/index-hero.jpeg);
-  background-repeat: no-repeat;
-  background-position: 68% bottom;
-  background-attachment: fixed;
-  -webkit-background-size: 450px;
-  -moz-background-size: 450px;
-  -o-background-size: 450px;
-  background-size: clamp(450px, calc((100vw) / 0.625), 600px);
+  // add pseudo element and set bg with position: fixed, instead of bg attachment.
+  // bg attachment doesn't work on mobile
+  &::before {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: 68% bottom;
+    background-color: #6862cc;
+    background-image: url(../../public/pictures/index-hero.jpeg);
+    background-size: clamp(450px, calc((100vw) / 0.625), 600px);
+  }
   .left {
     h1 {
       margin: 0;
@@ -43,10 +52,10 @@
 
 @media only screen and (min-width: $tablet-min-width) {
   .topPage {
-    background: url(../../public/pictures/index-hero.jpeg) no-repeat fixed 100%
-        bottom,
-      #6862cc;
-    background-size: 700px;
+    &::before {
+      background-position: 100% bottom;
+      background-size: 700px;
+    }
     .content-wrapper {
       height: 100%;
       .left {
@@ -70,13 +79,15 @@
 
 @media only screen and (min-width: $desktop-min-width) {
   .topPage {
+    &::before {
+      background-size: clamp(750px, 80%, 900px);
+      background-position-x: clamp(250px, 85%, 450px), 90%;
+    }
     padding-top: $desktop-header-height;
     padding-bottom: 0;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background-size: clamp(750px, 80%, 900px);
-    background-position-x: clamp(250px, 85%, 450px), 90%;
     .content-wrapper {
       .left {
         display: flex;
