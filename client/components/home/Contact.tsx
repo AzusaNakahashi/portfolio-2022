@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 import { postForm } from "../../features/form";
-import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 import styles from "../../styles/layout/contact.module.scss";
 

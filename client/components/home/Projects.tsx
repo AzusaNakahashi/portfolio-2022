@@ -1,17 +1,28 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { projectsData } from "../../public/projectData/text/projects";
 import type { Project } from "../../types/projectType";
 import { useInView } from "react-intersection-observer";
 import styles from "../../styles/layout/projects.module.scss";
+import { useAppDispatch } from "../../hooks";
+import { projectsVisibilityToggle } from "../../features/elementVisibility";
 
 const Projects = () => {
+  const dispatch = useAppDispatch();
+  const [componentRef, componentIsVisible] = useInView();
   const { ref: headingRef, inView: headingIsVisible } = useInView({
     threshold: 0.2,
     triggerOnce: true,
   });
+  useEffect(() => {
+    if (componentIsVisible) {
+      dispatch(projectsVisibilityToggle(true));
+    } else {
+      dispatch(projectsVisibilityToggle(false));
+    }
+  });
   return (
-    <div className={styles["projects"]} id="projects">
+    <div ref={componentRef} className={styles["projects"]} id="projects">
       <div className={styles["content-wrapper"]}>
         <h2
           ref={headingRef}

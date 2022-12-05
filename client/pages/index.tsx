@@ -1,7 +1,7 @@
 import type { ReactElement } from "react";
 import Layout from "../layout/Layout";
 import type { NextPageWithLayout } from "./../types/layoutType";
-import Top from "../components/home/Hero";
+import IndexHero from "../components/home/IndexHero";
 import About from "../components/home/About";
 import Projects from "../components/home/Projects";
 import Contact from "../components/home/Contact";
@@ -9,7 +9,7 @@ import Contact from "../components/home/Contact";
 const Home: NextPageWithLayout = () => {
   return (
     <>
-      <Top />
+      <IndexHero />
       <About />
       <Projects />
       <Contact />

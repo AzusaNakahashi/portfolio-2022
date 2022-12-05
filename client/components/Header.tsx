@@ -7,12 +7,26 @@ import { navToggle } from "../features/buttons";
 import { Link as ScrollLink } from "react-scroll";
 
 const Header = () => {
+  const heroIsVisible = useAppSelector(
+    (state) => state.elementVisibility.hero.componentIsVisible
+  );
+  const aboutIsVisible = useAppSelector(
+    (state) => state.elementVisibility.about.componentIsVisible
+  );
+  const projectsIsVisible = useAppSelector(
+    (state) => state.elementVisibility.projects.componentIsVisible
+  );
+  console.log("prokects", projectsIsVisible);
+  console.log("hero", heroIsVisible, aboutIsVisible);
   const router = useRouter();
   const pathName = router.pathname;
   const navIsOpen = useAppSelector((state) => state.buttons.navIsOpen);
   const dispatch = useAppDispatch();
   const [navBGC, setNavBGC] = useState("");
 
+  const changePcNavBgc = () => {};
+
+  /*
   const changePcNavBgc = () => {
     const yPosition = window.pageYOffset;
     const pageHeight = window.innerHeight;
@@ -55,13 +69,17 @@ const Header = () => {
     } else if (yPosition >= pageHeight * 7.55) {
       setNavBGC("navy");
     }
-  };
-
-  const changeProjectBgc = () => {
-    setNavBGC("lightblue");
-  };
+  };*/
 
   useEffect(() => {
+    if (heroIsVisible) {
+      setNavBGC("transparent"); // hero very top
+    } else if (!heroIsVisible && aboutIsVisible) {
+      setNavBGC("navy"); // about
+    } else if (!aboutIsVisible && projectsIsVisible) {
+      setNavBGC("lightblue"); // projects
+    }
+    /*
     if (pathName === "/") {
       if (window.innerWidth > 900) {
         window.addEventListener("scroll", changePcNavBgc);
@@ -76,8 +94,8 @@ const Header = () => {
       }
     } else {
       window.addEventListener("scroll", changeProjectBgc);
-    }
-  }, [pathName]);
+    }*/
+  }, [pathName, aboutIsVisible, heroIsVisible, changePcNavBgc]);
   return (
     <>
       <header className={`${styles["menu-wrapper"]} ${styles[navBGC]}`}>

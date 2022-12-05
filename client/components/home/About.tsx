@@ -1,21 +1,26 @@
 import styles from "../../styles/layout/about.module.scss";
 import { useInView } from "react-intersection-observer";
 import Link from "next/link";
+import { useEffect } from "react";
+import { useAppDispatch } from "../../hooks";
+import { aboutVisibilityToggle } from "../../features/elementVisibility";
 
 const About = () => {
-  const { ref: headingRef, inView: headingIsVisible } = useInView({
+  const dispatch = useAppDispatch();
+  const [componentRef, componentIsVisible] = useInView();
+  const [headingRef, headingIsVisible] = useInView({
     threshold: 0.2,
     triggerOnce: true,
   });
-  const { ref: textRef, inView: textIsVisible } = useInView({
+  const [textRef, textIsVisible] = useInView({
     threshold: 0.3,
     triggerOnce: true,
   });
-  const { ref: buttonRef, inView: buttonIsVisible } = useInView({
+  const [buttonRef, buttonIsVisible] = useInView({
     threshold: 0.5,
     triggerOnce: true,
   });
-  const { ref: skillsRef, inView: skillsIsVisible } = useInView({
+  const [skillsRef, skillsIsVisible] = useInView({
     threshold: 0.4,
     triggerOnce: true,
   });
@@ -46,8 +51,16 @@ const About = () => {
     { name: "MongoDB", path: "mongoDB.svg" },
   ];
 
+  useEffect(() => {
+    if (componentIsVisible) {
+      dispatch(aboutVisibilityToggle(true));
+    } else {
+      dispatch(aboutVisibilityToggle(false));
+    }
+  });
+
   return (
-    <div className={styles["about"]} id="about">
+    <div ref={componentRef} className={styles["about"]} id="about">
       <div className={styles["content-wrapper"]}>
         <h2
           ref={headingRef}
