@@ -3,6 +3,7 @@ import styles from "../../styles/layout/indexHero.module.scss";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 import { heroVisibilityToggle } from "../../features/elementVisibility";
 import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 const IndexHero = () => {
   const dispatch = useAppDispatch();

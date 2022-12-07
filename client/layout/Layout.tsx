@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { FC } from "react";
+import { FC, useEffect } from "react";
+import { useRouter } from "next/router";
 
 interface LayoutProps {
   children: React.ReactNode;

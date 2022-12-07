@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 import { postForm } from "../../features/form";
 import { useInView } from "react-intersection-observer";
+import { contactVisibilityToggle } from "../../features/elementVisibility";
 import styles from "../../styles/layout/contact.module.scss";
 
 const Contact = () => {
   const formStatus = useAppSelector((state) => state.form.status);
   const dispatch = useAppDispatch();
+  const [componentRef, componentIsVisible] = useInView();
   const [statusMessage, setStatusMessage] = useState("");
   const [formInput, setFormInput] = useState({
     name: "",
@@ -56,13 +58,22 @@ const Contact = () => {
   };
 
   useEffect(() => {
+    if (componentIsVisible) {
+      dispatch(contactVisibilityToggle(true));
+    } else {
+      dispatch(contactVisibilityToggle(false));
+    }
+  });
+
+  useEffect(() => {
     showFormStatusMessage(formStatus);
   }, [formStatus]);
 
   return (
-    <div ref={headingRef} className={styles["contact"]} id="contact">
+    <div ref={componentRef} className={styles["contact"]} id="contact">
       <div className={styles["content-wrapper"]}>
         <h2
+          ref={headingRef}
           className={`${styles["section-title"]} ${
             headingIsVisible && styles.animated
           }`}

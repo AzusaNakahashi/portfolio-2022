@@ -7,6 +7,11 @@ import { navToggle } from "../features/buttons";
 import { Link as ScrollLink } from "react-scroll";
 
 const Header = () => {
+  const router = useRouter();
+  const pathName = router.pathname;
+  const dispatch = useAppDispatch();
+  const [navBGC, setNavBGC] = useState("");
+  const navIsOpen = useAppSelector((state) => state.buttons.navIsOpen);
   const heroIsVisible = useAppSelector(
     (state) => state.elementVisibility.hero.componentIsVisible
   );
@@ -16,86 +21,33 @@ const Header = () => {
   const projectsIsVisible = useAppSelector(
     (state) => state.elementVisibility.projects.componentIsVisible
   );
-  console.log("prokects", projectsIsVisible);
-  console.log("hero", heroIsVisible, aboutIsVisible);
-  const router = useRouter();
-  const pathName = router.pathname;
-  const navIsOpen = useAppSelector((state) => state.buttons.navIsOpen);
-  const dispatch = useAppDispatch();
-  const [navBGC, setNavBGC] = useState("");
+  const contactIsVisible = useAppSelector(
+    (state) => state.elementVisibility.contact.componentIsVisible
+  );
 
-  const changePcNavBgc = () => {};
-
-  /*
-  const changePcNavBgc = () => {
-    const yPosition = window.pageYOffset;
-    const pageHeight = window.innerHeight;
-    if (yPosition >= pageHeight * 0 && yPosition < pageHeight * 0.2) {
-      setNavBGC("transparent"); // hero very top
-    } else if (yPosition >= pageHeight * 0.2 && yPosition < pageHeight * 0.9) {
-      setNavBGC("lightpurple"); // hero after scroll
-    } else if (yPosition >= pageHeight * 0.9 && yPosition < pageHeight * 2.07) {
-      setNavBGC("navy"); // about
-    } else if (
-      yPosition >= pageHeight * 2.07 &&
-      yPosition < pageHeight * 4.47
-    ) {
-      setNavBGC("lightblue"); // projects
-    } else if (yPosition >= pageHeight * 4.47) {
-      setNavBGC("navy"); // contact
-    }
-  };
-
-  const changeMobileNavBgc = () => {
-    const yPosition = window.pageYOffset;
-    const pageHeight = window.innerHeight;
-    if (yPosition >= pageHeight * 0 && yPosition < pageHeight * 0.08) {
-      setNavBGC("transparent");
-    } else if (
-      yPosition >= pageHeight * 0.08 &&
-      yPosition < pageHeight * 1.13
-    ) {
-      setNavBGC("lightpurple");
-    } else if (
-      yPosition >= pageHeight * 1.13 &&
-      yPosition < pageHeight * 2.78
-    ) {
-      setNavBGC("navy");
-    } else if (
-      yPosition >= pageHeight * 2.78 &&
-      yPosition < pageHeight * 7.55
-    ) {
-      setNavBGC("lightblue");
-    } else if (yPosition >= pageHeight * 7.55) {
-      setNavBGC("navy");
-    }
-  };*/
-
+  // chenge nav background color depending on the section
   useEffect(() => {
-    if (heroIsVisible) {
-      setNavBGC("transparent"); // hero very top
-    } else if (!heroIsVisible && aboutIsVisible) {
-      setNavBGC("navy"); // about
-    } else if (!aboutIsVisible && projectsIsVisible) {
-      setNavBGC("lightblue"); // projects
-    }
-    /*
     if (pathName === "/") {
-      if (window.innerWidth > 900) {
-        window.addEventListener("scroll", changePcNavBgc);
-        return () => {
-          window.removeEventListener("scroll", changePcNavBgc);
-        };
-      } else {
-        window.addEventListener("scroll", changeMobileNavBgc);
-        return () => {
-          window.removeEventListener("scroll", changeMobileNavBgc);
-        };
+      if (heroIsVisible) {
+        setNavBGC("transparent");
+      } else if (!heroIsVisible && aboutIsVisible) {
+        setNavBGC("navy");
+      } else if (!aboutIsVisible && projectsIsVisible) {
+        setNavBGC("lightblue");
+      } else if (!projectsIsVisible && contactIsVisible) {
+        setNavBGC("navy");
       }
     } else {
-      window.addEventListener("scroll", changeProjectBgc);
-    }*/
-  }, [pathName, aboutIsVisible, heroIsVisible, changePcNavBgc]);
+      setNavBGC("lightblue");
+    }
+  }, [
+    pathName,
+    aboutIsVisible,
+    heroIsVisible,
+    projectsIsVisible,
+    contactIsVisible,
+  ]);
+
   return (
     <>
       <header className={`${styles["menu-wrapper"]} ${styles[navBGC]}`}>
@@ -114,7 +66,7 @@ const Header = () => {
               <ul className={styles["page-section-list"]}>
                 {/* item number for animation */}
                 <li className={styles["item-1"]}>
-                  <Link href="/">
+                  <Link href="/#topPage" scroll={false}>
                     <ScrollLink
                       to="topPage"
                       spy={true}
@@ -128,7 +80,7 @@ const Header = () => {
                   </Link>
                 </li>
                 <li className={styles["item-2"]}>
-                  <Link href="/">
+                  <Link href="/#about" scroll={false}>
                     <ScrollLink
                       to="about"
                       spy={true}
@@ -142,7 +94,7 @@ const Header = () => {
                   </Link>
                 </li>
                 <li className={styles["item-3"]}>
-                  <Link href="/">
+                  <Link href="/#projects">
                     <ScrollLink
                       to="projects"
                       spy={true}
@@ -156,7 +108,7 @@ const Header = () => {
                   </Link>
                 </li>
                 <li className={styles["item-4"]}>
-                  <Link href="/">
+                  <Link href="/#contact">
                     <ScrollLink
                       to="contact"
                       spy={true}
