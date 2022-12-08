@@ -68,7 +68,7 @@ const ProjectCard = ({
     >
       <picture>
         <img
-          src={`/projectData/image/${pathNames[index]}/thumbnail.png`}
+          src={`/projectData/image/${pathNames[index]}/thumbnail.jpg`}
           alt="app thumbnail"
         />
       </picture>
