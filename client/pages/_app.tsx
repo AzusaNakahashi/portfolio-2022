@@ -1,11 +1,13 @@
-import { store } from "../store";
+import { wrapper } from "../store";
 import { Provider } from "react-redux";
 import Head from "next/head";
 import type { AppPropsWithLayout } from "../types/layoutType";
 import "../styles/global.scss";
 
-function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+function MyApp({ Component, ...rest }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page);
+  const { store, props } = wrapper.useWrappedStore(rest);
+  const { pageProps } = props;
   return (
     <Provider store={store}>
       <Head>
