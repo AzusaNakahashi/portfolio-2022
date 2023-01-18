@@ -81,7 +81,6 @@ const whereverWeather: Project = {
       "Redux",
       "TypeScript",
       "Sass",
-      "REST API",
       "Node.js",
       "Express",
       "Git",
