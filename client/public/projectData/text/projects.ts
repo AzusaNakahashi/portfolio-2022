@@ -53,7 +53,7 @@ const whereverWeather: Project = {
     explanation:
       "It allows you to find the weather information from your current location, search bar, and map pin.",
     liveURL: "https://wherever-forecast.vercel.app/",
-    github: "https://github.com/AzusaNakahashi/weather-app-with-map",
+    github: "https://github.com/AzusaNakahashi/wherever-forecast",
   },
   features: {
     intro: "You can find wehater from...",
@@ -79,6 +79,7 @@ const whereverWeather: Project = {
     techs: [
       "Next.js",
       "Redux",
+      "TypeScript",
       "Sass",
       "REST API",
       "Node.js",
