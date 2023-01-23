@@ -26,10 +26,10 @@ const About = () => {
   });
   // Content Text
   const text: string[] = [
-    "Hi! I'm Azusa, a Vancouver-based frontend developer with a passion for creating apps and delivering excellent user experience.",
-    "Currently, my favourite frontend development tool is React.js. I have worked on multiple school projects with Redux and Node.js along with React.js.",
-    "Readability is a high priority for me. I always try to keep my code clean and manageable.",
-    "Striving to grow as a web developer, I love learning and, whenever I can, investigate up-and-coming technologies.",
+    " Detail-oriented full-stack web development graduate with excellent understanding in design from Langara College (GPA 3.6), seeking an entry-level front-end/full-stack developer position.",
+    " I am currently living in Vancouver and have a 3-yearwork permit.",
+    " The accuracy of my design implementation was considered to be particularly high in the HTML/CSS(Sass) class in college. As aresult, I was offered an internship job for a college’s promotional website.",
+    "I have worked on multiple full-stack projects and am alwaysexcited about learning new languages/technologies. Currently, I am learning GraphQL(Apollo), Mongo DB, and MySQL.",
   ];
 
   type Tech = {
