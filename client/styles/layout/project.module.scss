@@ -209,6 +209,11 @@
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           padding-top: 1rem;
+          &.shrink {
+            grid-template-columns: repeat(2, 1fr);
+            margin: auto;
+            width: 60%;
+          }
           .feature {
             display: flex;
             flex-flow: column nowrap;

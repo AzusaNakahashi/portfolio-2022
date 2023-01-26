@@ -147,19 +147,15 @@ const grabo: Project = {
   technology: {
     techs: ["React Native", "Redux", "Sass", "Node.js", "Express", "MongoDB"],
     pointList: [
-      "Detect a language from google api",
-      "Log-in log-out implementation",
-      "Manage products information with Redux",
-      "Search products from MongoDB",
-      "In this project, I have worked on developing CRUD functions of the products.",
+      "Created a product data model for MongoDB, wrote code to modify product data with Node.js",
+      "Built the product page on the front-end to show the product data and modify the data.",
     ],
   },
   list: {
     motive: {
       title: "Motive",
       text: [
-        "This is the last term project from Langara college Web and Mobide Design and Development course (development stream.)",
-        "The team was conposed of 6 members: 4 developers and 2 designers.",
+        "3-month college project with a total of 7 people (4 developers and 3 designers) on the team..",
         "The purpose of this project was to create a hybrid/mobile app. As we had already developed apps with React.js, we chose React Native as a development tool.",
       ],
     },
@@ -174,7 +170,7 @@ const grabo: Project = {
       title: "Project Management",
       text: [
         "A regular weekly meeting.",
-        "Followed agile development. Created an alpha version and a beta version for testing.",
+        "Followed agile project management. Created an alpha version and a beta version for testing.",
         "Used Git for development efficiency and accuracy.",
         "Tracked team members' progress and managed tasks with Trello",
       ],
@@ -208,17 +204,18 @@ const petPaws: Project = {
       "Git",
     ],
     pointList: [
-      "Our first time to create a project with SQL (MySQL).",
-      "Data stored in MySQL (users' profile data, pet's calorie and exercise data.), fetched with Node.js (Express).",
-      "I mainly worked on the tracking pages, where the calorie graph and exercise graph are shown",
+      "Mainly worked on the data tracking pages, where the calorie graph and exercise graph are shown, also the form that allows users add new pet calorie/exercise data.",
+      "First time to build a project with SQL (MySQL).",
+      "Data stored in MySQL (users' profile data, pet's calorie and exercise data.), served with Node.js (Express).",
     ],
   },
   list: {
     motive: {
       title: "Motive",
       text: [
-        "This website was created as a Web and Mobile App Design and Development course (development stream) second project.",
         "The team was composed of 4 developers and 3 designers",
+        "The main goal in this project was to get farmiliar with database.",
+        "This website was created as a Web and Mobile App Design and Development course (development stream) second project.",
       ],
     },
     techGoal: {
@@ -228,7 +225,7 @@ const petPaws: Project = {
     projectManagement: {
       title: "Project Management",
       text: [
-        "Incorporation of agile practice",
+        "Incorporation of agile (Scrum) practice",
         "Weekly meeting.",
         "Created two test versions and fixed problems",
         "Use Trello for task tracking",
