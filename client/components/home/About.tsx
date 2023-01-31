@@ -26,10 +26,8 @@ const About = () => {
   });
   // Content Text
   const text: string[] = [
-    " Detail-oriented full-stack web development graduate with excellent understanding in design from Langara College (GPA 3.6), seeking an entry-level front-end/full-stack developer position.",
-    " I am currently living in Vancouver and have a 3-yearwork permit.",
-    " The accuracy of my design implementation was considered to be particularly high in the HTML/CSS(Sass) class in college. As aresult, I was offered an internship job for a college’s promotional website.",
-    "I have worked on multiple full-stack projects and am alwaysexcited about learning new languages/technologies. Currently, I am learning GraphQL(Apollo), Mongo DB, and MySQL.",
+    "Vancouver-based full-stack (React.js and Node.js) web development graduate with excellent understanding in design from Langara College (GPA 3.6), seeking an entry-level front-end/full-stack developer position.",
+    "I'm open to learning anything. I am currently working on front-end skills, especially building web applications with React.js (Next.js), however, I am very excited with learning other languages/frameworks/library too. I am very passionate about this industry.",
   ];
 
   type Tech = {
