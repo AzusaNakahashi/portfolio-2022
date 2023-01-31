@@ -1,11 +1,6 @@
 @import "../import.module.scss";
 .project {
-  background: linear-gradient(
-    0deg,
-    $bgc-gradient-brown 0%,
-    $bgc-gradient-purple 31%,
-    $bgc-gradient-blue 100%
-  );
+  background-color: $bgc-dark;
   .section-title {
     @include heading-text-shadow(
       $neon-color-primary,

@@ -25,7 +25,7 @@ const Header = () => {
     (state) => state.elementVisibility.contact.componentIsVisible
   );
 
-  // chenge nav background color depending on the section
+  // home: bg color changes depending on section, projec: only navy
   useEffect(() => {
     if (pathName === "/") {
       if (heroIsVisible) {
@@ -33,12 +33,12 @@ const Header = () => {
       } else if (!heroIsVisible && aboutIsVisible) {
         setNavBGC("navy");
       } else if (!aboutIsVisible && projectsIsVisible) {
-        setNavBGC("lightblue");
+        setNavBGC("lightpurple");
       } else if (!projectsIsVisible && contactIsVisible) {
         setNavBGC("navy");
       }
     } else {
-      setNavBGC("lightblue");
+      setNavBGC("navy");
     }
   }, [
     pathName,

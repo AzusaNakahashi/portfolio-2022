@@ -2,11 +2,7 @@
 @include neon-heading-flicker(yellow-flicker, $neon-color-secondary);
 
 .projects {
-  background: linear-gradient(
-    100deg,
-    $bgc-gradient-blue 0%,
-    $bgc-gradient-wine 100%
-  );
+  background-color: #6862cc;
   .section-title {
     margin: 1rem 0;
     color: $text-color;
@@ -24,7 +20,7 @@
       border-radius: 20px;
       background-color: $bgc-dark;
       overflow: hidden;
-      box-shadow: 0px 20px 4px rgba($bgc-gradient-wine, 0.5);
+      box-shadow: -10px 20px 4px rgba($bgc-gradient-wine, 0.2);
       @include slide-up-animation-quick(1s);
       img {
         object-fit: cover;
@@ -97,12 +93,11 @@
     }
   }
 }
-
 @media only screen and (min-width: $tablet-min-width) {
   .projects {
     background: url(../../public/illustration/palm-tree.svg) no-repeat fixed
         103% bottom,
-      linear-gradient(100deg, $bgc-gradient-blue 0%, $bgc-gradient-wine 100%);
+      #6862cc;
   }
 }
 
