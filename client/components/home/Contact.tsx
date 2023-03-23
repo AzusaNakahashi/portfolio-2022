@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 import { postForm } from "../../features/form";
 import { useInView } from "react-intersection-observer";
 import { contactVisibilityToggle } from "../../features/elementVisibility";
+import ReCAPTCHA from "react-google-recaptcha";
 import styles from "../../styles/layout/contact.module.scss";
 
 const Contact = () => {
@@ -22,6 +23,8 @@ const Contact = () => {
   });
   const [neonRef, neonIsVisible] = useInView({ triggerOnce: true });
   const [messageRef, messageIsVisible] = useInView({ triggerOnce: true });
+  const [isRecaptchaVerified, setRecaptchaVerified] = useState(false);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const showFormStatusMessage = (formSendingStatus: string) => {
     switch (formSendingStatus) {
@@ -42,11 +45,13 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const token = recaptchaRef!.current!.getValue();
     let formData = {
       name: formInput.name,
       email: formInput.email,
       subject: formInput.subject,
       message: formInput.message,
+      token,
     };
     dispatch(postForm(formData));
     setFormInput({
@@ -55,6 +60,17 @@ const Contact = () => {
       subject: "",
       message: "",
     });
+    recaptchaRef!.current!.reset();
+  };
+
+  const handleUserVerification = (token: string | null) => {
+    if (token) {
+      setRecaptchaVerified(true);
+    }
+  };
+
+  const handleRecaptchaExpiry = () => {
+    setRecaptchaVerified(false);
   };
 
   useEffect(() => {
@@ -175,6 +191,12 @@ const Contact = () => {
             </div>
             <button type="submit">Submit</button>
             <p className={styles["status-message"]}>{statusMessage}</p>
+            <ReCAPTCHA
+              sitekey={process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY!}
+              onChange={handleUserVerification}
+              ref={recaptchaRef}
+              onExpired={handleRecaptchaExpiry}
+            />
           </form>
         </div>
       </div>
