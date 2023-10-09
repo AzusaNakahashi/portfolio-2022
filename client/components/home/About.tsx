@@ -26,10 +26,11 @@ const About = () => {
   });
   // Content Text
   const text: string[] = [
-    "Vancouver-based full-stack (React.js and Node.js) web development graduate with excellent understanding in design from Langara College (GPA 3.6), seeking an entry-level front-end/full-stack developer position.",
-    "I'm open to learning anything. I am currently working on front-end skills, especially building web applications with React.js (Next.js), however, I am very excited with learning other languages/frameworks/library too. I am very passionate about this industry.",
+    "I am a skilled full-stack developer currently residing in Vancouver, BC with experience collaborating on various team projects utilizing cutting-edge technologies such as React.js, Next.js, TypeScript, Redux, Sass, Node.js, Express, MySQL, and MongoDB. Presently, I am seeking an entry-level developer position and possess a strong aptitude for learning, with a keen interest in expanding my knowledge of new technologies.",
+    "I'm open to learning anything. I am currently working on MERN stack skills. however, I am very excited with learning other languages/frameworks/library too. I am very passionate about this industry.",
+    "As a developer, I approach problem-solving with a meticulous attention to detail, carefully considering the root cause of issues, consulting relevant documentation, conducting extensive research, and ultimately choosing the optimal solution for each project. This approach enables me to not only develop effective solutions but also continuously improve my code readability.",
+    "In addition, I have developed extensive drawing skills through my personal hobby, which have greatly enhanced my ability to comprehend design concepts with ease. While I am proficient in utilizing libraries for design purposes, my proficiency in accurately reproducing intricate designs using pure CSS, without any reliance on external libraries, has significantly expedited the front-end development process.",
   ];
-
   type Tech = {
     name: string;
     path: string;
