@@ -28,7 +28,7 @@ const IndexHero = () => {
             Azusa Nakahashi
           </h1>
           <h2 className={`${titleIsVisible && styles.animated}`}>
-            Front-end Developer
+            MERN stack Developer
           </h2>
         </div>
       </div>
