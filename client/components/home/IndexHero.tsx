@@ -25,10 +25,10 @@ const IndexHero = () => {
       <div className={styles["content-wrapper"]}>
         <div className={styles["left"]}>
           <h1 ref={titleRef} className={`${titleIsVisible && styles.animated}`}>
-            Azusa Nakahashi
+            Azusa Nakahashiß
           </h1>
           <h2 className={`${titleIsVisible && styles.animated}`}>
-            Front-end Developer
+            MERN stack Developer
           </h2>
         </div>
       </div>
